@@ -664,6 +664,7 @@ MonoBehaviour:
     power: 0
     cardDescription: 
     thisImage: {fileID: 0}
+    thisIcon: {fileID: 0}
     draw_Card: 0
     add_CurrentMana: 0
     healBase: 0

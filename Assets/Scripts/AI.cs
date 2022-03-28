@@ -12,7 +12,7 @@ public class AI : MonoBehaviour
     public List<Card> cardsInHand = new List<Card>();
 
     public GameObject Hand;
-    
+
 
     
 
@@ -63,6 +63,7 @@ public class AI : MonoBehaviour
         y = 0;
         deckSize = 15;
 
+
         draw = true;
 
         for (int i = 1; i < deckSize; i++)
@@ -87,7 +88,7 @@ public class AI : MonoBehaviour
         {
             StartCoroutine(Draw(TurnSystem.EnemyDrawCount));
             draw = true;
-            TurnSystem.startTurn = false;
+            //TurnSystem.startTurn = false;
             TurnSystem.EnemyDrawCount = 0;
         }
 
@@ -183,7 +184,7 @@ public class AI : MonoBehaviour
             {
                 if (child.GetComponent<AiCardToHand>().id == summonThisId && CardDataBase.cardList[summonThisId].cost <= currentMana)
                 {
-                    int[] acak = {3, 4, 10,11,17,18,24,25};
+                    int[] acak = {5,6,14,15,23,24,32,33};
                     int acak1 = Random.Range(0, 8);
                     int x = acak[acak1];
                     for (int i = 0; i < Zone.Length; i++)
@@ -193,6 +194,7 @@ public class AI : MonoBehaviour
                             child.transform.SetParent(Zone[x].transform);
                         }
                     }
+                    AiCardToHand.summoned = true;
 
                     TurnSystem.EnemyDrawCount =+ 1;
                     TurnSystem.currentEnemyMana -= CardDataBase.cardList[summonThisId].cost;
@@ -203,6 +205,7 @@ public class AI : MonoBehaviour
             attackPhase = true;
         }
 
+       
     }
     public void Shuffle()
     {

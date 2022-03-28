@@ -8,7 +8,12 @@ public class AiCardToHand : MonoBehaviour
     public List<Card> thisCard = new List<Card>();
 
 
-
+    public bool cantMove;
+    public bool canMove;
+    public int position;
+    public bool summoningSickness;
+    public static bool summoned;
+    public GameObject[] Zone;
 
     public int thisId;
 
@@ -30,7 +35,7 @@ public class AiCardToHand : MonoBehaviour
     public Sprite thisIkonCard;
     public Image thatIcon;
 
-    public int move;
+    public static int move;
 
     public static int drawX;
     public int drawXcards;
@@ -60,7 +65,10 @@ public class AiCardToHand : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        Zone = GameObject.FindGameObjectsWithTag("Zone");
+        summoningSickness = true;
+        summoned = false;
+        canMove = false;
         tiles = GetComponent<Tiles>();  
 
         CardBackScript = GetComponent<CardBack>();
@@ -125,11 +133,72 @@ public class AiCardToHand : MonoBehaviour
             this.tag = "Untagged";
             cardBack = true;
         }
+        for (int i = 0; i < Zone.Length; i++)
+        {
+            if (summoned == true && this.transform.parent == Zone[i].transform)
+            {
+                if (this.transform.parent == Zone[i].transform)
+                {
+                    position = i;
+                    //Summon();
+                }
+            }
+        }
+        if (TurnSystem.isYourTurn == true && summoned == true)
+        {
+            summoningSickness = false;
+            //cantAttack = false;
+            cantMove = false;
 
+        }
+        if (TurnSystem.isYourTurn == false && summoningSickness == false && cantMove == false)
+        {
+            //canAttack = true;
+            canMove = true;
+        }
+        else
+        {
+            //canAttack = false;
+            canMove = false;
+        }
+        if (TurnSystem.isYourTurn == false && canMove == true && cantMove == false)
+        {
+            Move(move);
+        }
+        if (position == 1 || position == 9 || position == 10 || position == 18 || position == 19 || position == 27 || position == 28)
+        {
+            Destroy();
+            PlayerHP.staticHP = PlayerHP.staticHP - power;
+        }
     }
     public void ChangeSkin()
     {
         CardVisual.SetActive(false);
         IkonVisual.SetActive(true);
+    }
+    public void Move(int x)
+    {
+        if (position != 0)
+        {
+            if (Zone[position - x].GetComponent<Tiles>().Full == false)
+            {
+                Zone[position - x].GetComponent<Tiles>().Full = true;
+                for (int i = 0; i < Zone.Length; i++)
+                {
+                    if (position == i)
+                    {
+                        this.transform.SetParent(Zone[position - x].transform);
+                    }
+
+                }
+                position = position - x;
+
+                cantMove = true;
+            }
+        }
+    }
+    public void Destroy()
+    {
+        Destroy(this.gameObject);
     }
 }
