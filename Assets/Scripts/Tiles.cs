@@ -14,7 +14,7 @@ public class Tiles : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gameObject.GetComponentInChildren<ThisCard>())
+        if (gameObject.GetComponentInChildren<ThisCard>()||gameObject.GetComponentInChildren<AiCardToHand>())
         {
             Full = true;
         }

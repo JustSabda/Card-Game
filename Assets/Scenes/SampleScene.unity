@@ -419,7 +419,7 @@ MonoBehaviour:
   turnEnd: 0
   timeBar: {fileID: 75681896}
   enemyTimeBar: {fileID: 1943123273}
-  maxTime: 15
+  maxTime: 25
   maxEnemyTime: 5
   timeLeft: 0
   timerStart: 0
@@ -1492,13 +1492,13 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1326144041}
+  - {fileID: 1852418147}
   - {fileID: 503296983}
   - {fileID: 1560830475}
   - {fileID: 518370809}
   - {fileID: 1210230642}
   - {fileID: 1140026039}
   - {fileID: 1528322596}
-  - {fileID: 435837374}
   - {fileID: 427709428}
   - {fileID: 642289624}
   - {fileID: 1837488343}
@@ -1507,6 +1507,7 @@ RectTransform:
   - {fileID: 930962956}
   - {fileID: 370696200}
   - {fileID: 1733945386}
+  - {fileID: 435837374}
   - {fileID: 1276994865}
   - {fileID: 1752058442}
   m_Father: {fileID: 0}
@@ -1920,12 +1921,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 333451562}
-  m_RootOrder: 7
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -702, y: 454}
-  m_SizeDelta: {x: 554.587, y: 140.991}
+  m_AnchoredPosition: {x: -738, y: 454.06}
+  m_SizeDelta: {x: 361.09, y: 187.12}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &435837375
 CanvasRenderer:
@@ -2006,7 +2007,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 333451562}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2026,7 +2027,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.3254902}
+  m_Color: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 0.3254902}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2119,7 +2120,7 @@ RectTransform:
   m_Children:
   - {fileID: 137235294}
   m_Father: {fileID: 333451562}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2321,7 +2322,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &642289624
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3843,7 +3844,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 333451562}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3869,6 +3870,7 @@ MonoBehaviour:
     power: 0
     cardDescription: 
     thisImage: {fileID: 0}
+    thisIcon: {fileID: 0}
     draw_Card: 0
     add_CurrentMana: 0
     healBase: 0
@@ -3879,6 +3881,7 @@ MonoBehaviour:
     power: 0
     cardDescription: 
     thisImage: {fileID: 0}
+    thisIcon: {fileID: 0}
     draw_Card: 0
     add_CurrentMana: 0
     healBase: 0
@@ -3889,6 +3892,7 @@ MonoBehaviour:
     power: 0
     cardDescription: 
     thisImage: {fileID: 0}
+    thisIcon: {fileID: 0}
     draw_Card: 0
     add_CurrentMana: 0
     healBase: 0
@@ -3899,6 +3903,7 @@ MonoBehaviour:
     power: 0
     cardDescription: 
     thisImage: {fileID: 0}
+    thisIcon: {fileID: 0}
     draw_Card: 0
     add_CurrentMana: 0
     healBase: 0
@@ -3909,6 +3914,7 @@ MonoBehaviour:
     power: 0
     cardDescription: 
     thisImage: {fileID: 0}
+    thisIcon: {fileID: 0}
     draw_Card: 0
     add_CurrentMana: 0
     healBase: 0
@@ -3919,6 +3925,7 @@ MonoBehaviour:
     power: 0
     cardDescription: 
     thisImage: {fileID: 0}
+    thisIcon: {fileID: 0}
     draw_Card: 0
     add_CurrentMana: 0
     healBase: 0
@@ -3929,6 +3936,7 @@ MonoBehaviour:
     power: 0
     cardDescription: 
     thisImage: {fileID: 0}
+    thisIcon: {fileID: 0}
     draw_Card: 0
     add_CurrentMana: 0
     healBase: 0
@@ -3939,6 +3947,7 @@ MonoBehaviour:
     power: 0
     cardDescription: 
     thisImage: {fileID: 0}
+    thisIcon: {fileID: 0}
     draw_Card: 0
     add_CurrentMana: 0
     healBase: 0
@@ -3949,6 +3958,7 @@ MonoBehaviour:
     power: 0
     cardDescription: 
     thisImage: {fileID: 0}
+    thisIcon: {fileID: 0}
     draw_Card: 0
     add_CurrentMana: 0
     healBase: 0
@@ -3959,6 +3969,7 @@ MonoBehaviour:
     power: 0
     cardDescription: 
     thisImage: {fileID: 0}
+    thisIcon: {fileID: 0}
     draw_Card: 0
     add_CurrentMana: 0
     healBase: 0
@@ -3969,6 +3980,7 @@ MonoBehaviour:
     power: 0
     cardDescription: 
     thisImage: {fileID: 0}
+    thisIcon: {fileID: 0}
     draw_Card: 0
     add_CurrentMana: 0
     healBase: 0
@@ -3979,6 +3991,7 @@ MonoBehaviour:
     power: 0
     cardDescription: 
     thisImage: {fileID: 0}
+    thisIcon: {fileID: 0}
     draw_Card: 0
     add_CurrentMana: 0
     healBase: 0
@@ -3989,6 +4002,7 @@ MonoBehaviour:
     power: 0
     cardDescription: 
     thisImage: {fileID: 0}
+    thisIcon: {fileID: 0}
     draw_Card: 0
     add_CurrentMana: 0
     healBase: 0
@@ -3999,6 +4013,7 @@ MonoBehaviour:
     power: 0
     cardDescription: 
     thisImage: {fileID: 0}
+    thisIcon: {fileID: 0}
     draw_Card: 0
     add_CurrentMana: 0
     healBase: 0
@@ -4009,6 +4024,7 @@ MonoBehaviour:
     power: 0
     cardDescription: 
     thisImage: {fileID: 0}
+    thisIcon: {fileID: 0}
     draw_Card: 0
     add_CurrentMana: 0
     healBase: 0
@@ -4020,17 +4036,210 @@ MonoBehaviour:
     power: 0
     cardDescription: 
     thisImage: {fileID: 0}
+    thisIcon: {fileID: 0}
+    draw_Card: 0
+    add_CurrentMana: 0
+    healBase: 0
+    move: 0
+  cardsInHand:
+  - id: 0
+    cardName: 
+    cost: 0
+    power: 0
+    cardDescription: 
+    thisImage: {fileID: 0}
+    thisIcon: {fileID: 0}
+    draw_Card: 0
+    add_CurrentMana: 0
+    healBase: 0
+    move: 0
+  - id: 0
+    cardName: 
+    cost: 0
+    power: 0
+    cardDescription: 
+    thisImage: {fileID: 0}
+    thisIcon: {fileID: 0}
+    draw_Card: 0
+    add_CurrentMana: 0
+    healBase: 0
+    move: 0
+  - id: 0
+    cardName: 
+    cost: 0
+    power: 0
+    cardDescription: 
+    thisImage: {fileID: 0}
+    thisIcon: {fileID: 0}
+    draw_Card: 0
+    add_CurrentMana: 0
+    healBase: 0
+    move: 0
+  - id: 0
+    cardName: 
+    cost: 0
+    power: 0
+    cardDescription: 
+    thisImage: {fileID: 0}
+    thisIcon: {fileID: 0}
+    draw_Card: 0
+    add_CurrentMana: 0
+    healBase: 0
+    move: 0
+  - id: 0
+    cardName: 
+    cost: 0
+    power: 0
+    cardDescription: 
+    thisImage: {fileID: 0}
+    thisIcon: {fileID: 0}
+    draw_Card: 0
+    add_CurrentMana: 0
+    healBase: 0
+    move: 0
+  - id: 0
+    cardName: 
+    cost: 0
+    power: 0
+    cardDescription: 
+    thisImage: {fileID: 0}
+    thisIcon: {fileID: 0}
+    draw_Card: 0
+    add_CurrentMana: 0
+    healBase: 0
+    move: 0
+  - id: 0
+    cardName: 
+    cost: 0
+    power: 0
+    cardDescription: 
+    thisImage: {fileID: 0}
+    thisIcon: {fileID: 0}
+    draw_Card: 0
+    add_CurrentMana: 0
+    healBase: 0
+    move: 0
+  - id: 0
+    cardName: 
+    cost: 0
+    power: 0
+    cardDescription: 
+    thisImage: {fileID: 0}
+    thisIcon: {fileID: 0}
+    draw_Card: 0
+    add_CurrentMana: 0
+    healBase: 0
+    move: 0
+  - id: 0
+    cardName: 
+    cost: 0
+    power: 0
+    cardDescription: 
+    thisImage: {fileID: 0}
+    thisIcon: {fileID: 0}
+    draw_Card: 0
+    add_CurrentMana: 0
+    healBase: 0
+    move: 0
+  - id: 0
+    cardName: 
+    cost: 0
+    power: 0
+    cardDescription: 
+    thisImage: {fileID: 0}
+    thisIcon: {fileID: 0}
+    draw_Card: 0
+    add_CurrentMana: 0
+    healBase: 0
+    move: 0
+  - id: 0
+    cardName: 
+    cost: 0
+    power: 0
+    cardDescription: 
+    thisImage: {fileID: 0}
+    thisIcon: {fileID: 0}
+    draw_Card: 0
+    add_CurrentMana: 0
+    healBase: 0
+    move: 0
+  - id: 0
+    cardName: 
+    cost: 0
+    power: 0
+    cardDescription: 
+    thisImage: {fileID: 0}
+    thisIcon: {fileID: 0}
+    draw_Card: 0
+    add_CurrentMana: 0
+    healBase: 0
+    move: 0
+  - id: 0
+    cardName: 
+    cost: 0
+    power: 0
+    cardDescription: 
+    thisImage: {fileID: 0}
+    thisIcon: {fileID: 0}
+    draw_Card: 0
+    add_CurrentMana: 0
+    healBase: 0
+    move: 0
+  - id: 0
+    cardName: 
+    cost: 0
+    power: 0
+    cardDescription: 
+    thisImage: {fileID: 0}
+    thisIcon: {fileID: 0}
+    draw_Card: 0
+    add_CurrentMana: 0
+    healBase: 0
+    move: 0
+  - id: 0
+    cardName: 
+    cost: 0
+    power: 0
+    cardDescription: 
+    thisImage: {fileID: 0}
+    thisIcon: {fileID: 0}
     draw_Card: 0
     add_CurrentMana: 0
     healBase: 0
     move: 0
   Hand: {fileID: 0}
-  Zone: {fileID: 0}
   x: 0
   y: 0
   CardToHand: {fileID: 5362941949208870295, guid: 2466d2907f286d64ea8540d23fb5b632, type: 3}
-  Clones: []
+  Clones:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   CardBack: {fileID: 3653108352592644876, guid: 0c10975a55d2f224393d51409cdfc3ad, type: 3}
+  currentMana: 0
+  AiCanSummon: 000000000000000000000000000000
+  drawPhase: 0
+  summonPhase: 0
+  attackPhase: 0
+  endPhase: 0
+  cardsID: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  summonThisId: 0
+  aiCardToHand: {fileID: 0}
+  summonID: 0
+  howManyCards: 0
+  Zone: []
 --- !u!224 &1147071289 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6099085038265609417, guid: 70e0ec64dbf6fbc488b3e9d2b283048e, type: 3}
@@ -4536,7 +4745,7 @@ RectTransform:
   - {fileID: 2006012804}
   - {fileID: 1147071289}
   m_Father: {fileID: 333451562}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -4626,6 +4835,7 @@ MonoBehaviour:
     power: 0
     cardDescription: 
     thisImage: {fileID: 0}
+    thisIcon: {fileID: 0}
     draw_Card: 0
     add_CurrentMana: 0
     healBase: 0
@@ -4636,6 +4846,7 @@ MonoBehaviour:
     power: 0
     cardDescription: 
     thisImage: {fileID: 0}
+    thisIcon: {fileID: 0}
     draw_Card: 0
     add_CurrentMana: 0
     healBase: 0
@@ -4646,6 +4857,7 @@ MonoBehaviour:
     power: 0
     cardDescription: 
     thisImage: {fileID: 0}
+    thisIcon: {fileID: 0}
     draw_Card: 0
     add_CurrentMana: 0
     healBase: 0
@@ -4656,6 +4868,7 @@ MonoBehaviour:
     power: 0
     cardDescription: 
     thisImage: {fileID: 0}
+    thisIcon: {fileID: 0}
     draw_Card: 0
     add_CurrentMana: 0
     healBase: 0
@@ -4666,6 +4879,7 @@ MonoBehaviour:
     power: 0
     cardDescription: 
     thisImage: {fileID: 0}
+    thisIcon: {fileID: 0}
     draw_Card: 0
     add_CurrentMana: 0
     healBase: 0
@@ -4676,6 +4890,7 @@ MonoBehaviour:
     power: 0
     cardDescription: 
     thisImage: {fileID: 0}
+    thisIcon: {fileID: 0}
     draw_Card: 0
     add_CurrentMana: 0
     healBase: 0
@@ -4686,6 +4901,7 @@ MonoBehaviour:
     power: 0
     cardDescription: 
     thisImage: {fileID: 0}
+    thisIcon: {fileID: 0}
     draw_Card: 0
     add_CurrentMana: 0
     healBase: 0
@@ -4696,6 +4912,7 @@ MonoBehaviour:
     power: 0
     cardDescription: 
     thisImage: {fileID: 0}
+    thisIcon: {fileID: 0}
     draw_Card: 0
     add_CurrentMana: 0
     healBase: 0
@@ -4706,6 +4923,7 @@ MonoBehaviour:
     power: 0
     cardDescription: 
     thisImage: {fileID: 0}
+    thisIcon: {fileID: 0}
     draw_Card: 0
     add_CurrentMana: 0
     healBase: 0
@@ -4716,6 +4934,7 @@ MonoBehaviour:
     power: 0
     cardDescription: 
     thisImage: {fileID: 0}
+    thisIcon: {fileID: 0}
     draw_Card: 0
     add_CurrentMana: 0
     healBase: 0
@@ -4726,6 +4945,7 @@ MonoBehaviour:
     power: 0
     cardDescription: 
     thisImage: {fileID: 0}
+    thisIcon: {fileID: 0}
     draw_Card: 0
     add_CurrentMana: 0
     healBase: 0
@@ -4736,6 +4956,7 @@ MonoBehaviour:
     power: 0
     cardDescription: 
     thisImage: {fileID: 0}
+    thisIcon: {fileID: 0}
     draw_Card: 0
     add_CurrentMana: 0
     healBase: 0
@@ -4746,6 +4967,7 @@ MonoBehaviour:
     power: 0
     cardDescription: 
     thisImage: {fileID: 0}
+    thisIcon: {fileID: 0}
     draw_Card: 0
     add_CurrentMana: 0
     healBase: 0
@@ -4756,6 +4978,7 @@ MonoBehaviour:
     power: 0
     cardDescription: 
     thisImage: {fileID: 0}
+    thisIcon: {fileID: 0}
     draw_Card: 0
     add_CurrentMana: 0
     healBase: 0
@@ -4766,6 +4989,7 @@ MonoBehaviour:
     power: 0
     cardDescription: 
     thisImage: {fileID: 0}
+    thisIcon: {fileID: 0}
     draw_Card: 0
     add_CurrentMana: 0
     healBase: 0
@@ -4777,6 +5001,7 @@ MonoBehaviour:
     power: 0
     cardDescription: 
     thisImage: {fileID: 0}
+    thisIcon: {fileID: 0}
     draw_Card: 0
     add_CurrentMana: 0
     healBase: 0
@@ -4932,7 +5157,7 @@ RectTransform:
   - {fileID: 75681898}
   - {fileID: 1943123275}
   m_Father: {fileID: 333451562}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5603,7 +5828,7 @@ RectTransform:
   m_Children:
   - {fileID: 1477228697}
   m_Father: {fileID: 333451562}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5677,11 +5902,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 333451562}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 57.765625, y: 34.607483}
+  m_AnchoredPosition: {x: 66, y: 801}
   m_SizeDelta: {x: 564.9424, y: 391.4663}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1560830476
@@ -6030,7 +6255,7 @@ GameObject:
   - component: {fileID: 1733945388}
   - component: {fileID: 1733945387}
   m_Layer: 5
-  m_Name: Deck Panel (1)
+  m_Name: Popout
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6148,7 +6373,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 333451562}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6463,6 +6688,81 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1852418146
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1852418147}
+  - component: {fileID: 1852418149}
+  - component: {fileID: 1852418148}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1852418147
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1852418146}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 333451562}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -726.61, y: 452.9}
+  m_SizeDelta: {x: 263.2141, y: 138.7959}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1852418148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1852418146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.3254902}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 65bf745105acc1d4cbb3241473812be4, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1852418149
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1852418146}
+  m_CullTransparentMesh: 1
 --- !u!1 &1870990592
 GameObject:
   m_ObjectHideFlags: 0

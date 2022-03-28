@@ -281,14 +281,6 @@ public class ThisCard : MonoBehaviour
             }
         }
     }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.transform.tag.Equals("Base"))
-        {
-            Debug.Log("BASE !");
-            Destroy(this.gameObject);
-        }
-    }
     public void UnTargetEnemy()
     {
         staticTargetEnemy = false;
@@ -326,16 +318,16 @@ public class ThisCard : MonoBehaviour
         if (Zone[position + x].GetComponent<Tiles>().Full == false)
         {
             Zone[position + x].GetComponent<Tiles>().Full = true;
-                for (int i = 0; i < Zone.Length; i++)
+            for (int i = 0; i < Zone.Length; i++)
+            {
+                if (position == i)
                 {
-                    if (position == i)
-                    {
-                        this.transform.SetParent(Zone[position + x].transform);
-                    }
-
+                    this.transform.SetParent(Zone[position + x].transform);
                 }
-                position = position + x;
-            
+
+            }
+            position = position + x;
+
             cantMove = true;
         }
     }

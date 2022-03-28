@@ -48,7 +48,7 @@ public class PlayerDeck : MonoBehaviour
         }
         if (TurnSystem.startTurn == true)
         {
-            StartCoroutine(Draw(TurnSystem.EnemyDrawCount));
+            StartCoroutine(Draw(TurnSystem.DrawCount));
             TurnSystem.startTurn = false;
             TurnSystem.DrawCount = 0;
         }

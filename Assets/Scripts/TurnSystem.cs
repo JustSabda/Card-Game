@@ -102,7 +102,7 @@ public class TurnSystem : MonoBehaviour
         isYourTurn = false;
         yourOponentTurn += 1;
 
-        if (maxEnemyMana < 12)
+        if (maxEnemyMana < 6)
         {
             maxEnemyMana += 1;
         }

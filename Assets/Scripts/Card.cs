@@ -13,6 +13,7 @@ public class Card
     public string cardDescription;
 
     public Sprite thisImage;
+    public Sprite thisIcon;
     public int draw_Card;
     public int add_CurrentMana;
 
@@ -24,7 +25,7 @@ public class Card
 
     }
 
-    public Card(int Id ,string CardName, int Cost, int Power, string CardDescription, Sprite ThisImage ,int Draw_Card , int Add_CurrentMana , int HealBase , int Move)
+    public Card(int Id ,string CardName, int Cost, int Power, string CardDescription, Sprite ThisImage,Sprite ThisIcon ,int Draw_Card , int Add_CurrentMana , int HealBase , int Move)
     {
         id = Id;
         cardName = CardName;
@@ -32,6 +33,7 @@ public class Card
         power = Power;
         cardDescription = CardDescription;
         thisImage = ThisImage;
+        thisIcon = ThisIcon;
         draw_Card = Draw_Card;
         add_CurrentMana = Add_CurrentMana;
         healBase = HealBase;

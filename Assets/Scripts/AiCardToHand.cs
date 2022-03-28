@@ -5,7 +5,10 @@ using UnityEngine.UI;
 
 public class AiCardToHand : MonoBehaviour
 {
-    public List<Card> thisCard = new List<Card>(0);
+    public List<Card> thisCard = new List<Card>();
+
+
+
 
     public int thisId;
 
@@ -51,10 +54,14 @@ public class AiCardToHand : MonoBehaviour
 
     Tiles tiles;
     CardBack CardBackScript;
+
+    public GameObject CardVisual;
+    public GameObject IkonVisual;
     // Start is called before the first frame update
     void Start()
     {
-        tiles = GetComponent<Tiles>();
+
+        tiles = GetComponent<Tiles>();  
 
         CardBackScript = GetComponent<CardBack>();
 
@@ -77,11 +84,6 @@ public class AiCardToHand : MonoBehaviour
             z = 1;
         }
 
-        Hand = GameObject.Find("EnemyHand");
-        if (this.transform.parent == Hand.transform.parent)
-        {
-            cardBack = true;
-        }
 
         id = thisCard[0].id;
         cardName = thisCard[0].cardName;
@@ -97,6 +99,8 @@ public class AiCardToHand : MonoBehaviour
 
         healSpell = thisCard[0].healBase;
 
+        actualpower = power - hurted;
+
         //nameText.text = "" + cardName;
         //costText.text = "" + cost;
         //powerText.text = "" + power;
@@ -108,6 +112,8 @@ public class AiCardToHand : MonoBehaviour
 
         if (this.tag == "Clone")
         {
+
+
             thisCard[0] = AI.staticEnemyDeck[numberOfCardsInDeck - 1];
             numberOfCardsInDeck -= 1;
             AI.deckSize -= 1;
@@ -119,5 +125,11 @@ public class AiCardToHand : MonoBehaviour
             this.tag = "Untagged";
             cardBack = true;
         }
+
+    }
+    public void ChangeSkin()
+    {
+        CardVisual.SetActive(false);
+        IkonVisual.SetActive(true);
     }
 }
