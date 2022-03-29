@@ -581,7 +581,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4827836862363334736}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -669,6 +669,11 @@ MonoBehaviour:
     add_CurrentMana: 0
     healBase: 0
     move: 0
+  cantMove: 0
+  canMove: 0
+  position: 0
+  summoningSickness: 0
+  Zone: []
   thisId: 0
   id: 0
   cardName: 
@@ -679,7 +684,6 @@ MonoBehaviour:
   thatImage: {fileID: 4202850861088354403}
   thisIkonCard: {fileID: 0}
   thatIcon: {fileID: 0}
-  move: 0
   drawXcards: 0
   draw_cards: 0
   add_CurrentMana: 0
@@ -1030,8 +1034,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 8c9f4ef8da6fb2c46b0b9e23f6f9b2e0, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4

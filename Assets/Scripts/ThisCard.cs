@@ -131,7 +131,7 @@ public class ThisCard : MonoBehaviour
         //powerText.text = "" + power;
         //descriptionText.text = "" + cardDescription;
 
-        thatImage.sprite = thisSpriteCard;
+        
 
         CardBackScript.UpdateCard(cardBack);
 
@@ -151,6 +151,7 @@ public class ThisCard : MonoBehaviour
         }
         if (this.tag != "Deck")
         {
+            thatImage.sprite = thisSpriteCard;
             if (TurnSystem.currentMana >= cost && summoned == false&& TurnSystem.isYourTurn==true)
             {
                 canBeSummon = true;
@@ -193,7 +194,6 @@ public class ThisCard : MonoBehaviour
                 attackBorder.SetActive(false);
             }
         }
-
 
         if (TurnSystem.isYourTurn == false && summoned == true)
         {
