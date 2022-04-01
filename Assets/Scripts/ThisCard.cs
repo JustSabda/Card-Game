@@ -350,5 +350,8 @@ public class ThisCard : MonoBehaviour
         CardVisual.SetActive(true);
         IkonVisual.SetActive(false);
     }
-
+    public void SetSelectedHero()
+    {
+        MenuManager.Instance.ShowTileInfo(this);
+    }
 }
