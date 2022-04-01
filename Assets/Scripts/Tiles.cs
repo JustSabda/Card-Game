@@ -25,7 +25,7 @@ public class Tiles : MonoBehaviour
         if (gameObject.GetComponentInChildren<AiCardToHand>())
         {
             FullEnemies = true;
-            enemyCurrentPower = gameObject.GetComponentInChildren<AiCardToHand>().power;    
+            enemyCurrentPower = gameObject.GetComponentInChildren<AiCardToHand>().currentPower;    
         }
 
         if (!(gameObject.GetComponentInChildren<ThisCard>() || gameObject.GetComponentInChildren<AiCardToHand>()))

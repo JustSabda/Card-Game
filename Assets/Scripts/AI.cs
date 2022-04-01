@@ -49,6 +49,10 @@ public class AI : MonoBehaviour
 
     public GameObject[] Zone;
     // Start is called before the first frame update
+    private void Awake()
+    {
+        Shuffle();
+    }
     void Start()
     {
 
@@ -218,9 +222,6 @@ public class AI : MonoBehaviour
             deck[randomIndex] = container[0];
         }
 
-        Instantiate(CardBack, transform.position, transform.rotation);
-
-        StartCoroutine(ShuffleNow());
     }
 
     IEnumerator StartGame()
@@ -229,17 +230,6 @@ public class AI : MonoBehaviour
         {
             yield return new WaitForSeconds(1);
             Instantiate(CardToHand, transform.position, transform.rotation);
-        }
-    }
-
-    IEnumerator ShuffleNow()
-    {
-        yield return new WaitForSeconds(1);
-        Clones = GameObject.FindGameObjectsWithTag("Clone");
-
-        foreach (GameObject Clone in Clones)
-        {
-            Destroy(Clone);
         }
     }
 

@@ -182,7 +182,6 @@ public class ThisCard : MonoBehaviour
                 {
                     if (this.transform.parent == Zone[i].transform)
                     {
-                        maxPower = currentPower;
                         position = i;
                         Summon();
                     }
@@ -246,9 +245,9 @@ public class ThisCard : MonoBehaviour
             Destroy();
             EnemyHP.staticHP = EnemyHP.staticHP - currentPower;
         }
-        if(currentPower == 0)
+        if(currentPower == 0 && Zone[position].GetComponent<Tiles>().FullEnemies == true)
         {
-
+            Destroy();
         }
     }
     public void Summon()
@@ -260,7 +259,7 @@ public class ThisCard : MonoBehaviour
         TurnSystem.DrawCount += 1;
 
         drawX = draw_cards;
-
+        currentPower = maxPower;
         ChangeSkin();
     }
     public void CurrentMana(int x)
@@ -334,9 +333,9 @@ public class ThisCard : MonoBehaviour
             position = position + x;
 
             cantMove = true;
-            if (Zone[position + x].GetComponent<Tiles>().FullEnemies == true)
+            if (Zone[position].GetComponent<Tiles>().FullEnemies == true)
             {
-                currentPower = currentPower - Zone[position + x].GetComponent<Tiles>().enemyCurrentPower;
+                currentPower = currentPower - Zone[position].GetComponent<Tiles>().enemyCurrentPower;
             }
         }
 

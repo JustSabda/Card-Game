@@ -17,6 +17,11 @@ public class PlayerDeck : MonoBehaviour
     public GameObject Hand;
 
     // Start is called before the first frame update
+
+    private void Awake()
+    {
+        Shuffle();
+    }
     void Start()
     {
         y = 0;

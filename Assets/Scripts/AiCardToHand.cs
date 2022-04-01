@@ -20,7 +20,8 @@ public class AiCardToHand : MonoBehaviour
 
     public string cardName;
     public int cost;
-    public int power;
+    public static int Maxpower;
+    public int currentPower;
     public string cardDescription;
 
     //public Text nameText;
@@ -95,7 +96,7 @@ public class AiCardToHand : MonoBehaviour
         id = thisCard[0].id;
         cardName = thisCard[0].cardName;
         cost = thisCard[0].cost;
-        power = thisCard[0].power;
+        Maxpower = thisCard[0].power;
         cardDescription = thisCard[0].cardDescription;
 
         move = thisCard[0].move;
@@ -106,7 +107,7 @@ public class AiCardToHand : MonoBehaviour
 
         healSpell = thisCard[0].healBase;
 
-        actualpower = power - hurted;
+        //actualpower = mapower - hurted;
 
         //nameText.text = "" + cardName;
         //costText.text = "" + cost;
@@ -164,7 +165,7 @@ public class AiCardToHand : MonoBehaviour
         if (position == 1 || position == 9 || position == 10 || position == 18 || position == 19 || position == 27 || position == 28)
         {
             Destroy();
-            PlayerHP.staticHP = PlayerHP.staticHP - power;
+            PlayerHP.staticHP = PlayerHP.staticHP - currentPower;
         }
     }
     public void ChangeSkin()
