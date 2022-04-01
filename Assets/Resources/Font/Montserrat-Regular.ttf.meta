@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 575a7cc6414d5174195973b657432533
+guid: fee113b2318e84b4a9559eb88a71ed0a
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,8 +9,9 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - New Rocker
-  fallbackFontReferences: []
+  - Montserrat
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 84be807ebede6724c9650f06b04ea6a4, type: 3}
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1
