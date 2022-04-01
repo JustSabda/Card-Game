@@ -7,11 +7,10 @@ public class AiCardToHand : MonoBehaviour
 {
     public List<Card> thisCard = new List<Card>();
 
-
     public bool cantMove;
     public bool canMove;
     public int position;
-    public bool summoningSickness;
+    public static bool summoningSickness;
     public static bool summoned;
     public GameObject[] Zone;
 
@@ -120,8 +119,6 @@ public class AiCardToHand : MonoBehaviour
 
         if (this.tag == "Clone")
         {
-
-
             thisCard[0] = AI.staticEnemyDeck[numberOfCardsInDeck - 1];
             numberOfCardsInDeck -= 1;
             AI.deckSize -= 1;
@@ -149,7 +146,6 @@ public class AiCardToHand : MonoBehaviour
             summoningSickness = false;
             //cantAttack = false;
             cantMove = false;
-
         }
         if (TurnSystem.isYourTurn == false && summoningSickness == false && cantMove == false)
         {
@@ -180,9 +176,9 @@ public class AiCardToHand : MonoBehaviour
     {
         if (position != 0)
         {
-            if (Zone[position - x].GetComponent<Tiles>().Full == false)
+            if (Zone[position - x].GetComponent<Tiles>().FullEnemies == false)
             {
-                Zone[position - x].GetComponent<Tiles>().Full = true;
+                Zone[position - x].GetComponent<Tiles>().FullEnemies = true;
                 for (int i = 0; i < Zone.Length; i++)
                 {
                     if (position == i)

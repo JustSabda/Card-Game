@@ -5,6 +5,9 @@ using UnityEngine;
 public class Tiles : MonoBehaviour
 {
     public bool Full;
+    public int currentPower;
+    public int enemyCurrentPower;
+    public bool FullEnemies;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,13 +17,24 @@ public class Tiles : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gameObject.GetComponentInChildren<ThisCard>()||gameObject.GetComponentInChildren<AiCardToHand>())
+        if (gameObject.GetComponentInChildren<ThisCard>())
         {
             Full = true;
+            currentPower = gameObject.GetComponentInChildren<ThisCard>().currentPower;
         }
-        else
+        if (gameObject.GetComponentInChildren<AiCardToHand>())
+        {
+            FullEnemies = true;
+            enemyCurrentPower = gameObject.GetComponentInChildren<AiCardToHand>().power;    
+        }
+
+        if (!(gameObject.GetComponentInChildren<ThisCard>() || gameObject.GetComponentInChildren<AiCardToHand>()))
         {
             Full = false;
+            FullEnemies = false;
+            currentPower = 0;
+            enemyCurrentPower = 0;
         }
+
     }
 }

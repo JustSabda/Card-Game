@@ -189,12 +189,13 @@ public class AI : MonoBehaviour
                     int x = acak[acak1];
                     for (int i = 0; i < Zone.Length; i++)
                     {
-                        if (Zone[x].GetComponent<Tiles>().Full == false)
+                        if (Zone[x].GetComponent<Tiles>().FullEnemies == false && Zone[x].GetComponent<Tiles>().Full == false)
                         {
                             child.transform.SetParent(Zone[x].transform);
+                            AiCardToHand.summoned = true;
+                            AiCardToHand.summoningSickness = true;
                         }
                     }
-                    AiCardToHand.summoned = true;
 
                     TurnSystem.EnemyDrawCount =+ 1;
                     TurnSystem.currentEnemyMana -= CardDataBase.cardList[summonThisId].cost;
@@ -215,7 +216,6 @@ public class AI : MonoBehaviour
             int randomIndex = Random.Range(i, deckSize);
             deck[i] = deck[randomIndex];
             deck[randomIndex] = container[0];
-
         }
 
         Instantiate(CardBack, transform.position, transform.rotation);

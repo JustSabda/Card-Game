@@ -12,7 +12,8 @@ public class ThisCard : MonoBehaviour
     public int id;
     public string cardName;
     public int cost;
-    public int power;
+    public int maxPower;
+    public int currentPower;
     public string cardDescription;
 
     //public Text nameText;
@@ -102,6 +103,8 @@ public class ThisCard : MonoBehaviour
         }
 
         Zone = GameObject.FindGameObjectsWithTag("Zone");
+
+
     }
 
     // Update is called once per frame
@@ -115,7 +118,7 @@ public class ThisCard : MonoBehaviour
         id = thisCard[0].id;
         cardName = thisCard[0].cardName;
         cost = thisCard[0].cost;
-        power = thisCard[0].power;
+        maxPower = thisCard[0].power;
         cardDescription = thisCard[0].cardDescription;
 
         move = thisCard[0].move;
@@ -179,6 +182,7 @@ public class ThisCard : MonoBehaviour
                 {
                     if (this.transform.parent == Zone[i].transform)
                     {
+                        maxPower = currentPower;
                         position = i;
                         Summon();
                     }
@@ -227,7 +231,6 @@ public class ThisCard : MonoBehaviour
         if(targeting == true && targetingEnemy == true && onlyThisCardAttack == true)
         {
             Attack();
-            
         }
         if(canHeal == true && summoned == true)
         {
@@ -238,12 +241,15 @@ public class ThisCard : MonoBehaviour
         {
             Move(move);
         }
-        if(position == 5||position==6 || position == 12 || position == 13 || position == 19 || position == 20 || position == 26 || position == 27)
+        if(position == 7||position==8 || position == 16 || position == 17 || position == 25 || position == 26 || position == 34 || position == 35)
         {
             Destroy();
-            EnemyHP.staticHP = EnemyHP.staticHP - power;
+            EnemyHP.staticHP = EnemyHP.staticHP - currentPower;
         }
+        if(currentPower == 0)
+        {
 
+        }
     }
     public void Summon()
     {
@@ -270,7 +276,7 @@ public class ThisCard : MonoBehaviour
             {
                 if (Target == Enemy)
                 {
-                    EnemyHP.staticHP -= power;
+                    EnemyHP.staticHP -= currentPower;
                     targeting = false;
                     cantAttack = true;
                 }
@@ -324,12 +330,16 @@ public class ThisCard : MonoBehaviour
                 {
                     this.transform.SetParent(Zone[position + x].transform);
                 }
-
             }
             position = position + x;
 
             cantMove = true;
+            if (Zone[position + x].GetComponent<Tiles>().FullEnemies == true)
+            {
+                currentPower = currentPower - Zone[position + x].GetComponent<Tiles>().enemyCurrentPower;
+            }
         }
+
     }
     public void ChangeSkin()
     {
@@ -341,4 +351,5 @@ public class ThisCard : MonoBehaviour
         CardVisual.SetActive(true);
         IkonVisual.SetActive(false);
     }
+
 }
