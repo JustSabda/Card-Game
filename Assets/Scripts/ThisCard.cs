@@ -14,6 +14,8 @@ public class ThisCard : MonoBehaviour
     public int cost;
     public int maxPower;
     public int currentPower;
+    public int damage;
+
     public string cardDescription;
 
     //public Text nameText;
@@ -75,6 +77,9 @@ public class ThisCard : MonoBehaviour
     public GameObject[] Zone;
     Tiles tiles;
 
+    public bool canDamaged;
+    public static bool cantDamaged;
+
     void Start()
     {
         tiles = GetComponent<Tiles>();
@@ -90,6 +95,7 @@ public class ThisCard : MonoBehaviour
         canAttack = false;
         summoningSickness = true;
         canMove = false;
+        cantDamaged = false;
 
         Enemy = GameObject.Find("EnemyHP");
 
@@ -103,7 +109,6 @@ public class ThisCard : MonoBehaviour
         }
 
         Zone = GameObject.FindGameObjectsWithTag("Zone");
-
 
     }
 
@@ -155,7 +160,7 @@ public class ThisCard : MonoBehaviour
         if (this.tag != "Deck")
         {
             thatImage.sprite = thisSpriteCard;
-            if (TurnSystem.currentMana >= cost && summoned == false&& TurnSystem.isYourTurn==true)
+            if (TurnSystem.currentMana >= cost && summoned == false && TurnSystem.isYourTurn==true)
             {
                 canBeSummon = true;
             }
@@ -196,6 +201,7 @@ public class ThisCard : MonoBehaviour
             {
                 attackBorder.SetActive(false);
             }
+            
         }
 
         if (TurnSystem.isYourTurn == false && summoned == true)
@@ -203,9 +209,8 @@ public class ThisCard : MonoBehaviour
             summoningSickness = false;
             cantAttack = false;
             cantMove = false;
-            
         }
-        if (TurnSystem.isYourTurn ==true&&summoningSickness == false && (cantAttack == false||cantMove==false))
+        if (TurnSystem.isYourTurn == true && summoningSickness == false && (cantAttack == false || cantMove == false))
         {
             canAttack = true;
             canMove = true;
@@ -245,9 +250,32 @@ public class ThisCard : MonoBehaviour
             Destroy();
             EnemyHP.staticHP = EnemyHP.staticHP - currentPower;
         }
-        if(currentPower == 0 && Zone[position].GetComponent<Tiles>().FullEnemies == true)
+        if (Zone[position].GetComponent<Tiles>().FullEnemies == true && TurnSystem.isYourTurn == false)
         {
-            Destroy();
+            //currentPower = currentPower - Zone[position].GetComponent<Tiles>().enemyCurrentPower;
+            //damaged();
+        }
+        if(Zone[position].GetComponent<Tiles>().FullEnemies == true)
+        {
+            //Zone[position].GetComponent<Tiles>().currentPower;
+        }
+    }
+
+
+    public void LateUpdate()
+    {
+        if (currentPower <= 0 && Zone[position].GetComponent<Tiles>().FullEnemies == true)
+        {
+            //Destroy();
+        }
+    }
+    public void damaged()
+    {
+        if (TurnSystem.isYourTurn == false && cantDamaged == false)
+        {
+            Debug.Log("Damaged");
+            currentPower = currentPower - Zone[position].GetComponent<Tiles>().enemyCurrentPower;
+            cantDamaged = true;
         }
     }
     public void Summon()
@@ -335,10 +363,13 @@ public class ThisCard : MonoBehaviour
             cantMove = true;
             if (Zone[position].GetComponent<Tiles>().FullEnemies == true)
             {
-                currentPower = currentPower - Zone[position].GetComponent<Tiles>().enemyCurrentPower;
+
+                Zone[position].GetComponent<Tiles>().enemyCurrentPower = Zone[position].GetComponent<Tiles>().enemyCurrentPower - currentPower;
+                currentPower = currentPower - Zone[position].GetComponent<Tiles>().enemyDamaged;
+                //currentPower = currentPower - Zone[position].GetComponent<Tiles>().enemyCurrentPower;
+                //Zone[position].GetComponent<Tiles>().enemyCurrentPower = Zone[position].GetComponent<Tiles>().enemyCurrentPower - currentPower;
             }
         }
-
     }
     public void ChangeSkin()
     {

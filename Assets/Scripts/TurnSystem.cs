@@ -113,6 +113,7 @@ public class TurnSystem : MonoBehaviour
         enemyTimeBar.enabled = true;
 
         AI.draw = false;
+        ThisCard.cantDamaged = false;
     }
 
     public void EndYourOpponentTurn()

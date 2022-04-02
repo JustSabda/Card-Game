@@ -20,7 +20,7 @@ public class AiCardToHand : MonoBehaviour
 
     public string cardName;
     public int cost;
-    public static int Maxpower;
+    public int maxPower;
     public int currentPower;
     public string cardDescription;
 
@@ -43,6 +43,8 @@ public class AiCardToHand : MonoBehaviour
     public int add_CurrentMana;
 
     public int hurted;
+    public bool canAttack;
+    public bool cantAttack;
     public int actualpower;
     public int returnXcards;
 
@@ -62,6 +64,13 @@ public class AiCardToHand : MonoBehaviour
 
     public GameObject CardVisual;
     public GameObject IkonVisual;
+
+    //test
+
+    public bool isTarget;
+    public bool thisCardCanBeDestroyed;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -72,7 +81,6 @@ public class AiCardToHand : MonoBehaviour
         tiles = GetComponent<Tiles>();  
 
         CardBackScript = GetComponent<CardBack>();
-
         thisCard[0] = CardDataBase.cardList[thisId];
         Hand = GameObject.Find("EnemyHand");
 
@@ -96,7 +104,8 @@ public class AiCardToHand : MonoBehaviour
         id = thisCard[0].id;
         cardName = thisCard[0].cardName;
         cost = thisCard[0].cost;
-        Maxpower = thisCard[0].power;
+        maxPower = thisCard[0].power;
+        //currentPower = maxPower - hurted;
         cardDescription = thisCard[0].cardDescription;
 
         move = thisCard[0].move;
@@ -167,11 +176,51 @@ public class AiCardToHand : MonoBehaviour
             Destroy();
             PlayerHP.staticHP = PlayerHP.staticHP - currentPower;
         }
+        if (Zone[position].GetComponent<Tiles>().Full == true&& TurnSystem.isYourTurn == true)
+        {
+            //currentPower = currentPower - Zone[position].GetComponent<Tiles>().currentPower;
+        }
+        if(hurted>=maxPower && thisCardCanBeDestroyed)
+        {
+            //Destroy();
+            //hurted = 0;
+        }
+    }
+    IEnumerator Battle()
+    {
+        yield return new WaitForSeconds(1);
+        if(currentPower <= 0 && Zone[position].GetComponent<Tiles>().Full == true)
+        {
+
+        }
+    }
+    public void LateUpdate()
+    {
+        if (currentPower <= 0 && Zone[position].GetComponent<Tiles>().Full == true)
+        {
+            //Destroy();
+        }
+    }
+    public void Summon()
+    {
+        //TurnSystem.currentMana -= cost;
+        //summoned = true;
+
+        //TurnSystem.currentMana += add_CurrentMana;
+        //TurnSystem.DrawCount += 1;
+
+        //drawX = draw_cards;
+        //currentPower = maxPower;
+        //ChangeSkin();
     }
     public void ChangeSkin()
     {
         CardVisual.SetActive(false);
         IkonVisual.SetActive(true);
+    }
+    public void damaged()
+    {
+
     }
     public void Move(int x)
     {
@@ -191,6 +240,12 @@ public class AiCardToHand : MonoBehaviour
                 position = position - x;
 
                 cantMove = true;
+                if (Zone[position].GetComponent<Tiles>().Full == true)
+                {
+                    Zone[position].GetComponent<Tiles>().currentPower = Zone[position].GetComponent<Tiles>().currentPower - currentPower;
+                    currentPower = currentPower - Zone[position].GetComponent<Tiles>().damaged;
+                    
+                }
             }
         }
     }

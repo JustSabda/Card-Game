@@ -55,7 +55,8 @@ public class AI : MonoBehaviour
     }
     void Start()
     {
-
+        
+        
         StartCoroutine(WaitFiveSeconds());
 
         StartCoroutine(StartGame());
@@ -188,6 +189,7 @@ public class AI : MonoBehaviour
             {
                 if (child.GetComponent<AiCardToHand>().id == summonThisId && CardDataBase.cardList[summonThisId].cost <= currentMana)
                 {
+                    
                     int[] acak = {5,6,14,15,23,24,32,33};
                     int acak1 = Random.Range(0, 8);
                     int x = acak[acak1];
@@ -198,8 +200,13 @@ public class AI : MonoBehaviour
                             child.transform.SetParent(Zone[x].transform);
                             AiCardToHand.summoned = true;
                             AiCardToHand.summoningSickness = true;
+                            if (AiCardToHand.summoningSickness == true)
+                            {
+                                child.GetComponent<AiCardToHand>().currentPower = child.GetComponent<AiCardToHand>().maxPower;
+                            }
                         }
                     }
+                    
 
                     TurnSystem.EnemyDrawCount =+ 1;
                     TurnSystem.currentEnemyMana -= CardDataBase.cardList[summonThisId].cost;
@@ -221,7 +228,6 @@ public class AI : MonoBehaviour
             deck[i] = deck[randomIndex];
             deck[randomIndex] = container[0];
         }
-
     }
 
     IEnumerator StartGame()
