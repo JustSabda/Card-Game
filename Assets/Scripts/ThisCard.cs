@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 
 public class ThisCard : MonoBehaviour
 {
+    public AiCardToHand aiScript;
     public List<Card> thisCard = new List<Card>();
     public int thisId;
 
@@ -14,7 +15,6 @@ public class ThisCard : MonoBehaviour
     public int cost;
     public int maxPower;
     public int currentPower;
-    public int damage;
 
     public string cardDescription;
 
@@ -95,7 +95,6 @@ public class ThisCard : MonoBehaviour
         canAttack = false;
         summoningSickness = true;
         canMove = false;
-        cantDamaged = false;
 
         Enemy = GameObject.Find("EnemyHP");
 
@@ -266,7 +265,7 @@ public class ThisCard : MonoBehaviour
     {
         if (currentPower <= 0 && Zone[position].GetComponent<Tiles>().FullEnemies == true)
         {
-            //Destroy();
+            Destroy();
         }
     }
     public void damaged()
@@ -363,9 +362,12 @@ public class ThisCard : MonoBehaviour
             cantMove = true;
             if (Zone[position].GetComponent<Tiles>().FullEnemies == true)
             {
-
-                Zone[position].GetComponent<Tiles>().enemyCurrentPower = Zone[position].GetComponent<Tiles>().enemyCurrentPower - currentPower;
+                aiScript = GetComponentInParent<Transform>().parent.GetComponentInChildren<AiCardToHand>();
+                //Zone[position].GetComponent<Tiles>().enemyCurrentPower = Zone[position].GetComponent<Tiles>().enemyCurrentPower - currentPower;
+                aiScript.currentPower = aiScript.currentPower - currentPower;
                 currentPower = currentPower - Zone[position].GetComponent<Tiles>().enemyDamaged;
+
+
                 //currentPower = currentPower - Zone[position].GetComponent<Tiles>().enemyCurrentPower;
                 //Zone[position].GetComponent<Tiles>().enemyCurrentPower = Zone[position].GetComponent<Tiles>().enemyCurrentPower - currentPower;
             }

@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class AiCardToHand : MonoBehaviour
 {
+    public ThisCard playerScript;
     public List<Card> thisCard = new List<Card>();
 
     public bool cantMove;
@@ -105,7 +106,6 @@ public class AiCardToHand : MonoBehaviour
         cardName = thisCard[0].cardName;
         cost = thisCard[0].cost;
         maxPower = thisCard[0].power;
-        //currentPower = maxPower - hurted;
         cardDescription = thisCard[0].cardDescription;
 
         move = thisCard[0].move;
@@ -115,8 +115,6 @@ public class AiCardToHand : MonoBehaviour
         add_CurrentMana = thisCard[0].add_CurrentMana;
 
         healSpell = thisCard[0].healBase;
-
-        //actualpower = mapower - hurted;
 
         //nameText.text = "" + cardName;
         //costText.text = "" + cost;
@@ -198,7 +196,7 @@ public class AiCardToHand : MonoBehaviour
     {
         if (currentPower <= 0 && Zone[position].GetComponent<Tiles>().Full == true)
         {
-            //Destroy();
+            Destroy();
         }
     }
     public void Summon()
@@ -242,9 +240,10 @@ public class AiCardToHand : MonoBehaviour
                 cantMove = true;
                 if (Zone[position].GetComponent<Tiles>().Full == true)
                 {
-                    Zone[position].GetComponent<Tiles>().currentPower = Zone[position].GetComponent<Tiles>().currentPower - currentPower;
+                    playerScript = GetComponentInParent<Transform>().parent.GetComponentInChildren<ThisCard>();
+                    playerScript.currentPower = playerScript.currentPower - currentPower;
+                    //Zone[position].GetComponent<Tiles>().currentPower = Zone[position].GetComponent<Tiles>().currentPower - currentPower;
                     currentPower = currentPower - Zone[position].GetComponent<Tiles>().damaged;
-                    
                 }
             }
         }
