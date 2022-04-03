@@ -19,7 +19,7 @@ public class Click : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            if (EventSystem.current.currentSelectedGameObject.GetComponent<Button>() != null)
+            if (EventSystem.current.currentSelectedGameObject)
             {
                 PlaySound(clickSound);
             }
