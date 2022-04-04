@@ -5,10 +5,19 @@ using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
+    
     public static MenuManager Instance;
     [SerializeField] private GameObject _selecetedHeroObject;
     [SerializeField] private GameObject _skinCare1;
     [SerializeField] private GameObject _skinCare2;
+
+    public GameObject pauseMenu;
+    public GameObject Tutorial;
+    void Start()
+    {
+        Tutorial.SetActive(true);
+        Time.timeScale = 0f;
+    }
     private void Awake()
     {
         Instance = this;
@@ -26,5 +35,16 @@ public class MenuManager : MonoBehaviour
         _selecetedHeroObject.SetActive(true);
         _skinCare1.SetActive(false);
         _skinCare2.SetActive(true);
+    }
+    public void Pause()
+    {
+        pauseMenu.SetActive(true);
+        Time.timeScale = 0f;
+    }
+    public void Resume()
+    {
+        pauseMenu.SetActive(false);
+        Tutorial.SetActive(false);
+        Time.timeScale = 1f;
     }
 }

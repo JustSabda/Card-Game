@@ -6,11 +6,12 @@ using UnityEngine.UI;
 public class EndGame : MonoBehaviour
 {
     //public Text victoryText;
-    public GameObject textObject;
+    public GameObject WLPanel;
+    public Text wLText;
     // Start is called before the first frame update
     void Start()
     {
-        //textObject.SetActive(false);
+        WLPanel.SetActive(false);
 
     }
 
@@ -19,12 +20,15 @@ public class EndGame : MonoBehaviour
     {
         if(PlayerHP.staticHP <= 0)
         {
-            //textObject.SetActive(true);
-            
+            WLPanel.SetActive(true);
+            wLText.text = "Are You NOOB ?";
+            Time.timeScale = 0f;
         }
         if(EnemyHP.staticHP <= 0)
         {
-            //textObject.SetActive(true);
+            WLPanel.SetActive(true);
+            wLText.text = "Beginner Luck";
+            Time.timeScale = 0f;
         }
     }
 }

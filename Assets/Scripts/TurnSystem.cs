@@ -32,8 +32,6 @@ public class TurnSystem : MonoBehaviour
     public Text enemyManaText;
 
 
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -96,43 +94,49 @@ public class TurnSystem : MonoBehaviour
 
     public void EndYourTurn()
     {
-        startTurn = true;
-        timerStart = false;
-        timerStartEnemy = true;
-        isYourTurn = false;
-        yourOponentTurn += 1;
-
-        if (maxEnemyMana < 3)
+        if (isYourTurn == true && Time.timeScale != 0f)
         {
-            maxEnemyMana += 1;
+            startTurn = true;
+            timerStart = false;
+            timerStartEnemy = true;
+            isYourTurn = false;
+            yourOponentTurn += 1;
+
+            if (maxEnemyMana < 3)
+            {
+                maxEnemyMana += 1;
+            }
+            currentEnemyMana = maxEnemyMana;
+
+            timeLeft = maxEnemyTime;
+            timeBar.enabled = false;
+            enemyTimeBar.enabled = true;
+
+            AI.draw = false;
+            ThisCard.cantDamaged = false;
         }
-        currentEnemyMana = maxEnemyMana;
-
-        timeLeft = maxEnemyTime;
-        timeBar.enabled = false;
-        enemyTimeBar.enabled = true;
-
-        AI.draw = false;
-        ThisCard.cantDamaged = false;
     }
 
     public void EndYourOpponentTurn()
     {
-        isYourTurn = true;
-        yourTurn += 1;
-        if (maxMana < 12)
+        if (isYourTurn == false && Time.timeScale != 0f)
         {
-            maxMana += 1;
+            isYourTurn = true;
+            yourTurn += 1;
+            if (maxMana < 12)
+            {
+                maxMana += 1;
+            }
+
+            currentMana = maxMana;
+            timerStart = true;
+            timerStartEnemy = false;
+
+
+            timeLeft = maxTime;
+            timeBar.enabled = true;
+            enemyTimeBar.enabled = false;
         }
-
-        currentMana = maxMana;
-        timerStart = true;
-        timerStartEnemy = false;
-
-
-        timeLeft = maxTime;
-        timeBar.enabled = true;
-        enemyTimeBar.enabled = false;
     }
     public void Countdown()
     {

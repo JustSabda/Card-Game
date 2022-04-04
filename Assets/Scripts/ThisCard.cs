@@ -173,7 +173,7 @@ public class ThisCard : MonoBehaviour
                 canBeSummon = false;
             }
 
-            if (canBeSummon == true)
+            if (canBeSummon == true && Time.timeScale != 0f)
             {
                 gameObject.GetComponent<Draggable>().enabled = true;
                 skinCare.SetActive(true);
