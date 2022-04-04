@@ -41,11 +41,11 @@ public class TurnSystem : MonoBehaviour
         yourTurn = 1;
         yourOponentTurn = 0;
 
-        maxMana = 1;
-        currentMana = 1;
+        maxMana = 4;
+        currentMana = 4;
 
-        maxEnemyMana = 0;
-        currentEnemyMana = 0;
+        maxEnemyMana = 3;
+        currentEnemyMana = 3;
 
         timeLeft = maxTime;
         startTurn = false;
@@ -102,7 +102,7 @@ public class TurnSystem : MonoBehaviour
         isYourTurn = false;
         yourOponentTurn += 1;
 
-        if (maxEnemyMana < 6)
+        if (maxEnemyMana < 3)
         {
             maxEnemyMana += 1;
         }

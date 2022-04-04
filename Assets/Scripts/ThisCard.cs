@@ -20,7 +20,7 @@ public class ThisCard : MonoBehaviour
 
     //public Text nameText;
     //public Text costText;
-    //public Text powerText;
+    public Text powerText;
     //public Text descriptionText;
 
     public Sprite thisSpriteCard;
@@ -90,7 +90,7 @@ public class ThisCard : MonoBehaviour
 
         canBeSummon = false;
         summoned = false;
-
+        currentPower = 0;
         drawX = 0;
         canAttack = false;
         summoningSickness = true;
@@ -128,6 +128,8 @@ public class ThisCard : MonoBehaviour
         move = thisCard[0].move;
         thisSpriteCard = thisCard[0].thisImage;
 
+        thisIkonCard = thisCard[0].thisIcon;
+
         draw_cards = thisCard[0].draw_Card;
         add_CurrentMana = thisCard[0].add_CurrentMana;
 
@@ -135,7 +137,7 @@ public class ThisCard : MonoBehaviour
 
         //nameText.text = "" + cardName;
         //costText.text = "" + cost;
-        //powerText.text = "" + power;
+        
         //descriptionText.text = "" + cardDescription;
 
         
@@ -144,21 +146,24 @@ public class ThisCard : MonoBehaviour
 
         if(this.tag == "Clone")
         {
+            if(numberOfCardsInDeck == 0 && PlayerDeck.deckSize == 0)
+            {
+                numberOfCardsInDeck = 8;
+                PlayerDeck.deckSize = 8;
+                
+            }
             thisCard[0] = PlayerDeck.staticDeck[numberOfCardsInDeck - 1];
 
             numberOfCardsInDeck -= 1;
             PlayerDeck.deckSize -= 1;
-            if(numberOfCardsInDeck == 0 && PlayerDeck.deckSize == 0)
-            {
-                numberOfCardsInDeck = 14;
-                PlayerDeck.deckSize = 14;
-            }
             cardBack = false;
             this.tag = "Untagged";
         }
         if (this.tag != "Deck")
         {
+            powerText.text = "" + currentPower;
             thatImage.sprite = thisSpriteCard;
+            thatIcon.sprite = thisIkonCard;
             if (TurnSystem.currentMana >= cost && summoned == false && TurnSystem.isYourTurn==true)
             {
                 canBeSummon = true;
@@ -194,11 +199,11 @@ public class ThisCard : MonoBehaviour
 
             if (canAttack == true)
             {
-                attackBorder.SetActive(true);
+                //attackBorder.SetActive(true);
             }
             else
             {
-                attackBorder.SetActive(false);
+                //attackBorder.SetActive(false);
             }
             
         }

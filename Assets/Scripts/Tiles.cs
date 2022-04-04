@@ -41,6 +41,10 @@ public class Tiles : MonoBehaviour
         {
             enemyCurrentPower = 0;
         }
+        if(gameObject.GetComponentInChildren<ThisCard>() && gameObject.GetComponentInChildren<AiCardToHand>())
+        {
+
+        }
         if (!(gameObject.GetComponentInChildren<ThisCard>() || gameObject.GetComponentInChildren<AiCardToHand>()))
         {
             Full = false;

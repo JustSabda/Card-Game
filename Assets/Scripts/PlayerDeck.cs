@@ -9,31 +9,59 @@ public class PlayerDeck : MonoBehaviour
     public List<Card> container = new List<Card>();
     public static List<Card> staticDeck = new List<Card>();
 
+    //Deck Setting
     public int x;
-    public int y;
-    public static int deckSize = 15;
+    public int x1;
+    public int x2;
+    public int x3;
+    public int x4;
+    public int x5;
+    public int x6;
+
+
+    public static int deckSize = 8;
 
     public GameObject CardToHand;
     public GameObject Hand;
 
     // Start is called before the first frame update
 
-    private void Awake()
+    void Awake()
     {
-        Shuffle();
+        
     }
     void Start()
     {
-        y = 0;
-        x = 1;
-        deckSize = 15;
+        deckSize = 8;
+        //dummy
+        x = 0;
+        
 
-        for(int i = 1;i < deckSize; i++)
+        //realcard
+        x1 = 1;
+        x2 = 6;
+        x3 = 4;
+        x4 = 2;
+        x5 = 3;
+        x6 = 5;
+
+        for (int i = 1; i < deckSize; i++)
         {
-            deck[0] = CardDataBase.cardList[y];
-            x = Random.Range(1, 5);
-            deck[i] = CardDataBase.cardList[x];
+            
+            deck[0] = CardDataBase.cardList[x1];
+            deck[1] = CardDataBase.cardList[x2];
+            deck[2] = CardDataBase.cardList[x3];
+            deck[3] = CardDataBase.cardList[x4];
+            deck[4] = CardDataBase.cardList[x4];
+            deck[5] = CardDataBase.cardList[x5];
+            deck[6] = CardDataBase.cardList[x5];
+            deck[7] = CardDataBase.cardList[x6];
         }
+
+
+
+        Shuffle();
+
 
         StartCoroutine(StartGame());
 
@@ -69,7 +97,7 @@ public class PlayerDeck : MonoBehaviour
     }
     public void Shuffle()
     {
-        for(int i = 1; i < deckSize; i++)
+        for(int i = 0; i < deckSize; i++)
         {
             container[0] = deck[i];
             int randomIndex = Random.Range(i, deckSize);

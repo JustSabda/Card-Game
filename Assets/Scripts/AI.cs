@@ -13,11 +13,7 @@ public class AI : MonoBehaviour
 
     public GameObject Hand;
 
-
-    
-
     public int x;
-    public int y;
     public static int deckSize;
 
     public GameObject CardToHand;
@@ -48,35 +44,35 @@ public class AI : MonoBehaviour
     public int howManyCards;
 
     public GameObject[] Zone;
+
     // Start is called before the first frame update
-    private void Awake()
-    {
-        Shuffle();
-    }
+
     void Start()
     {
-        
-        
-        StartCoroutine(WaitFiveSeconds());
 
-        StartCoroutine(StartGame());
+  
 
         Hand = GameObject.Find("EnemyHand");
         Zone = GameObject.FindGameObjectsWithTag("Zone");
 
-        x = 0;
-        y = 0;
-        deckSize = 15;
+        //x = 0;
+        deckSize = 30;
 
 
         draw = true;
-
-        for (int i = 1; i < deckSize; i++)
+        for (int i = 0; i < deckSize; i++)
         {
-            deck[0] = CardDataBase.cardList[0];
-            x = Random.Range(1, 5);
-            deck[i] = CardDataBase.cardList[x];
+            int[] acak = { 2, 3, 5};
+            int acak1 = Random.Range(0, 3);
+            int y = acak[acak1];
+            deck[i] = CardDataBase.cardList[y];
         }
+
+
+        Shuffle();
+
+        StartCoroutine(StartGame());
+
     }
     // Update is called once per frame
     void Update()
@@ -113,7 +109,7 @@ public class AI : MonoBehaviour
                 j++;
             }
 
-            for(int i = 0; i < 15; i++)
+            for(int i = 0; i < 30; i++)
             {
                 if (i >= howManyCards)
                 {
@@ -124,7 +120,7 @@ public class AI : MonoBehaviour
         }
         if (TurnSystem.isYourTurn == false)
         {
-            for(int i = 0; i < 15; i++)
+            for(int i = 0; i < 30; i++)
             {
                 if(cardsInHand[i].id != 0)
                 {
@@ -137,7 +133,7 @@ public class AI : MonoBehaviour
         }
         else
         {
-            for(int i = 0; i < 15; i++)
+            for(int i = 0; i < 30; i++)
             {
                 AiCanSummon[i] = false; 
             }
@@ -159,14 +155,13 @@ public class AI : MonoBehaviour
             summonPhase = false;
             attackPhase = false;
             endPhase = false;
-        }
-            
+        }  
         if (summonPhase == true)
         {
             summonID = 0;
             summonThisId = 0;
             int index = 0;
-            for (int i = 0; i < 15; i++)
+            for (int i = 0; i < 30; i++)
             {
                 if (AiCanSummon[i] == true)
                 {
@@ -174,7 +169,7 @@ public class AI : MonoBehaviour
                     index++;
                 }
             }
-            for(int i = 0; i < 15; i++)
+            for(int i = 0; i < 30; i++)
             {
                 if (cardsID[i] != 0)
                 {
@@ -183,6 +178,7 @@ public class AI : MonoBehaviour
                         summonID = cardsID[i];
                     }
                 }
+
             }
             summonThisId = summonID;
             foreach(Transform child in Hand.transform)
@@ -221,7 +217,7 @@ public class AI : MonoBehaviour
     }
     public void Shuffle()
     {
-        for (int i = 1; i < deckSize; i++)
+        for (int i = 0; i < deckSize; i++)
         {
             container[0] = deck[i];
             int randomIndex = Random.Range(i, deckSize);
@@ -249,10 +245,6 @@ public class AI : MonoBehaviour
         }
     }
 
-    IEnumerator WaitFiveSeconds()
-    {
-        yield return new WaitForSeconds(5);
-    }
     IEnumerator WaitForSummonPhase()
     {
         yield return new WaitForSeconds(1);

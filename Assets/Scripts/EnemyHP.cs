@@ -8,27 +8,27 @@ public class EnemyHP : MonoBehaviour
     public static float maxHP;
     public static float staticHP;
     public float hp;
-    public Image Health;
-    //public Text hpText;
+    //public Image Health;
+    public Text hpText;
 
     // Start is called before the first frame update
     void Start()
     {
-        maxHP = 10;
-        staticHP = 10;
+        maxHP = 6;
+        staticHP = 6;
     }
 
     // Update is called once per frame
     void Update()
     {
         hp = staticHP;
-        Health.fillAmount = hp / maxHP;
+        //Health.fillAmount = hp / maxHP;
 
         if (hp >= maxHP)
         {
             hp = maxHP;
         }
 
-        //hpText.text = hp + "HP";
+        hpText.text = hp + "HP";
     }
 }

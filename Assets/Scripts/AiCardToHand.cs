@@ -27,7 +27,7 @@ public class AiCardToHand : MonoBehaviour
 
     //public Text nameText;
     //public Text costText;
-    //public Text powerText;
+    public Text powerText;
     //public Text descriptionText;
 
     public Sprite thisSpriteCard;
@@ -78,6 +78,7 @@ public class AiCardToHand : MonoBehaviour
         Zone = GameObject.FindGameObjectsWithTag("Zone");
         summoningSickness = true;
         summoned = false;
+        currentPower = 0;
         canMove = false;
         tiles = GetComponent<Tiles>();  
 
@@ -109,7 +110,9 @@ public class AiCardToHand : MonoBehaviour
         cardDescription = thisCard[0].cardDescription;
 
         move = thisCard[0].move;
+
         thisSpriteCard = thisCard[0].thisImage;
+        thisIkonCard = thisCard[0].thisIcon;
 
         draw_cards = thisCard[0].draw_Card;
         add_CurrentMana = thisCard[0].add_CurrentMana;
@@ -118,23 +121,24 @@ public class AiCardToHand : MonoBehaviour
 
         //nameText.text = "" + cardName;
         //costText.text = "" + cost;
-        //powerText.text = "" + power;
+        powerText.text = "" + currentPower;
         //descriptionText.text = "" + cardDescription;
 
         thatImage.sprite = thisSpriteCard;
-
+        thatIcon.sprite = thisIkonCard;
         CardBackScript.UpdateCard(cardBack);
 
         if (this.tag == "Clone")
         {
+            if (numberOfCardsInDeck == 0 && PlayerDeck.deckSize == 0)
+            {
+                numberOfCardsInDeck = 8;
+                PlayerDeck.deckSize = 8;
+            }
             thisCard[0] = AI.staticEnemyDeck[numberOfCardsInDeck - 1];
             numberOfCardsInDeck -= 1;
             AI.deckSize -= 1;
-            if (numberOfCardsInDeck == 0 && PlayerDeck.deckSize == 0)
-            {
-                numberOfCardsInDeck = 14;
-                PlayerDeck.deckSize = 14;
-            }
+
             this.tag = "Untagged";
             cardBack = true;
         }
@@ -251,5 +255,9 @@ public class AiCardToHand : MonoBehaviour
     public void Destroy()
     {
         Destroy(this.gameObject);
+    }
+    public void SetSelectedHero()
+    {
+        MenuManager.Instance.ShowTileInfo2(this);
     }
 }
