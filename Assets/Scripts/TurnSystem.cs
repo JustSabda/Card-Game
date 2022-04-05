@@ -31,6 +31,8 @@ public class TurnSystem : MonoBehaviour
     public static int currentEnemyMana;
     public Text enemyManaText;
 
+    public bool turnAwal;
+
 
     // Start is called before the first frame update
     void Start()
@@ -52,6 +54,8 @@ public class TurnSystem : MonoBehaviour
         
         timeBar.enabled = true;
         enemyTimeBar.enabled = false;
+        turnAwal = true;
+        
     }
 
     // Update is called once per frame
@@ -60,6 +64,7 @@ public class TurnSystem : MonoBehaviour
         if (isYourTurn == true)
         {
             turnText.text = "Your Turn";
+
         }
         else
         {
@@ -94,8 +99,9 @@ public class TurnSystem : MonoBehaviour
 
     public void EndYourTurn()
     {
-        if (isYourTurn == true && Time.timeScale != 0f)
+        if (isYourTurn == true && Time.timeScale != 0f&& turnAwal == false)
         {
+
             startTurn = true;
             timerStart = false;
             timerStartEnemy = true;
@@ -114,6 +120,31 @@ public class TurnSystem : MonoBehaviour
 
             AI.draw = false;
             ThisCard.cantDamaged = false;
+        }
+        else if (isYourTurn == true && Time.timeScale != 0f && turnAwal == true)
+        {
+            if (timeLeft <= 20f)
+            {
+                startTurn = true;
+                timerStart = false;
+                timerStartEnemy = true;
+                isYourTurn = false;
+                yourOponentTurn += 1;
+
+                if (maxEnemyMana < 3)
+                {
+                    maxEnemyMana += 1;
+                }
+                currentEnemyMana = maxEnemyMana;
+
+                timeLeft = maxEnemyTime;
+                timeBar.enabled = false;
+                enemyTimeBar.enabled = true;
+
+                AI.draw = false;
+                ThisCard.cantDamaged = false;
+                turnAwal = false;
+            }
         }
     }
 
@@ -161,5 +192,10 @@ public class TurnSystem : MonoBehaviour
         {
             Time.timeScale = 0;
         }
+    }
+    IEnumerator Awal()
+    {
+        yield return new WaitForSeconds(2f);
+        turnAwal = false;
     }
 }

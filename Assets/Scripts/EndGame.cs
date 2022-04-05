@@ -7,11 +7,17 @@ public class EndGame : MonoBehaviour
 {
     //public Text victoryText;
     public GameObject WLPanel;
-    public Text wLText;
+    public GameObject Win;
+    public GameObject Lose;
+    //public Text wLText;
+
+    //public Image imageNotif;
     // Start is called before the first frame update
     void Start()
     {
         WLPanel.SetActive(false);
+        Win.SetActive(false);
+        Lose.SetActive(false);
 
     }
 
@@ -21,13 +27,13 @@ public class EndGame : MonoBehaviour
         if(PlayerHP.staticHP <= 0)
         {
             WLPanel.SetActive(true);
-            wLText.text = "Are You NOOB ?";
+            Win.SetActive(true);
             Time.timeScale = 0f;
         }
         if(EnemyHP.staticHP <= 0)
         {
             WLPanel.SetActive(true);
-            wLText.text = "Beginner Luck";
+            Lose.SetActive(true);
             Time.timeScale = 0f;
         }
     }
