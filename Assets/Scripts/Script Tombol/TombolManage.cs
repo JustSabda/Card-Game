@@ -24,12 +24,11 @@ public class TombolManage : MonoBehaviour
         Credits.SetActive(false);
         Setting.SetActive(false);
         List.SetActive(false);
+        
     }
-
-    // Update is called once per frame
     void Update()
     {
-        
+
     }
     public void MenuButton()
     {

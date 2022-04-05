@@ -9,6 +9,7 @@ TagManager:
   - Zone
   - Base
   - Hand
+  - GameMusic
   layers:
   - Default
   - TransparentFX
