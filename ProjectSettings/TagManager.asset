@@ -10,6 +10,7 @@ TagManager:
   - Base
   - Hand
   - GameMusic
+  - Volume
   layers:
   - Default
   - TransparentFX

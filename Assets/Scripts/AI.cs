@@ -186,7 +186,7 @@ public class AI : MonoBehaviour
                 if (child.GetComponent<AiCardToHand>().id == summonThisId && CardDataBase.cardList[summonThisId].cost <= currentMana)
                 {
                     
-                    int[] acak = {5,6,14,15,23,24,32,33};
+                    int[] acak = {6,7,15,16,24,25,33,34};
                     int acak1 = Random.Range(0, 8);
                     int x = acak[acak1];
                     for (int i = 0; i < Zone.Length; i++)

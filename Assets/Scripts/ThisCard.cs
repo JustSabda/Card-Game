@@ -7,6 +7,7 @@ using UnityEngine.EventSystems;
 public class ThisCard : MonoBehaviour
 {
     public AiCardToHand aiScript;
+    SoundMenu soundMenu;
     public List<Card> thisCard = new List<Card>();
     public int thisId;
 
@@ -80,8 +81,10 @@ public class ThisCard : MonoBehaviour
     public bool canDamaged;
     public static bool cantDamaged;
 
+    AudioSource audiox;
     void Start()
     {
+        audiox = GetComponent<AudioSource>();
         tiles = GetComponent<Tiles>();
 
         CardBackScript = GetComponent<CardBack>();
@@ -249,8 +252,9 @@ public class ThisCard : MonoBehaviour
         {
             Move(move);
         }
-        if(position == 7||position==8 || position == 16 || position == 17 || position == 25 || position == 26 || position == 34 || position == 35)
+        if(position == 8||position==9 || position == 17 || position == 18 || position == 26 || position == 27 || position == 35 || position == 36)
         {
+            audiox.Play();
             Destroy();
             EnemyHP.staticHP = EnemyHP.staticHP - currentPower;
         }
@@ -270,6 +274,7 @@ public class ThisCard : MonoBehaviour
     {
         if (currentPower <= 0 && Zone[position].GetComponent<Tiles>().FullEnemies == true)
         {
+            audiox.Play();
             Destroy();
         }
     }
@@ -367,6 +372,7 @@ public class ThisCard : MonoBehaviour
             cantMove = true;
             if (Zone[position].GetComponent<Tiles>().FullEnemies == true)
             {
+                audiox.Play();
                 aiScript = GetComponentInParent<Transform>().parent.GetComponentInChildren<AiCardToHand>();
                 //Zone[position].GetComponent<Tiles>().enemyCurrentPower = Zone[position].GetComponent<Tiles>().enemyCurrentPower - currentPower;
                 aiScript.currentPower = aiScript.currentPower - currentPower;

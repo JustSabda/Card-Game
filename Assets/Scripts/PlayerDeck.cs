@@ -24,6 +24,8 @@ public class PlayerDeck : MonoBehaviour
     public GameObject CardToHand;
     public GameObject Hand;
 
+    AudioSource audiox;
+
     // Start is called before the first frame update
 
     void Awake()
@@ -32,6 +34,7 @@ public class PlayerDeck : MonoBehaviour
     }
     void Start()
     {
+        audiox = GetComponent<AudioSource>();
         deckSize = 8;
         //dummy
         x = 0;
@@ -70,18 +73,21 @@ public class PlayerDeck : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         staticDeck = deck;
 
         if(ThisCard.drawX > 0)
         {
 
             StartCoroutine(Draw(ThisCard.drawX));
+            
             ThisCard.drawX = 0;
 
         }
         if (TurnSystem.startTurn == true)
         {
             StartCoroutine(Draw(TurnSystem.DrawCount));
+            
             TurnSystem.startTurn = false;
             TurnSystem.DrawCount = 0;
         }
@@ -91,8 +97,10 @@ public class PlayerDeck : MonoBehaviour
     {
         for(int i = 0; i <= 3; i++)
         {
+            
             yield return new WaitForSeconds(1);
             Instantiate(CardToHand, transform.position, transform.rotation);
+            audiox.Play();
         }
     }
     public void Shuffle()
@@ -113,6 +121,7 @@ public class PlayerDeck : MonoBehaviour
         {
             yield return new WaitForSeconds(1);
             Instantiate(CardToHand, transform.position, transform.rotation);
+            audiox.Play();
         }
     }
 }

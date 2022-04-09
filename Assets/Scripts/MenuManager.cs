@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
-    
+    [SerializeField] Slider volumeSlider;
     public static MenuManager Instance;
     [SerializeField] private GameObject _selecetedHeroObject;
     [SerializeField] private GameObject _skinCare1;
@@ -15,8 +16,12 @@ public class MenuManager : MonoBehaviour
     public GameObject Tutorial;
     void Start()
     {
-        Tutorial.SetActive(true);
-        Time.timeScale = 0f;
+        TutorialBtn();
+    }
+    void Update()
+    {
+
+        //ChangeVolume();
     }
     private void Awake()
     {
@@ -46,5 +51,18 @@ public class MenuManager : MonoBehaviour
         pauseMenu.SetActive(false);
         Tutorial.SetActive(false);
         Time.timeScale = 1f;
+    }
+    public void TutorialBtn()
+    {
+        Tutorial.SetActive(true);
+        Time.timeScale = 0f;
+    }
+    public void ChangeVolume()
+    {
+        AudioListener.volume = volumeSlider.value;
+    }
+    public void MenuButton()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 }

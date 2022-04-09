@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SoundManage : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class SoundManage : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        PlayerPrefs.SetFloat("musicVolume", 1);
         ObjectMusic = GameObject.FindWithTag("GameMusic");
         AudioSource = ObjectMusic.GetComponent<AudioSource>();
         if(!PlayerPrefs.HasKey("musicVolume"))
@@ -27,7 +29,19 @@ public class SoundManage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      
+        if (volumeSlider == null && SceneManager.GetActiveScene().name == "MainMenu")
+        {
+            
+            volumeSlider = GameObject.FindGameObjectWithTag("Volume").GetComponent<Slider>();
+            volumeSlider.value = PlayerPrefs.GetFloat("musicVolume");
+        }
+        if (volumeSlider == null && SceneManager.GetActiveScene().name == "Level 1")
+        {
+            volumeSlider = GameObject.FindGameObjectWithTag("Volume").GetComponent<Slider>();
+            volumeSlider.value = PlayerPrefs.GetFloat("musicVolume");
+        }
+        ChangeVolume();
+        Save();
     }
     public void ChangeVolume()
     {

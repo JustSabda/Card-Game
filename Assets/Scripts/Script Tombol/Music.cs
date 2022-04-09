@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Dont : MonoBehaviour
+public class Music : MonoBehaviour
 {
-    public static Dont Instance { get; set; }
+    public static Music Instance { get; set; }
     private void Awake()
     {
         DontDestroyOnLoad(this);

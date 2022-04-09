@@ -29,6 +29,6 @@ public class EnemyHP : MonoBehaviour
             hp = maxHP;
         }
 
-        hpText.text = hp + "HP";
+        hpText.text = hp + "";
     }
 }

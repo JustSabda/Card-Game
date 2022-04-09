@@ -10,11 +10,12 @@ public class Tiles : MonoBehaviour
     public int enemyCurrentPower;
     public int enemyDamaged;
     public bool FullEnemies;
+    SoundMenu soundMenu;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        soundMenu = GetComponent<SoundMenu>();
     }
 
     // Update is called once per frame
@@ -43,7 +44,7 @@ public class Tiles : MonoBehaviour
         }
         if(gameObject.GetComponentInChildren<ThisCard>() && gameObject.GetComponentInChildren<AiCardToHand>())
         {
-
+            //soundMenu.BattleSound();
         }
         if (!(gameObject.GetComponentInChildren<ThisCard>() || gameObject.GetComponentInChildren<AiCardToHand>()))
         {

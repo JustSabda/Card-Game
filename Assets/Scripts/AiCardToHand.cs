@@ -71,14 +71,17 @@ public class AiCardToHand : MonoBehaviour
     public bool isTarget;
     public bool thisCardCanBeDestroyed;
 
+    AudioSource audiox;
 
     // Start is called before the first frame update
     void Start()
     {
+        
+        audiox = GetComponent<AudioSource>();
         Zone = GameObject.FindGameObjectsWithTag("Zone");
         summoningSickness = true;
         summoned = false;
-        currentPower = 0;
+        currentPower = 5;
         canMove = false;
         tiles = GetComponent<Tiles>();  
 
@@ -173,14 +176,11 @@ public class AiCardToHand : MonoBehaviour
         {
             Move(move);
         }
-        if (position == 1 || position == 9 || position == 10 || position == 18 || position == 19 || position == 27 || position == 28)
+        if (position == 1 || position == 2 || position == 10 || position == 11 || position == 19 || position == 20 || position == 29 || position == 29)
         {
+            audiox.Play();
             Destroy();
             PlayerHP.staticHP = PlayerHP.staticHP - currentPower;
-        }
-        if (Zone[position].GetComponent<Tiles>().Full == true&& TurnSystem.isYourTurn == true)
-        {
-            //currentPower = currentPower - Zone[position].GetComponent<Tiles>().currentPower;
         }
         if(hurted>=maxPower && thisCardCanBeDestroyed)
         {
@@ -200,6 +200,7 @@ public class AiCardToHand : MonoBehaviour
     {
         if (currentPower <= 0 && Zone[position].GetComponent<Tiles>().Full == true)
         {
+            audiox.Play();
             Destroy();
         }
     }
@@ -244,6 +245,7 @@ public class AiCardToHand : MonoBehaviour
                 cantMove = true;
                 if (Zone[position].GetComponent<Tiles>().Full == true)
                 {
+                    audiox.Play();
                     playerScript = GetComponentInParent<Transform>().parent.GetComponentInChildren<ThisCard>();
                     playerScript.currentPower = playerScript.currentPower - currentPower;
                     //Zone[position].GetComponent<Tiles>().currentPower = Zone[position].GetComponent<Tiles>().currentPower - currentPower;

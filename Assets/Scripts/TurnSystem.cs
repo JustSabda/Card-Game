@@ -193,9 +193,4 @@ public class TurnSystem : MonoBehaviour
             Time.timeScale = 0;
         }
     }
-    IEnumerator Awal()
-    {
-        yield return new WaitForSeconds(2f);
-        turnAwal = false;
-    }
 }

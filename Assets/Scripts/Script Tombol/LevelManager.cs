@@ -45,7 +45,7 @@ public class LevelManager : MonoBehaviour
     }
     public void MulaiSatu()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Level 1");
     }
     public void MenuButton()
     {

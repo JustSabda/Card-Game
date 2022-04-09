@@ -203,6 +203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bfb19630f886cc4a96d22892ce86a87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aiScript: {fileID: 0}
   thisCard:
   - id: 0
     cardName: 
@@ -219,8 +220,10 @@ MonoBehaviour:
   id: 0
   cardName: 
   cost: 0
-  power: 0
+  maxPower: 0
+  currentPower: 0
   cardDescription: 
+  powerText: {fileID: 0}
   thisSpriteCard: {fileID: 0}
   thatImage: {fileID: 0}
   thisIkonCard: {fileID: 0}
@@ -251,6 +254,7 @@ MonoBehaviour:
   IkonVisual: {fileID: 0}
   position: 0
   Zone: []
+  canDamaged: 0
 --- !u!114 &6099085038265609419
 MonoBehaviour:
   m_ObjectHideFlags: 0
