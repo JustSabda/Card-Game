@@ -68,7 +68,7 @@ public class TombolManage : MonoBehaviour
     }
     public void Selection()
     {
-        SceneManager.LoadScene("Level Selection");
+        SceneManager.LoadScene("LevelSelection");
     }
     public void Game()
     {

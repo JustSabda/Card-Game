@@ -5,11 +5,14 @@ using UnityEngine.UI;
 
 public class SoundManage : MonoBehaviour
 {
+    public GameObject ObjectMusic;
     [SerializeField] Slider volumeSlider;
+    private AudioSource AudioSource;
     // Start is called before the first frame update
     void Start()
     {
-        
+        ObjectMusic = GameObject.FindWithTag("GameMusic");
+        AudioSource = ObjectMusic.GetComponent<AudioSource>();
         if(!PlayerPrefs.HasKey("musicVolume"))
         {
             PlayerPrefs.SetFloat("musicVolume",1);
