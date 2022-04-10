@@ -65,4 +65,8 @@ public class MenuManager : MonoBehaviour
     {
         SceneManager.LoadScene("MainMenu");
     }
+    public void RestartButton()
+    {
+        SceneManager.LoadScene("Level 1");
+    }
 }
