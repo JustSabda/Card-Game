@@ -110,8 +110,47 @@ public class ThisCard : MonoBehaviour
             IkonVisual.SetActive(false);
         }
 
-        Zone = GameObject.FindGameObjectsWithTag("Zone");
-
+        //Zone = GameObject.FindGameObjectsWithTag("Zone");
+        if (this.tag != "Deck")
+        {
+            Zone[0] = GameObject.Find("Zone_a00");
+            Zone[1] = GameObject.Find("Zone_a01");
+            Zone[2] = GameObject.Find("Zone_a02");
+            Zone[3] = GameObject.Find("Zone_a03");
+            Zone[4] = GameObject.Find("Zone_a04");
+            Zone[5] = GameObject.Find("Zone_a05");
+            Zone[6] = GameObject.Find("Zone_a06");
+            Zone[7] = GameObject.Find("Zone_a07");
+            Zone[8] = GameObject.Find("Zone_a08");
+            Zone[9] = GameObject.Find("Zone_a09");
+            Zone[10] = GameObject.Find("Zone_b01");
+            Zone[11] = GameObject.Find("Zone_b02");
+            Zone[12] = GameObject.Find("Zone_b03");
+            Zone[13] = GameObject.Find("Zone_b04");
+            Zone[14] = GameObject.Find("Zone_b05");
+            Zone[15] = GameObject.Find("Zone_b06");
+            Zone[16] = GameObject.Find("Zone_b07");
+            Zone[17] = GameObject.Find("Zone_b08");
+            Zone[18] = GameObject.Find("Zone_b09");
+            Zone[19] = GameObject.Find("Zone_c01");
+            Zone[20] = GameObject.Find("Zone_c02");
+            Zone[21] = GameObject.Find("Zone_c03");
+            Zone[22] = GameObject.Find("Zone_c04");
+            Zone[23] = GameObject.Find("Zone_c05");
+            Zone[24] = GameObject.Find("Zone_c06");
+            Zone[25] = GameObject.Find("Zone_c07");
+            Zone[26] = GameObject.Find("Zone_c08");
+            Zone[27] = GameObject.Find("Zone_c09");
+            Zone[28] = GameObject.Find("Zone_d01");
+            Zone[29] = GameObject.Find("Zone_d02");
+            Zone[30] = GameObject.Find("Zone_d03");
+            Zone[31] = GameObject.Find("Zone_d04");
+            Zone[32] = GameObject.Find("Zone_d05");
+            Zone[33] = GameObject.Find("Zone_d06");
+            Zone[34] = GameObject.Find("Zone_d07");
+            Zone[35] = GameObject.Find("Zone_d08");
+            Zone[36] = GameObject.Find("Zone_d09");
+        }
     }
 
     // Update is called once per frame

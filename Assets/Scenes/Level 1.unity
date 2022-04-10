@@ -135,6 +135,10 @@ PrefabInstance:
       value: Card (3)
       objectReference: {fileID: 0}
     - target: {fileID: 6099085038265609416, guid: 70e0ec64dbf6fbc488b3e9d2b283048e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6099085038265609416, guid: 70e0ec64dbf6fbc488b3e9d2b283048e, type: 3}
       propertyPath: m_TagString
       value: Deck
       objectReference: {fileID: 0}
@@ -225,6 +229,10 @@ PrefabInstance:
     - target: {fileID: 6099085038265609418, guid: 70e0ec64dbf6fbc488b3e9d2b283048e, type: 3}
       propertyPath: cardBack
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6099085038265609418, guid: 70e0ec64dbf6fbc488b3e9d2b283048e, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70e0ec64dbf6fbc488b3e9d2b283048e, type: 3}
@@ -600,7 +608,7 @@ GameObject:
   - component: {fileID: 149927342}
   - component: {fileID: 149927346}
   m_Layer: 5
-  m_Name: Zone2-1
+  m_Name: Zone_b03
   m_TagString: Zone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -731,6 +739,10 @@ PrefabInstance:
       value: Card (1)
       objectReference: {fileID: 0}
     - target: {fileID: 6099085038265609416, guid: 70e0ec64dbf6fbc488b3e9d2b283048e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6099085038265609416, guid: 70e0ec64dbf6fbc488b3e9d2b283048e, type: 3}
       propertyPath: m_TagString
       value: Deck
       objectReference: {fileID: 0}
@@ -822,6 +834,10 @@ PrefabInstance:
       propertyPath: cardBack
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6099085038265609418, guid: 70e0ec64dbf6fbc488b3e9d2b283048e, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70e0ec64dbf6fbc488b3e9d2b283048e, type: 3}
 --- !u!1 &200405708
@@ -838,7 +854,7 @@ GameObject:
   - component: {fileID: 200405711}
   - component: {fileID: 200405710}
   m_Layer: 5
-  m_Name: Zone4-0
+  m_Name: Zone_d01
   m_TagString: Zone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -959,7 +975,7 @@ GameObject:
   - component: {fileID: 215984052}
   - component: {fileID: 215984051}
   m_Layer: 5
-  m_Name: Zone4-End
+  m_Name: Zone_d08
   m_TagString: Zone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1080,7 +1096,7 @@ GameObject:
   - component: {fileID: 219474955}
   - component: {fileID: 219474954}
   m_Layer: 5
-  m_Name: Zone4-4
+  m_Name: Zone_d06
   m_TagString: Zone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1201,7 +1217,7 @@ GameObject:
   - component: {fileID: 219746827}
   - component: {fileID: 219746826}
   m_Layer: 5
-  m_Name: Zone4-5
+  m_Name: Zone_d07
   m_TagString: Zone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1322,7 +1338,7 @@ GameObject:
   - component: {fileID: 239562603}
   - component: {fileID: 239562602}
   m_Layer: 5
-  m_Name: Zone1-4
+  m_Name: Zone_a06
   m_TagString: Zone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1743,7 +1759,7 @@ GameObject:
   - component: {fileID: 281359017}
   - component: {fileID: 281359021}
   m_Layer: 5
-  m_Name: Zone2-2
+  m_Name: Zone_b04
   m_TagString: Zone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1877,7 +1893,7 @@ GameObject:
   - component: {fileID: 311971496}
   - component: {fileID: 311971500}
   m_Layer: 5
-  m_Name: Zone4-1
+  m_Name: Zone_d03
   m_TagString: Zone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2368,7 +2384,7 @@ GameObject:
   - component: {fileID: 373277801}
   - component: {fileID: 373277800}
   m_Layer: 5
-  m_Name: Zone2-4
+  m_Name: Zone_b06
   m_TagString: Zone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2855,7 +2871,7 @@ GameObject:
   - component: {fileID: 448516199}
   - component: {fileID: 448516198}
   m_Layer: 5
-  m_Name: Zone3-0
+  m_Name: Zone_c01
   m_TagString: Zone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3521,7 +3537,7 @@ GameObject:
   - component: {fileID: 648791637}
   - component: {fileID: 648791636}
   m_Layer: 5
-  m_Name: Zone1-Begin
+  m_Name: Zone_a00
   m_TagString: Zone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3642,7 +3658,7 @@ GameObject:
   - component: {fileID: 652023954}
   - component: {fileID: 652023953}
   m_Layer: 5
-  m_Name: Zone2-0
+  m_Name: Zone_b01
   m_TagString: Zone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3763,7 +3779,7 @@ GameObject:
   - component: {fileID: 660861957}
   - component: {fileID: 660861956}
   m_Layer: 5
-  m_Name: Zone4-3
+  m_Name: Zone_d05
   m_TagString: Zone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4035,7 +4051,7 @@ GameObject:
   - component: {fileID: 771043245}
   - component: {fileID: 771043249}
   m_Layer: 5
-  m_Name: Zone3-1
+  m_Name: Zone_c03
   m_TagString: Zone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4243,7 +4259,7 @@ GameObject:
   - component: {fileID: 801877323}
   - component: {fileID: 801877322}
   m_Layer: 5
-  m_Name: Zone3-4
+  m_Name: Zone_c06
   m_TagString: Zone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4365,7 +4381,7 @@ GameObject:
   - component: {fileID: 827266789}
   - component: {fileID: 827266793}
   m_Layer: 5
-  m_Name: Zone4-2
+  m_Name: Zone_d04
   m_TagString: Zone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4577,7 +4593,7 @@ GameObject:
   - component: {fileID: 877188776}
   - component: {fileID: 877188780}
   m_Layer: 5
-  m_Name: Zone1-2
+  m_Name: Zone_a04
   m_TagString: Zone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4864,7 +4880,7 @@ GameObject:
   - component: {fileID: 912304668}
   - component: {fileID: 912304667}
   m_Layer: 5
-  m_Name: Zone3-End
+  m_Name: Zone_c08
   m_TagString: Zone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5127,7 +5143,7 @@ GameObject:
   - component: {fileID: 1024526901}
   - component: {fileID: 1024526900}
   m_Layer: 5
-  m_Name: Zone2-0.5
+  m_Name: Zone_b02
   m_TagString: Zone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5380,7 +5396,7 @@ GameObject:
   - component: {fileID: 1060956528}
   - component: {fileID: 1060956527}
   m_Layer: 5
-  m_Name: Zone4-0.5
+  m_Name: Zone_d02
   m_TagString: Zone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5719,6 +5735,10 @@ PrefabInstance:
       value: Card (2)
       objectReference: {fileID: 0}
     - target: {fileID: 6099085038265609416, guid: 70e0ec64dbf6fbc488b3e9d2b283048e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6099085038265609416, guid: 70e0ec64dbf6fbc488b3e9d2b283048e, type: 3}
       propertyPath: m_TagString
       value: Deck
       objectReference: {fileID: 0}
@@ -5809,6 +5829,10 @@ PrefabInstance:
     - target: {fileID: 6099085038265609418, guid: 70e0ec64dbf6fbc488b3e9d2b283048e, type: 3}
       propertyPath: cardBack
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6099085038265609418, guid: 70e0ec64dbf6fbc488b3e9d2b283048e, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70e0ec64dbf6fbc488b3e9d2b283048e, type: 3}
@@ -6580,7 +6604,44 @@ MonoBehaviour:
   aiCardToHand: {fileID: 0}
   summonID: 0
   howManyCards: 0
-  Zone: []
+  Zone:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!224 &1147071289 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6099085038265609417, guid: 70e0ec64dbf6fbc488b3e9d2b283048e, type: 3}
@@ -6600,7 +6661,7 @@ GameObject:
   - component: {fileID: 1152690528}
   - component: {fileID: 1152690527}
   m_Layer: 5
-  m_Name: Zone4-End (1)
+  m_Name: Zone_d09
   m_TagString: Zone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6800,7 +6861,7 @@ GameObject:
   - component: {fileID: 1166835134}
   - component: {fileID: 1166835133}
   m_Layer: 5
-  m_Name: Zone2-5
+  m_Name: Zone_b07
   m_TagString: Zone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7155,7 +7216,7 @@ GameObject:
   - component: {fileID: 1198007349}
   - component: {fileID: 1198007348}
   m_Layer: 5
-  m_Name: Zone1-5
+  m_Name: Zone_a07
   m_TagString: Zone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7276,7 +7337,7 @@ GameObject:
   - component: {fileID: 1208213240}
   - component: {fileID: 1208213239}
   m_Layer: 5
-  m_Name: Zone1-End
+  m_Name: Zone_a08
   m_TagString: Zone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7723,7 +7784,7 @@ GameObject:
   - component: {fileID: 1210553439}
   - component: {fileID: 1210553438}
   m_Layer: 5
-  m_Name: Zone1-End (1)
+  m_Name: Zone_a09
   m_TagString: Zone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7844,7 +7905,7 @@ GameObject:
   - component: {fileID: 1250826228}
   - component: {fileID: 1250826227}
   m_Layer: 5
-  m_Name: Zone1-0
+  m_Name: Zone_a01
   m_TagString: Zone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8039,7 +8100,7 @@ GameObject:
   - component: {fileID: 1306958126}
   - component: {fileID: 1306958125}
   m_Layer: 5
-  m_Name: Zone3-0.5
+  m_Name: Zone_c02
   m_TagString: Zone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8160,7 +8221,7 @@ GameObject:
   - component: {fileID: 1313126313}
   - component: {fileID: 1313126312}
   m_Layer: 5
-  m_Name: Zone3-5
+  m_Name: Zone_c07
   m_TagString: Zone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8564,7 +8625,7 @@ GameObject:
   - component: {fileID: 1420173609}
   - component: {fileID: 1420173608}
   m_Layer: 5
-  m_Name: Zone2-End
+  m_Name: Zone_b08
   m_TagString: Zone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8818,7 +8879,7 @@ GameObject:
   - component: {fileID: 1433157205}
   - component: {fileID: 1433157209}
   m_Layer: 5
-  m_Name: Zone3-2
+  m_Name: Zone_c04
   m_TagString: Zone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9357,6 +9418,10 @@ PrefabInstance:
       value: Card
       objectReference: {fileID: 0}
     - target: {fileID: 6099085038265609416, guid: 70e0ec64dbf6fbc488b3e9d2b283048e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6099085038265609416, guid: 70e0ec64dbf6fbc488b3e9d2b283048e, type: 3}
       propertyPath: m_TagString
       value: Deck
       objectReference: {fileID: 0}
@@ -9447,6 +9512,10 @@ PrefabInstance:
     - target: {fileID: 6099085038265609418, guid: 70e0ec64dbf6fbc488b3e9d2b283048e, type: 3}
       propertyPath: cardBack
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6099085038265609418, guid: 70e0ec64dbf6fbc488b3e9d2b283048e, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70e0ec64dbf6fbc488b3e9d2b283048e, type: 3}
@@ -9557,7 +9626,7 @@ GameObject:
   - component: {fileID: 1706509283}
   - component: {fileID: 1706509287}
   m_Layer: 5
-  m_Name: Zone1-1
+  m_Name: Zone_a03
   m_TagString: Zone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9795,7 +9864,7 @@ GameObject:
   - component: {fileID: 1752597747}
   - component: {fileID: 1752597746}
   m_Layer: 5
-  m_Name: Zone1-0.5
+  m_Name: Zone_a02
   m_TagString: Zone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9916,7 +9985,7 @@ GameObject:
   - component: {fileID: 1770805138}
   - component: {fileID: 1770805137}
   m_Layer: 5
-  m_Name: Zone3-3
+  m_Name: Zone_c05
   m_TagString: Zone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10169,7 +10238,7 @@ GameObject:
   - component: {fileID: 1809780182}
   - component: {fileID: 1809780181}
   m_Layer: 5
-  m_Name: Zone3-End (1)
+  m_Name: Zone_c09
   m_TagString: Zone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10512,7 +10581,7 @@ GameObject:
   - component: {fileID: 1870990595}
   - component: {fileID: 1870990594}
   m_Layer: 5
-  m_Name: Zone2-End (1)
+  m_Name: Zone_b09
   m_TagString: Zone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10633,7 +10702,7 @@ GameObject:
   - component: {fileID: 1942417025}
   - component: {fileID: 1942417024}
   m_Layer: 5
-  m_Name: Zone2-3
+  m_Name: Zone_b05
   m_TagString: Zone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10992,7 +11061,7 @@ GameObject:
   - component: {fileID: 2113314442}
   - component: {fileID: 2113314441}
   m_Layer: 5
-  m_Name: Zone1-3
+  m_Name: Zone_a05
   m_TagString: Zone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
