@@ -30,14 +30,14 @@ public class EndGame : MonoBehaviour
         {
             audiox.Play();
             WLPanel.SetActive(true);
-            Win.SetActive(true);
+            Lose.SetActive(true);
             Time.timeScale = 0f;
         }
         if(EnemyHP.staticHP <= 0)
         {
             audiox.Play();
             WLPanel.SetActive(true);
-            Lose.SetActive(true);
+            Win.SetActive(true);
             Time.timeScale = 0f;
         }
     }

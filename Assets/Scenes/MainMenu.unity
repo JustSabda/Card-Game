@@ -1024,7 +1024,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1823418351}
+      - m_Target: {fileID: 808932594}
         m_TargetAssemblyTypeName: SoundManage, Assembly-CSharp
         m_MethodName: ChangeVolume
         m_Mode: 1
@@ -1846,6 +1846,7 @@ GameObject:
   - component: {fileID: 808932592}
   - component: {fileID: 808932591}
   - component: {fileID: 808932593}
+  - component: {fileID: 808932594}
   m_Layer: 0
   m_Name: Audio
   m_TagString: Untagged
@@ -1976,6 +1977,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clickSound: {fileID: 8300000, guid: 8206148adb8b25e4bb1c127db1ffdb4e, type: 3}
+--- !u!114 &808932594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 808932590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8c9efa8c244a014985e1c6c8aded348, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObjectMusic: {fileID: 0}
+  volumeSlider: {fileID: 528303062}
 --- !u!1 &830005900
 GameObject:
   m_ObjectHideFlags: 0
@@ -4733,7 +4748,6 @@ GameObject:
   - component: {fileID: 1823418349}
   - component: {fileID: 1823418348}
   - component: {fileID: 1823418350}
-  - component: {fileID: 1823418351}
   m_Layer: 0
   m_Name: MusicMenu
   m_TagString: GameMusic
@@ -4783,20 +4797,6 @@ MonoBehaviour:
   bambang: {fileID: 8300000, guid: daa2bd5e9ce8466498dd303b03f1edd3, type: 3}
   Ipul: {fileID: 8300000, guid: ec1f7068a73e7c84cbe0ada7b54da601, type: 3}
   x: 0
---- !u!114 &1823418351
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1823418347}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8c9efa8c244a014985e1c6c8aded348, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObjectMusic: {fileID: 0}
-  volumeSlider: {fileID: 528303062}
 --- !u!1 &1849396562
 GameObject:
   m_ObjectHideFlags: 0

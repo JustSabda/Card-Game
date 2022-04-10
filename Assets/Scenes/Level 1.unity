@@ -5177,6 +5177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clickSound: {fileID: 8300000, guid: 8206148adb8b25e4bb1c127db1ffdb4e, type: 3}
+  volumeSlider: {fileID: 1168001239}
 --- !u!4 &990066398
 Transform:
   m_ObjectHideFlags: 0
