@@ -45,6 +45,7 @@ public class AI : MonoBehaviour
 
     public GameObject[] Zone;
 
+
     // Start is called before the first frame update
 
     void Start()
@@ -58,10 +59,12 @@ public class AI : MonoBehaviour
         draw = true;
         for (int i = 0; i < deckSize; i++)
         {
+            
             int[] acak = { 2, 3, 5};
             int acak1 = Random.Range(0, 3);
             int y = acak[acak1];
             deck[i] = CardDataBase.cardList[y];
+            //deck[5] = CardDataBase.cardList[6];
         }
 
 
@@ -236,6 +239,7 @@ public class AI : MonoBehaviour
                             if (AiCardToHand.summoningSickness == true)
                             {
                                 child.GetComponent<AiCardToHand>().currentPower = child.GetComponent<AiCardToHand>().maxPower;
+                                child.GetComponent<AiCardToHand>().currentMove = child.GetComponent<AiCardToHand>().move;
                             }
                         }
                     }

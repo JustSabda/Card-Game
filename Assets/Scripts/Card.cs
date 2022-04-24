@@ -20,12 +20,14 @@ public class Card
     public int healBase;
     public int move;
 
+    public bool freeze;
+
     public Card()
     {
 
     }
 
-    public Card(int Id ,string CardName, int Cost, int Power, string CardDescription, Sprite ThisImage,Sprite ThisIcon ,int Draw_Card , int Add_CurrentMana , int HealBase , int Move)
+    public Card(int Id ,string CardName, int Cost, int Power, string CardDescription, Sprite ThisImage,Sprite ThisIcon ,int Draw_Card , int Add_CurrentMana , int HealBase , int Move , bool Freeze)
     {
         id = Id;
         cardName = CardName;
@@ -38,5 +40,6 @@ public class Card
         add_CurrentMana = Add_CurrentMana;
         healBase = HealBase;
         move = Move;
+        freeze = Freeze;
     }
 }

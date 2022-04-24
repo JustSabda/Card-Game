@@ -36,7 +36,8 @@ public class AiCardToHand : MonoBehaviour
     public Sprite thisIkonCard;
     public Image thatIcon;
 
-    public static int move;
+    public int move;
+    public int currentMove;
 
     public static int drawX;
     public int drawXcards;
@@ -72,6 +73,8 @@ public class AiCardToHand : MonoBehaviour
     public bool thisCardCanBeDestroyed;
 
     AudioSource audiox;
+    public bool freeze;
+    public bool cold;
 
     // Start is called before the first frame update
     void Start()
@@ -81,7 +84,6 @@ public class AiCardToHand : MonoBehaviour
         
         summoningSickness = true;
         summoned = false;
-        currentPower = 5;
         canMove = false;
         tiles = GetComponent<Tiles>();  
 
@@ -212,7 +214,7 @@ public class AiCardToHand : MonoBehaviour
         }
         if (TurnSystem.isYourTurn == false && canMove == true && cantMove == false)
         {
-            Move(move);
+            Move(currentMove);
         }
         if (position == 1 || position == 2 || position == 10 || position == 11 || position == 19 || position == 20 || position == 29 || position == 30)
         {
@@ -224,6 +226,11 @@ public class AiCardToHand : MonoBehaviour
         {
             //Destroy();
             //hurted = 0;
+        }
+        if(cold == true)
+        {
+            currentMove = 0;
+            thatIcon.color = new Color32(102,255,229,255);
         }
     }
     IEnumerator Battle()
@@ -288,6 +295,10 @@ public class AiCardToHand : MonoBehaviour
                     playerScript.currentPower = playerScript.currentPower - currentPower;
                     //Zone[position].GetComponent<Tiles>().currentPower = Zone[position].GetComponent<Tiles>().currentPower - currentPower;
                     currentPower = currentPower - Zone[position].GetComponent<Tiles>().damaged;
+                    if (freeze == true)
+                    {
+                        playerScript.cold = true;
+                    }
                 }
             }
         }

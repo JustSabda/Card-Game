@@ -713,6 +713,7 @@ MonoBehaviour:
     add_CurrentMana: 0
     healBase: 0
     move: 0
+    freeze: 0
   cantMove: 0
   canMove: 0
   position: 0
@@ -766,6 +767,8 @@ MonoBehaviour:
   thatImage: {fileID: 4202850861088354403}
   thisIkonCard: {fileID: 0}
   thatIcon: {fileID: 1600625458761000321}
+  move: 0
+  currentMove: 0
   drawXcards: 0
   draw_cards: 0
   add_CurrentMana: 0
@@ -785,6 +788,8 @@ MonoBehaviour:
   IkonVisual: {fileID: 735273360758701839}
   isTarget: 0
   thisCardCanBeDestroyed: 0
+  freeze: 0
+  cold: 0
 --- !u!114 &2120792846104015239
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -12,7 +12,7 @@ public class SoundMenu : MonoBehaviour
     void Start()
     {
         audiox = GetComponent<AudioSource>();
-        volumeSlider = GameObject.FindGameObjectWithTag("Volume").GetComponent<Slider>();
+        //volumeSlider = GameObject.FindGameObjectWithTag("Volume").GetComponent<Slider>();
         volumeSlider.value = PlayerPrefs.GetFloat("musicVolume");
     }
     private void Update()

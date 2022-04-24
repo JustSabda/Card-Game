@@ -31,6 +31,7 @@ public class ThisCard : MonoBehaviour
     public Image thatIcon;
 
     public int move;
+    public int currentMove;
 
     public bool cardBack;
     CardBack CardBackScript;
@@ -80,6 +81,9 @@ public class ThisCard : MonoBehaviour
 
     public bool canDamaged;
     public static bool cantDamaged;
+
+    public bool freeze;
+    public bool cold;
 
     AudioSource audiox;
     void Start()
@@ -176,6 +180,8 @@ public class ThisCard : MonoBehaviour
         add_CurrentMana = thisCard[0].add_CurrentMana;
 
         healSpell = thisCard[0].healBase;
+
+        freeze = thisCard[0].freeze;
 
         //nameText.text = "" + cardName;
         //costText.text = "" + cost;
@@ -289,7 +295,7 @@ public class ThisCard : MonoBehaviour
         }
         if (TurnSystem.isYourTurn == true && canMove == true && cantMove == false)
         {
-            Move(move);
+            Move(currentMove);
         }
         if(position == 8||position==9 || position == 17 || position == 18 || position == 26 || position == 27 || position == 35 || position == 36)
         {
@@ -305,6 +311,11 @@ public class ThisCard : MonoBehaviour
         if(Zone[position].GetComponent<Tiles>().FullEnemies == true)
         {
             //Zone[position].GetComponent<Tiles>().currentPower;
+        }
+        if (cold == true)
+        {
+            currentMove = 0;
+            thatIcon.color = new Color32(102, 255, 229, 255);
         }
     }
 
@@ -336,6 +347,8 @@ public class ThisCard : MonoBehaviour
 
         drawX = draw_cards;
         currentPower = maxPower;
+        currentMove = move;
+        
         ChangeSkin();
     }
     public void CurrentMana(int x)
@@ -420,6 +433,10 @@ public class ThisCard : MonoBehaviour
 
                 //currentPower = currentPower - Zone[position].GetComponent<Tiles>().enemyCurrentPower;
                 //Zone[position].GetComponent<Tiles>().enemyCurrentPower = Zone[position].GetComponent<Tiles>().enemyCurrentPower - currentPower;
+                if(freeze == true)
+                {
+                    aiScript.cold = true;
+                }
             }
         }
     }
