@@ -102,6 +102,8 @@ public class PlayerDeck : MonoBehaviour
             Instantiate(CardToHand, transform.position, transform.rotation);
             audiox.Play();
         }
+        yield return new WaitForSeconds(3/4);
+        MenuManager.Instance.TutorialBtn1();
     }
     public void Shuffle()
     {

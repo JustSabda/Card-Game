@@ -31,7 +31,7 @@ public class TurnSystem : MonoBehaviour
     public static int currentEnemyMana;
     public Text enemyManaText;
 
-    public bool turnAwal;
+    public bool turnAwal, turnKedua, tutorDone;
 
 
     // Start is called before the first frame update
@@ -55,6 +55,8 @@ public class TurnSystem : MonoBehaviour
         timeBar.enabled = true;
         enemyTimeBar.enabled = false;
         turnAwal = true;
+        turnKedua = false;
+        tutorDone = false;
         
     }
 
@@ -92,6 +94,12 @@ public class TurnSystem : MonoBehaviour
         if(timeLeft <= 0 && isYourTurn == false)
         {
             EndYourOpponentTurn();
+        }
+
+        if(currentMana <= 2 && turnAwal == true && tutorDone == false)
+        {
+            MenuManager.Instance.TutorialBtn4();
+            tutorDone = true;
         }
 
         //enemyManaText.text = currentEnemyMana + "";
@@ -144,13 +152,14 @@ public class TurnSystem : MonoBehaviour
                 AI.draw = false;
                 ThisCard.cantDamaged = false;
                 turnAwal = false;
+                turnKedua = true;
             }
         }
     }
 
     public void EndYourOpponentTurn()
     {
-        if (isYourTurn == false && Time.timeScale != 0f)
+        if (isYourTurn == false && Time.timeScale != 0f && turnKedua == false)
         {
             isYourTurn = true;
             yourTurn += 1;
@@ -167,6 +176,26 @@ public class TurnSystem : MonoBehaviour
             timeLeft = maxTime;
             timeBar.enabled = true;
             enemyTimeBar.enabled = false;
+        }
+        if (isYourTurn == false && Time.timeScale != 0f && turnKedua == true)
+        {
+            isYourTurn = true;
+            yourTurn += 1;
+            if (maxMana < 12)
+            {
+                maxMana += 1;
+            }
+
+            currentMana = maxMana;
+            timerStart = true;
+            timerStartEnemy = false;
+
+
+            timeLeft = maxTime;
+            timeBar.enabled = true;
+            enemyTimeBar.enabled = false;
+            MenuManager.Instance.TutorialBtn5();
+            turnKedua = false;
         }
     }
     public void Countdown()
