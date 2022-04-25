@@ -75,6 +75,7 @@ public class AiCardToHand : MonoBehaviour
     AudioSource audiox;
     public bool freeze;
     public bool cold;
+    public GameObject freezeEffect;
 
     // Start is called before the first frame update
     void Start()
@@ -131,6 +132,8 @@ public class AiCardToHand : MonoBehaviour
         Zone[34] = GameObject.Find("Zone_d07");
         Zone[35] = GameObject.Find("Zone_d08");
         Zone[36] = GameObject.Find("Zone_d09");
+
+        freezeEffect.SetActive(false);
     }
 
     // Update is called once per frame
@@ -166,7 +169,7 @@ public class AiCardToHand : MonoBehaviour
         //costText.text = "" + cost;
         powerText.text = "" + currentPower;
         //descriptionText.text = "" + cardDescription;
-
+        freeze = thisCard[0].freeze;
         thatImage.sprite = thisSpriteCard;
         thatIcon.sprite = thisIkonCard;
         CardBackScript.UpdateCard(cardBack);
@@ -230,7 +233,8 @@ public class AiCardToHand : MonoBehaviour
         if(cold == true)
         {
             currentMove = 0;
-            thatIcon.color = new Color32(102,255,229,255);
+            freezeEffect.SetActive(true);
+            //thatIcon.color = new Color32(102,255,229,255);
         }
     }
     IEnumerator Battle()
@@ -246,6 +250,7 @@ public class AiCardToHand : MonoBehaviour
         if (currentPower <= 0 && Zone[position].GetComponent<Tiles>().Full == true)
         {
             audiox.Play();
+            Zone[position].GetComponent<Tiles>().Full = false;
             Destroy();
         }
     }
@@ -298,6 +303,7 @@ public class AiCardToHand : MonoBehaviour
                     if (freeze == true)
                     {
                         playerScript.cold = true;
+                        
                     }
                 }
             }

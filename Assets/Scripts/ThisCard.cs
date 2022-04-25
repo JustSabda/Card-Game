@@ -84,6 +84,7 @@ public class ThisCard : MonoBehaviour
 
     public bool freeze;
     public bool cold;
+    public GameObject freezeEffect;
 
     AudioSource audiox;
     void Start()
@@ -155,6 +156,7 @@ public class ThisCard : MonoBehaviour
             Zone[35] = GameObject.Find("Zone_d08");
             Zone[36] = GameObject.Find("Zone_d09");
         }
+        freezeEffect.SetActive(false);
     }
 
     // Update is called once per frame
@@ -315,7 +317,9 @@ public class ThisCard : MonoBehaviour
         if (cold == true)
         {
             currentMove = 0;
-            thatIcon.color = new Color32(102, 255, 229, 255);
+            freezeEffect.SetActive(true);
+            Zone[position].GetComponent<Tiles>().FullEnemies = false;
+            //thatIcon.color = new Color32(102, 255, 229, 255);
         }
     }
 
@@ -325,7 +329,9 @@ public class ThisCard : MonoBehaviour
         if (currentPower <= 0 && Zone[position].GetComponent<Tiles>().FullEnemies == true)
         {
             audiox.Play();
+            
             Destroy();
+            
         }
     }
     public void damaged()
@@ -436,6 +442,7 @@ public class ThisCard : MonoBehaviour
                 if(freeze == true)
                 {
                     aiScript.cold = true;
+                    
                 }
             }
         }
