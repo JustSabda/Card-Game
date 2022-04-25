@@ -234,7 +234,14 @@ public class AiCardToHand : MonoBehaviour
         {
             currentMove = 0;
             freezeEffect.SetActive(true);
+            Zone[position].GetComponent<Tiles>().Full = false;
             //thatIcon.color = new Color32(102,255,229,255);
+            if (currentPower <= 0)
+            {
+                audiox.Play();
+
+                Destroy();
+            }
         }
     }
     IEnumerator Battle()

@@ -320,6 +320,12 @@ public class ThisCard : MonoBehaviour
             freezeEffect.SetActive(true);
             Zone[position].GetComponent<Tiles>().FullEnemies = false;
             //thatIcon.color = new Color32(102, 255, 229, 255);
+            if(currentPower <= 0)
+            {
+                audiox.Play();
+
+                Destroy();
+            }
         }
     }
 
