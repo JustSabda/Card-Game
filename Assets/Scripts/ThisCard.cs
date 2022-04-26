@@ -465,6 +465,7 @@ public class ThisCard : MonoBehaviour
     }
     public void SetSelectedHero()
     {
+        MenuManager.Instance.TutorialBtn6();
         MenuManager.Instance.ShowTileInfo(this);
     }
 }

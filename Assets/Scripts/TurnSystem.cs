@@ -31,7 +31,7 @@ public class TurnSystem : MonoBehaviour
     public static int currentEnemyMana;
     public Text enemyManaText;
 
-    public bool turnAwal, turnKedua, tutorDone;
+    public bool turnAwal, turnKedua, turnTutorNiga, tutorDone;
 
 
     // Start is called before the first frame update
@@ -56,6 +56,7 @@ public class TurnSystem : MonoBehaviour
         enemyTimeBar.enabled = false;
         turnAwal = true;
         turnKedua = false;
+        turnTutorNiga = false;
         tutorDone = false;
         
     }
@@ -107,7 +108,7 @@ public class TurnSystem : MonoBehaviour
 
     public void EndYourTurn()
     {
-        if (isYourTurn == true && Time.timeScale != 0f&& turnAwal == false)
+        if (isYourTurn == true && Time.timeScale != 0f&& turnAwal == false && turnTutorNiga == false)
         {
 
             startTurn = true;
@@ -155,6 +156,31 @@ public class TurnSystem : MonoBehaviour
                 turnKedua = true;
             }
         }
+        else if (isYourTurn == true && Time.timeScale != 0f && turnAwal == false && turnTutorNiga == true)
+        {
+            Debug.Log("a");
+                startTurn = true;
+                timerStart = false;
+                timerStartEnemy = true;
+                isYourTurn = false;
+                yourOponentTurn += 1;
+
+                if (maxEnemyMana < 3)
+                {
+                    maxEnemyMana += 1;
+                }
+                currentEnemyMana = maxEnemyMana;
+
+                timeLeft = maxEnemyTime;
+                timeBar.enabled = false;
+                enemyTimeBar.enabled = true;
+
+                AI.draw = false;
+                ThisCard.cantDamaged = false;
+                turnAwal = false;
+                turnTutorNiga = false;
+                MenuManager.Instance.TutorialBtn8();
+        }
     }
 
     public void EndYourOpponentTurn()
@@ -194,8 +220,10 @@ public class TurnSystem : MonoBehaviour
             timeLeft = maxTime;
             timeBar.enabled = true;
             enemyTimeBar.enabled = false;
-            MenuManager.Instance.TutorialBtn5();
             turnKedua = false;
+            turnTutorNiga = true;
+            MenuManager.Instance.TutorialBtn5();
+
         }
     }
     public void Countdown()

@@ -13,11 +13,13 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private GameObject _skinCare1;
     [SerializeField] private GameObject _skinCare2;
 
+    public bool firstClick;
     public GameObject pauseMenu;
-    public GameObject Tutorial, Tutorial1, Tutorial2, Tutorial3, Tutorial4, Tutorial5;
+    public GameObject Tutorial, Tutorial0, Tutorial1, Tutorial2, Tutorial3, Tutorial4, Tutorial5, Tutorial52, Tutorial6, Tutorial7, Tutorial8;
     void Start()
     {
-        
+        Tutorial0.SetActive(true);
+        firstClick = false;
     }
     void Update()
     {
@@ -51,16 +53,22 @@ public class MenuManager : MonoBehaviour
     {
         pauseMenu.SetActive(false);
         //Tutorial.SetActive(false);
+        Tutorial0.SetActive(false);
         Tutorial1.SetActive(false);
         Tutorial2.SetActive(false);
         Tutorial3.SetActive(false);
         Tutorial4.SetActive(false);
         Tutorial5.SetActive(false);
+        Tutorial52.SetActive(false);
+        Tutorial6.SetActive(false);
+        Tutorial7.SetActive(false);
+        Tutorial8.SetActive(false);
         Time.timeScale = 1f;
     }
     public void TutorialBtn1()
     {
         //Tutorial.SetActive(true);
+        Tutorial0.SetActive(false);
         Tutorial1.SetActive(true);
         Tutorial2.SetActive(false);
         Tutorial3.SetActive(false);
@@ -108,12 +116,44 @@ public class MenuManager : MonoBehaviour
         Tutorial5.SetActive(true);
         Time.timeScale = 0f;
     }
+    public void TutorialBtn52()
+    {
+        Tutorial5.SetActive(false);
+        Tutorial52.SetActive(true);
+        Time.timeScale = 0f;
+        firstClick = true;
+    }
+    public void TutorialBtn6()
+    {
+        if(firstClick == true)
+        {
+            Tutorial52.SetActive(false);
+            Tutorial5.SetActive(false);
+            Tutorial6.SetActive(true);
+            Time.timeScale = 0f;
+        }
+        firstClick = false;
+    }
+    public void TutorialBtn7()
+    {
+
+        Tutorial6.SetActive(false);
+        Tutorial7.SetActive(true);
+        Time.timeScale = 0f;
+    }
+    public void TutorialBtn8()
+    {
+        Tutorial7.SetActive(false);
+        Tutorial8.SetActive(true);
+        Time.timeScale = 0f;
+    }
     public void ChangeVolume()
     {
         AudioListener.volume = volumeSlider.value;
     }
     public void MenuButton()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
     }
     public void RestartButton()
