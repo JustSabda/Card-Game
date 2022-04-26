@@ -7,7 +7,6 @@ using UnityEngine.EventSystems;
 public class ThisCard : MonoBehaviour
 {
     public AiCardToHand aiScript;
-    SoundMenu soundMenu;
     public List<Card> thisCard = new List<Card>();
     public int thisId;
 
@@ -49,20 +48,9 @@ public class ThisCard : MonoBehaviour
     public int draw_cards;
     public int add_CurrentMana;
 
-    public GameObject Target;
-    public GameObject Enemy;
 
     public GameObject attackBorder;
     public bool summoningSickness;
-    public bool cantAttack;
-
-    public bool canAttack;
-
-    public static bool staticTargeting;
-    public static bool staticTargetEnemy;
-
-    public bool targeting;
-    public bool targetingEnemy;
 
     public bool onlyThisCardAttack;
     public bool canMove;
@@ -84,6 +72,7 @@ public class ThisCard : MonoBehaviour
 
     public bool freeze;
     public bool cold;
+    public int coldCountdown;
     public GameObject freezeEffect;
 
     AudioSource audiox;
@@ -100,14 +89,10 @@ public class ThisCard : MonoBehaviour
         summoned = false;
         currentPower = 0;
         drawX = 0;
-        canAttack = false;
         summoningSickness = true;
         canMove = false;
 
-        Enemy = GameObject.Find("EnemyHP");
 
-        targeting = false;
-        targetingEnemy = false;
         canHeal = true;
         if (this.tag != "Deck")
         {
@@ -246,49 +231,20 @@ public class ThisCard : MonoBehaviour
                     }
                 }
             }
-
-            if (canAttack == true)
-            {
-                //attackBorder.SetActive(true);
-            }
-            else
-            {
-                //attackBorder.SetActive(false);
-            }
-            
         }
 
         if (TurnSystem.isYourTurn == false && summoned == true)
         {
             summoningSickness = false;
-            cantAttack = false;
             cantMove = false;
         }
-        if (TurnSystem.isYourTurn == true && summoningSickness == false && (cantAttack == false || cantMove == false))
+        if (TurnSystem.isYourTurn == true && summoningSickness == false && cantMove == false)
         {
-            canAttack = true;
             canMove = true;
         }
         else
         {
-            canAttack = false;
             canMove = false;
-        }
-
-        targeting = staticTargeting;
-        targetingEnemy = staticTargetEnemy;
-        
-        if (targetingEnemy == true)
-        {
-            Target = Enemy;
-        }
-        else
-        {
-            Target = null;
-        }
-        if(targeting == true && targetingEnemy == true && onlyThisCardAttack == true)
-        {
-            Attack();
         }
         if(canHeal == true && summoned == true)
         {
@@ -298,6 +254,11 @@ public class ThisCard : MonoBehaviour
         if (TurnSystem.isYourTurn == true && canMove == true && cantMove == false)
         {
             Move(currentMove);
+            if (coldCountdown != 0)
+            {
+                coldCountdown--;
+                cantMove = true;
+            }
         }
         if(position == 8||position==9 || position == 17 || position == 18 || position == 26 || position == 27 || position == 35 || position == 36)
         {
@@ -305,14 +266,15 @@ public class ThisCard : MonoBehaviour
             Destroy();
             EnemyHP.staticHP = EnemyHP.staticHP - currentPower;
         }
-        if (Zone[position].GetComponent<Tiles>().FullEnemies == true && TurnSystem.isYourTurn == false)
+        if (coldCountdown > 0)
         {
-            //currentPower = currentPower - Zone[position].GetComponent<Tiles>().enemyCurrentPower;
-            //damaged();
+            cold = true;
         }
-        if(Zone[position].GetComponent<Tiles>().FullEnemies == true)
+        else
         {
-            //Zone[position].GetComponent<Tiles>().currentPower;
+            cold = false;
+            currentMove = move;
+            freezeEffect.SetActive(false);
         }
         if (cold == true)
         {
@@ -328,8 +290,6 @@ public class ThisCard : MonoBehaviour
             }
         }
     }
-
-
     public void LateUpdate()
     {
         if (currentPower <= 0 && Zone[position].GetComponent<Tiles>().FullEnemies == true)
@@ -367,50 +327,6 @@ public class ThisCard : MonoBehaviour
     {
         TurnSystem.currentMana += x;
     }
-
-    public void Attack()
-    {
-        if(canAttack == true&&summoned==true)
-        {
-            if(Target != null)
-            {
-                if (Target == Enemy)
-                {
-                    EnemyHP.staticHP -= currentPower;
-                    targeting = false;
-                    cantAttack = true;
-                }
-                if (Target.name == "CardToHand(Clone)")
-                {
-                    canAttack = true;
-                }
-            }
-        }
-    }
-    public void UnTargetEnemy()
-    {
-        staticTargetEnemy = false;
-    }
-    public void TargetEnemy()
-    {
-        staticTargetEnemy = true;
-    }
-    public void StartAttack()
-    {
-        staticTargeting = true;
-    }
-    public void StopAttack()
-    {
-        staticTargeting = false;
-    }
-    public void OneCardAttack()
-    {
-        onlyThisCardAttack = true;
-    }
-    public void OneCardAttackStop()
-    {
-        onlyThisCardAttack = false;
-    }
     public void Destroy()
     {
         Destroy(this.gameObject);
@@ -432,7 +348,6 @@ public class ThisCard : MonoBehaviour
                 }
             }
             position = position + x;
-
             cantMove = true;
             if (Zone[position].GetComponent<Tiles>().FullEnemies == true)
             {
@@ -442,16 +357,17 @@ public class ThisCard : MonoBehaviour
                 aiScript.currentPower = aiScript.currentPower - currentPower;
                 currentPower = currentPower - Zone[position].GetComponent<Tiles>().enemyDamaged;
 
-
+                
                 //currentPower = currentPower - Zone[position].GetComponent<Tiles>().enemyCurrentPower;
                 //Zone[position].GetComponent<Tiles>().enemyCurrentPower = Zone[position].GetComponent<Tiles>().enemyCurrentPower - currentPower;
-                if(freeze == true)
+                if (freeze == true)
                 {
-                    aiScript.cold = true;
+                    aiScript.coldCountdown = 2;
                     
                 }
             }
         }
+
     }
     public void ChangeSkin()
     {
@@ -465,7 +381,7 @@ public class ThisCard : MonoBehaviour
     }
     public void SetSelectedHero()
     {
-        MenuManager.Instance.TutorialBtn6();
+	MenuManager.Instance.TutorialBtn6();
         MenuManager.Instance.ShowTileInfo(this);
     }
 }

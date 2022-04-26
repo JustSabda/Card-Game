@@ -30,6 +30,7 @@ public class Tiles : MonoBehaviour
         }
         else
         {
+            Full = false;
             currentPower = 0;
         }
         if (gameObject.GetComponentInChildren<AiCardToHand>())
@@ -40,6 +41,7 @@ public class Tiles : MonoBehaviour
         }
         else
         {
+            FullEnemies = false;
             enemyCurrentPower = 0;
         }
         if(gameObject.GetComponentInChildren<ThisCard>() && gameObject.GetComponentInChildren<AiCardToHand>())
@@ -54,14 +56,6 @@ public class Tiles : MonoBehaviour
             enemyCurrentPower = 0;
             damaged = 0;
             enemyDamaged = 0;
-            if (gameObject.GetComponentInChildren<ThisCard>())
-            {
-                FullEnemies = true;
-            }
-            if (gameObject.GetComponentInChildren<AiCardToHand>())
-            {
-                Full = true;
-            }
         }
 
     }

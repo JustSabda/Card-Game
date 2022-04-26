@@ -44,9 +44,6 @@ public class AiCardToHand : MonoBehaviour
     public int draw_cards;
     public int add_CurrentMana;
 
-    public int hurted;
-    public bool canAttack;
-    public bool cantAttack;
     public int actualpower;
     public int returnXcards;
 
@@ -61,7 +58,6 @@ public class AiCardToHand : MonoBehaviour
     public int numberOfCardsInDeck;
     public bool cardBack;
 
-    Tiles tiles;
     CardBack CardBackScript;
 
     public GameObject CardVisual;
@@ -75,6 +71,7 @@ public class AiCardToHand : MonoBehaviour
     AudioSource audiox;
     public bool freeze;
     public bool cold;
+    public int coldCountdown;
     public GameObject freezeEffect;
 
     // Start is called before the first frame update
@@ -86,7 +83,6 @@ public class AiCardToHand : MonoBehaviour
         summoningSickness = true;
         summoned = false;
         canMove = false;
-        tiles = GetComponent<Tiles>();  
 
         CardBackScript = GetComponent<CardBack>();
         thisCard[0] = CardDataBase.cardList[thisId];
@@ -218,6 +214,11 @@ public class AiCardToHand : MonoBehaviour
         if (TurnSystem.isYourTurn == false && canMove == true && cantMove == false)
         {
             Move(currentMove);
+            if (coldCountdown != 0)
+            {
+                coldCountdown--;
+                cantMove = true;
+            }
         }
         if (position == 1 || position == 2 || position == 10 || position == 11 || position == 19 || position == 20 || position == 29 || position == 30)
         {
@@ -225,12 +226,17 @@ public class AiCardToHand : MonoBehaviour
             Destroy();
             PlayerHP.staticHP = PlayerHP.staticHP - currentPower;
         }
-        if(hurted>=maxPower && thisCardCanBeDestroyed)
+        if (coldCountdown > 0)
         {
-            //Destroy();
-            //hurted = 0;
+            cold = true;
         }
-        if(cold == true)
+        else
+        {
+            cold = false;
+            currentMove = move;
+            freezeEffect.SetActive(false);
+        }
+        if (cold == true)
         {
             currentMove = 0;
             freezeEffect.SetActive(true);
@@ -244,14 +250,6 @@ public class AiCardToHand : MonoBehaviour
             }
         }
     }
-    IEnumerator Battle()
-    {
-        yield return new WaitForSeconds(1);
-        if(currentPower <= 0 && Zone[position].GetComponent<Tiles>().Full == true)
-        {
-
-        }
-    }
     public void LateUpdate()
     {
         if (currentPower <= 0 && Zone[position].GetComponent<Tiles>().Full == true)
@@ -261,26 +259,10 @@ public class AiCardToHand : MonoBehaviour
             Destroy();
         }
     }
-    public void Summon()
-    {
-        //TurnSystem.currentMana -= cost;
-        //summoned = true;
-
-        //TurnSystem.currentMana += add_CurrentMana;
-        //TurnSystem.DrawCount += 1;
-
-        //drawX = draw_cards;
-        //currentPower = maxPower;
-        //ChangeSkin();
-    }
     public void ChangeSkin()
     {
         CardVisual.SetActive(false);
         IkonVisual.SetActive(true);
-    }
-    public void damaged()
-    {
-
     }
     public void Move(int x)
     {
@@ -309,12 +291,12 @@ public class AiCardToHand : MonoBehaviour
                     currentPower = currentPower - Zone[position].GetComponent<Tiles>().damaged;
                     if (freeze == true)
                     {
-                        playerScript.cold = true;
-                        
+                        playerScript.coldCountdown = 2;
                     }
                 }
             }
         }
+
     }
     public void Destroy()
     {
