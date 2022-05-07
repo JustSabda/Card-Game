@@ -18,7 +18,10 @@ public class MenuManager : MonoBehaviour
     public GameObject Tutorial, Tutorial0, Tutorial1, Tutorial2, Tutorial3, Tutorial4, Tutorial5, Tutorial52, Tutorial6, Tutorial7, Tutorial8;
     void Start()
     {
-        Tutorial0.SetActive(true);
+        if (SceneManager.GetActiveScene().name == "Level 1")
+        {
+            Tutorial0.SetActive(true);
+        }
         firstClick = false;
     }
     void Update()

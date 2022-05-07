@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TurnSystem : MonoBehaviour
 {
@@ -99,8 +100,11 @@ public class TurnSystem : MonoBehaviour
 
         if(currentMana <= 2 && turnAwal == true && tutorDone == false)
         {
-            MenuManager.Instance.TutorialBtn4();
-            tutorDone = true;
+            if (SceneManager.GetActiveScene().name == "Level 1")
+            {
+                MenuManager.Instance.TutorialBtn4();
+                tutorDone = true;
+            }
         }
 
         //enemyManaText.text = currentEnemyMana + "";
@@ -179,7 +183,10 @@ public class TurnSystem : MonoBehaviour
                 ThisCard.cantDamaged = false;
                 turnAwal = false;
                 turnTutorNiga = false;
+            if (SceneManager.GetActiveScene().name == "Level 1")
+            {
                 MenuManager.Instance.TutorialBtn8();
+            }
         }
     }
 
@@ -222,8 +229,10 @@ public class TurnSystem : MonoBehaviour
             enemyTimeBar.enabled = false;
             turnKedua = false;
             turnTutorNiga = true;
-            MenuManager.Instance.TutorialBtn5();
-
+            if (SceneManager.GetActiveScene().name == "Level 1")
+            {
+                MenuManager.Instance.TutorialBtn5();
+            }
         }
     }
     public void Countdown()

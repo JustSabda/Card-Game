@@ -33,11 +33,12 @@ public class DropZone : MonoBehaviour, IPointerEnterHandler , IPointerExitHandle
         Draggable d = eventData.pointerDrag.GetComponent<Draggable>();
         if (this.tag != "Hand")
         {
-            if (d != null && GetComponent<Tiles>().Full == false)
+            if (d != null && GetComponent<Tiles>().Full == false&& GetComponent<Tiles>().FullEnemies == false)
             {
                 d.parentToReturnTo = this.transform;
 
             }
+
         }
     }
     // Start is called before the first frame update

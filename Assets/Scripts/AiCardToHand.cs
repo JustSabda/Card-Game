@@ -220,7 +220,7 @@ public class AiCardToHand : MonoBehaviour
                 cantMove = true;
             }
         }
-        if (position == 1 || position == 2 || position == 10 || position == 11 || position == 19 || position == 20 || position == 29 || position == 30)
+        if (position == 1 || position == 2 || position == 10 || position == 11 || position == 19 || position == 20 || position == 28 || position == 29)
         {
             audiox.Play();
             Destroy();

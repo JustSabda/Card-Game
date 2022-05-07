@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerDeck : MonoBehaviour
 {
@@ -103,7 +104,11 @@ public class PlayerDeck : MonoBehaviour
             audiox.Play();
         }
         yield return new WaitForSeconds(3/4);
-        MenuManager.Instance.TutorialBtn1();
+        if (SceneManager.GetActiveScene().name == "Level 1")
+        {
+            MenuManager.Instance.TutorialBtn1();
+        }
+            
     }
     public void Shuffle()
     {
