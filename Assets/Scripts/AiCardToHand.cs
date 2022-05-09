@@ -74,6 +74,11 @@ public class AiCardToHand : MonoBehaviour
     public int coldCountdown;
     public GameObject freezeEffect;
 
+    public bool toxic;
+    public bool poisoned;
+    public int poisonedCountdown;
+    public GameObject poisonedEffect;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -293,6 +298,7 @@ public class AiCardToHand : MonoBehaviour
                     {
                         playerScript.coldCountdown = 2;
                     }
+                    
                 }
             }
         }

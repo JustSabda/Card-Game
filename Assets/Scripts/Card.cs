@@ -21,13 +21,14 @@ public class Card
     public int move;
 
     public bool freeze;
+    public bool toxic;
 
     public Card()
     {
 
     }
 
-    public Card(int Id ,string CardName, int Cost, int Power, string CardDescription, Sprite ThisImage,Sprite ThisIcon ,int Draw_Card , int Add_CurrentMana , int HealBase , int Move , bool Freeze)
+    public Card(int Id ,string CardName, int Cost, int Power, string CardDescription, Sprite ThisImage,Sprite ThisIcon ,int Draw_Card , int Add_CurrentMana , int HealBase , int Move , bool Freeze , bool Toxic)
     {
         id = Id;
         cardName = CardName;
@@ -41,5 +42,6 @@ public class Card
         healBase = HealBase;
         move = Move;
         freeze = Freeze;
+        toxic = Toxic;
     }
 }
