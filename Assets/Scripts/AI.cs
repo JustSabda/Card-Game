@@ -76,11 +76,30 @@ public class AI : MonoBehaviour
                 int acak1 = Random.Range(0, 4);
                 int y = acak[acak1];
                 deck[i] = CardDataBase.cardList[y];
-                //deck[5] = CardDataBase.cardList[6];
+                deck[4] = CardDataBase.cardList[9];
+                deck[10] = CardDataBase.cardList[10];
+                deck[16] = CardDataBase.cardList[9];
+                deck[24] = CardDataBase.cardList[10];
+                deck[29] = CardDataBase.cardList[10];
+            }
+        }
+        if (SceneManager.GetActiveScene().name == "Level 3")
+        {
+            for (int i = 0; i < deckSize; i++)
+            {
+                int[] acak = { 2, 3, 5, 8 };
+                int acak1 = Random.Range(0, 4);
+                int y = acak[acak1];
+                deck[i] = CardDataBase.cardList[y];
+                deck[4] = CardDataBase.cardList[9];
+                deck[10] = CardDataBase.cardList[10];
+                deck[16] = CardDataBase.cardList[9];
+                deck[24] = CardDataBase.cardList[10];
+                deck[29] = CardDataBase.cardList[10];
             }
         }
 
-        Shuffle();
+        //Shuffle();
 
         StartCoroutine(StartGame());
 

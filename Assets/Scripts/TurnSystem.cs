@@ -59,7 +59,6 @@ public class TurnSystem : MonoBehaviour
         turnKedua = false;
         turnTutorNiga = false;
         tutorDone = false;
-        
     }
 
     // Update is called once per frame
@@ -112,7 +111,7 @@ public class TurnSystem : MonoBehaviour
 
     public void EndYourTurn()
     {
-        if (isYourTurn == true && Time.timeScale != 0f&& turnAwal == false && turnTutorNiga == false)
+        if (isYourTurn == true && Time.timeScale != 0f && turnAwal == false && turnTutorNiga == false)
         {
 
             startTurn = true;
@@ -121,9 +120,26 @@ public class TurnSystem : MonoBehaviour
             isYourTurn = false;
             yourOponentTurn += 1;
 
-            if (maxEnemyMana < 3)
+            if (SceneManager.GetActiveScene().name == "Level 1")
             {
-                maxEnemyMana += 1;
+                if (maxEnemyMana < 3)
+                {
+                    maxEnemyMana += 1;
+                }
+            }
+            if (SceneManager.GetActiveScene().name == "Level 2")
+            {
+                if (maxEnemyMana < 6)
+                {
+                    maxEnemyMana += 1;
+                }
+            }
+            if (SceneManager.GetActiveScene().name == "Level 3")
+            {
+                if (maxEnemyMana < 6)
+                {
+                    maxEnemyMana += 1;
+                }
             }
             currentEnemyMana = maxEnemyMana;
 
@@ -162,27 +178,27 @@ public class TurnSystem : MonoBehaviour
         }
         else if (isYourTurn == true && Time.timeScale != 0f && turnAwal == false && turnTutorNiga == true)
         {
-            Debug.Log("a");
-                startTurn = true;
-                timerStart = false;
-                timerStartEnemy = true;
-                isYourTurn = false;
-                yourOponentTurn += 1;
+            //Debug.Log("a");
+            startTurn = true;
+            timerStart = false;
+            timerStartEnemy = true;
+            isYourTurn = false;
+            yourOponentTurn += 1;
 
-                if (maxEnemyMana < 3)
-                {
-                    maxEnemyMana += 1;
-                }
-                currentEnemyMana = maxEnemyMana;
+            if (maxEnemyMana < 3)
+            {
+                maxEnemyMana += 1;
+            }
+            currentEnemyMana = maxEnemyMana;
 
-                timeLeft = maxEnemyTime;
-                timeBar.enabled = false;
-                enemyTimeBar.enabled = true;
+            timeLeft = maxEnemyTime;
+            timeBar.enabled = false;
+            enemyTimeBar.enabled = true;
 
-                AI.draw = false;
-                ThisCard.cantDamaged = false;
-                turnAwal = false;
-                turnTutorNiga = false;
+            AI.draw = false;
+            ThisCard.cantDamaged = false;
+            turnAwal = false;
+            turnTutorNiga = false;
             if (SceneManager.GetActiveScene().name == "Level 1")
             {
                 MenuManager.Instance.TutorialBtn8();

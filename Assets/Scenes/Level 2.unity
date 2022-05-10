@@ -2915,8 +2915,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 7216922215060566195}
-  - {fileID: 1862566087}
   - {fileID: 1326144041}
+  - {fileID: 1862566087}
   - {fileID: 1852418147}
   - {fileID: 503296983}
   - {fileID: 1560830475}
@@ -10319,6 +10319,19 @@ MonoBehaviour:
     move: 0
     freeze: 0
     toxic: 0
+  - id: 0
+    cardName: 
+    cost: 0
+    power: 0
+    cardDescription: 
+    thisImage: {fileID: 0}
+    thisIcon: {fileID: 0}
+    draw_Card: 0
+    add_CurrentMana: 0
+    healBase: 0
+    move: 0
+    freeze: 0
+    toxic: 0
   container:
   - id: 0
     cardName: 
@@ -11314,7 +11327,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 333451562}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -13836,7 +13849,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1852418147
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13924,12 +13937,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 333451562}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 982, y: 1078}
+  m_SizeDelta: {x: 1145, y: 1077}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1862566088
 MonoBehaviour:
@@ -13951,7 +13964,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5b75de06df36d2c44965f9e9b87fecad, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 774fe7f703d46104891fc5d916f2fac2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

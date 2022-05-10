@@ -8346,6 +8346,7 @@ MonoBehaviour:
     healBase: 0
     move: 0
     freeze: 0
+    toxic: 0
   - id: 0
     cardName: 
     cost: 0
@@ -8358,6 +8359,7 @@ MonoBehaviour:
     healBase: 0
     move: 0
     freeze: 0
+    toxic: 0
   - id: 0
     cardName: 
     cost: 0
@@ -8370,6 +8372,7 @@ MonoBehaviour:
     healBase: 0
     move: 0
     freeze: 0
+    toxic: 0
   - id: 0
     cardName: 
     cost: 0
@@ -8382,6 +8385,7 @@ MonoBehaviour:
     healBase: 0
     move: 0
     freeze: 0
+    toxic: 0
   - id: 0
     cardName: 
     cost: 0
@@ -8394,6 +8398,7 @@ MonoBehaviour:
     healBase: 0
     move: 0
     freeze: 0
+    toxic: 0
   - id: 0
     cardName: 
     cost: 0
@@ -8406,6 +8411,7 @@ MonoBehaviour:
     healBase: 0
     move: 0
     freeze: 0
+    toxic: 0
   - id: 0
     cardName: 
     cost: 0
@@ -8418,6 +8424,7 @@ MonoBehaviour:
     healBase: 0
     move: 0
     freeze: 0
+    toxic: 0
   - id: 0
     cardName: 
     cost: 0
@@ -8430,6 +8437,7 @@ MonoBehaviour:
     healBase: 0
     move: 0
     freeze: 0
+    toxic: 0
   - id: 0
     cardName: 
     cost: 0
@@ -8442,6 +8450,7 @@ MonoBehaviour:
     healBase: 0
     move: 0
     freeze: 0
+    toxic: 0
   - id: 0
     cardName: 
     cost: 0
@@ -8454,6 +8463,7 @@ MonoBehaviour:
     healBase: 0
     move: 0
     freeze: 0
+    toxic: 0
   - id: 0
     cardName: 
     cost: 0
@@ -8466,6 +8476,7 @@ MonoBehaviour:
     healBase: 0
     move: 0
     freeze: 0
+    toxic: 0
   - id: 0
     cardName: 
     cost: 0
@@ -8478,6 +8489,7 @@ MonoBehaviour:
     healBase: 0
     move: 0
     freeze: 0
+    toxic: 0
   - id: 0
     cardName: 
     cost: 0
@@ -8490,6 +8502,7 @@ MonoBehaviour:
     healBase: 0
     move: 0
     freeze: 0
+    toxic: 0
   - id: 0
     cardName: 
     cost: 0
@@ -8502,6 +8515,7 @@ MonoBehaviour:
     healBase: 0
     move: 0
     freeze: 0
+    toxic: 0
   - id: 0
     cardName: 
     cost: 0
@@ -8514,6 +8528,7 @@ MonoBehaviour:
     healBase: 0
     move: 0
     freeze: 0
+    toxic: 0
   - id: 0
     cardName: 
     cost: 0
@@ -8526,6 +8541,7 @@ MonoBehaviour:
     healBase: 0
     move: 0
     freeze: 0
+    toxic: 0
   - id: 0
     cardName: 
     cost: 0
@@ -8538,6 +8554,7 @@ MonoBehaviour:
     healBase: 0
     move: 0
     freeze: 0
+    toxic: 0
   - id: 0
     cardName: 
     cost: 0
@@ -8550,6 +8567,7 @@ MonoBehaviour:
     healBase: 0
     move: 0
     freeze: 0
+    toxic: 0
   - id: 0
     cardName: 
     cost: 0
@@ -8562,6 +8580,7 @@ MonoBehaviour:
     healBase: 0
     move: 0
     freeze: 0
+    toxic: 0
   - id: 0
     cardName: 
     cost: 0
@@ -8574,6 +8593,7 @@ MonoBehaviour:
     healBase: 0
     move: 0
     freeze: 0
+    toxic: 0
   - id: 0
     cardName: 
     cost: 0
@@ -8586,6 +8606,7 @@ MonoBehaviour:
     healBase: 0
     move: 0
     freeze: 0
+    toxic: 0
   - id: 0
     cardName: 
     cost: 0
@@ -8598,6 +8619,7 @@ MonoBehaviour:
     healBase: 0
     move: 0
     freeze: 0
+    toxic: 0
   - id: 0
     cardName: 
     cost: 0
@@ -8610,6 +8632,7 @@ MonoBehaviour:
     healBase: 0
     move: 0
     freeze: 0
+    toxic: 0
   - id: 0
     cardName: 
     cost: 0
@@ -8622,6 +8645,7 @@ MonoBehaviour:
     healBase: 0
     move: 0
     freeze: 0
+    toxic: 0
   - id: 0
     cardName: 
     cost: 0
@@ -8634,6 +8658,7 @@ MonoBehaviour:
     healBase: 0
     move: 0
     freeze: 0
+    toxic: 0
   - id: 0
     cardName: 
     cost: 0
@@ -8646,6 +8671,7 @@ MonoBehaviour:
     healBase: 0
     move: 0
     freeze: 0
+    toxic: 0
   - id: 0
     cardName: 
     cost: 0
@@ -8658,6 +8684,7 @@ MonoBehaviour:
     healBase: 0
     move: 0
     freeze: 0
+    toxic: 0
   - id: 0
     cardName: 
     cost: 0
@@ -8670,6 +8697,7 @@ MonoBehaviour:
     healBase: 0
     move: 0
     freeze: 0
+    toxic: 0
   - id: 0
     cardName: 
     cost: 0
@@ -8682,6 +8710,7 @@ MonoBehaviour:
     healBase: 0
     move: 0
     freeze: 0
+    toxic: 0
   - id: 0
     cardName: 
     cost: 0
@@ -8694,6 +8723,7 @@ MonoBehaviour:
     healBase: 0
     move: 0
     freeze: 0
+    toxic: 0
   container:
   - id: 0
     cardName: 
@@ -8707,6 +8737,7 @@ MonoBehaviour:
     healBase: 0
     move: 0
     freeze: 0
+    toxic: 0
   cardsInHand:
   - id: 0
     cardName: 
@@ -8720,6 +8751,7 @@ MonoBehaviour:
     healBase: 0
     move: 0
     freeze: 0
+    toxic: 0
   - id: 0
     cardName: 
     cost: 0
@@ -8732,6 +8764,7 @@ MonoBehaviour:
     healBase: 0
     move: 0
     freeze: 0
+    toxic: 0
   - id: 0
     cardName: 
     cost: 0
@@ -8744,6 +8777,7 @@ MonoBehaviour:
     healBase: 0
     move: 0
     freeze: 0
+    toxic: 0
   - id: 0
     cardName: 
     cost: 0
@@ -8756,6 +8790,7 @@ MonoBehaviour:
     healBase: 0
     move: 0
     freeze: 0
+    toxic: 0
   - id: 0
     cardName: 
     cost: 0
@@ -8768,6 +8803,7 @@ MonoBehaviour:
     healBase: 0
     move: 0
     freeze: 0
+    toxic: 0
   - id: 0
     cardName: 
     cost: 0
@@ -8780,6 +8816,7 @@ MonoBehaviour:
     healBase: 0
     move: 0
     freeze: 0
+    toxic: 0
   - id: 0
     cardName: 
     cost: 0
@@ -8792,6 +8829,7 @@ MonoBehaviour:
     healBase: 0
     move: 0
     freeze: 0
+    toxic: 0
   - id: 0
     cardName: 
     cost: 0
@@ -8804,6 +8842,7 @@ MonoBehaviour:
     healBase: 0
     move: 0
     freeze: 0
+    toxic: 0
   - id: 0
     cardName: 
     cost: 0
@@ -8816,6 +8855,7 @@ MonoBehaviour:
     healBase: 0
     move: 0
     freeze: 0
+    toxic: 0
   - id: 0
     cardName: 
     cost: 0
@@ -8828,6 +8868,7 @@ MonoBehaviour:
     healBase: 0
     move: 0
     freeze: 0
+    toxic: 0
   - id: 0
     cardName: 
     cost: 0
@@ -8840,6 +8881,7 @@ MonoBehaviour:
     healBase: 0
     move: 0
     freeze: 0
+    toxic: 0
   - id: 0
     cardName: 
     cost: 0
@@ -8852,6 +8894,7 @@ MonoBehaviour:
     healBase: 0
     move: 0
     freeze: 0
+    toxic: 0
   - id: 0
     cardName: 
     cost: 0
@@ -8864,6 +8907,7 @@ MonoBehaviour:
     healBase: 0
     move: 0
     freeze: 0
+    toxic: 0
   - id: 0
     cardName: 
     cost: 0
@@ -8876,6 +8920,7 @@ MonoBehaviour:
     healBase: 0
     move: 0
     freeze: 0
+    toxic: 0
   - id: 0
     cardName: 
     cost: 0
@@ -8888,6 +8933,7 @@ MonoBehaviour:
     healBase: 0
     move: 0
     freeze: 0
+    toxic: 0
   - id: 0
     cardName: 
     cost: 0
@@ -8900,6 +8946,7 @@ MonoBehaviour:
     healBase: 0
     move: 0
     freeze: 0
+    toxic: 0
   - id: 0
     cardName: 
     cost: 0
@@ -8912,6 +8959,7 @@ MonoBehaviour:
     healBase: 0
     move: 0
     freeze: 0
+    toxic: 0
   - id: 0
     cardName: 
     cost: 0
@@ -8924,6 +8972,7 @@ MonoBehaviour:
     healBase: 0
     move: 0
     freeze: 0
+    toxic: 0
   - id: 0
     cardName: 
     cost: 0
@@ -8936,6 +8985,7 @@ MonoBehaviour:
     healBase: 0
     move: 0
     freeze: 0
+    toxic: 0
   - id: 0
     cardName: 
     cost: 0
@@ -8948,6 +8998,7 @@ MonoBehaviour:
     healBase: 0
     move: 0
     freeze: 0
+    toxic: 0
   - id: 0
     cardName: 
     cost: 0
@@ -8960,6 +9011,7 @@ MonoBehaviour:
     healBase: 0
     move: 0
     freeze: 0
+    toxic: 0
   - id: 0
     cardName: 
     cost: 0
@@ -8972,6 +9024,7 @@ MonoBehaviour:
     healBase: 0
     move: 0
     freeze: 0
+    toxic: 0
   - id: 0
     cardName: 
     cost: 0
@@ -8984,6 +9037,7 @@ MonoBehaviour:
     healBase: 0
     move: 0
     freeze: 0
+    toxic: 0
   - id: 0
     cardName: 
     cost: 0
@@ -8996,6 +9050,7 @@ MonoBehaviour:
     healBase: 0
     move: 0
     freeze: 0
+    toxic: 0
   - id: 0
     cardName: 
     cost: 0
@@ -9008,6 +9063,7 @@ MonoBehaviour:
     healBase: 0
     move: 0
     freeze: 0
+    toxic: 0
   - id: 0
     cardName: 
     cost: 0
@@ -9020,6 +9076,7 @@ MonoBehaviour:
     healBase: 0
     move: 0
     freeze: 0
+    toxic: 0
   - id: 0
     cardName: 
     cost: 0
@@ -9032,6 +9089,7 @@ MonoBehaviour:
     healBase: 0
     move: 0
     freeze: 0
+    toxic: 0
   - id: 0
     cardName: 
     cost: 0
@@ -9044,6 +9102,7 @@ MonoBehaviour:
     healBase: 0
     move: 0
     freeze: 0
+    toxic: 0
   - id: 0
     cardName: 
     cost: 0
@@ -9056,6 +9115,7 @@ MonoBehaviour:
     healBase: 0
     move: 0
     freeze: 0
+    toxic: 0
   - id: 0
     cardName: 
     cost: 0
@@ -9068,6 +9128,7 @@ MonoBehaviour:
     healBase: 0
     move: 0
     freeze: 0
+    toxic: 0
   Hand: {fileID: 0}
   x: 0
   CardToHand: {fileID: 5362941949208870295, guid: 2466d2907f286d64ea8540d23fb5b632, type: 3}
@@ -10166,6 +10227,7 @@ MonoBehaviour:
     healBase: 0
     move: 0
     freeze: 0
+    toxic: 0
   - id: 0
     cardName: 
     cost: 0
@@ -10178,6 +10240,7 @@ MonoBehaviour:
     healBase: 0
     move: 0
     freeze: 0
+    toxic: 0
   - id: 0
     cardName: 
     cost: 0
@@ -10190,6 +10253,7 @@ MonoBehaviour:
     healBase: 0
     move: 0
     freeze: 0
+    toxic: 0
   - id: 0
     cardName: 
     cost: 0
@@ -10202,6 +10266,7 @@ MonoBehaviour:
     healBase: 0
     move: 0
     freeze: 0
+    toxic: 0
   - id: 0
     cardName: 
     cost: 0
@@ -10214,6 +10279,7 @@ MonoBehaviour:
     healBase: 0
     move: 0
     freeze: 0
+    toxic: 0
   - id: 0
     cardName: 
     cost: 0
@@ -10226,6 +10292,7 @@ MonoBehaviour:
     healBase: 0
     move: 0
     freeze: 0
+    toxic: 0
   - id: 0
     cardName: 
     cost: 0
@@ -10238,6 +10305,7 @@ MonoBehaviour:
     healBase: 0
     move: 0
     freeze: 0
+    toxic: 0
   - id: 0
     cardName: 
     cost: 0
@@ -10250,6 +10318,20 @@ MonoBehaviour:
     healBase: 0
     move: 0
     freeze: 0
+    toxic: 0
+  - id: 0
+    cardName: 
+    cost: 0
+    power: 0
+    cardDescription: 
+    thisImage: {fileID: 0}
+    thisIcon: {fileID: 0}
+    draw_Card: 0
+    add_CurrentMana: 0
+    healBase: 0
+    move: 0
+    freeze: 0
+    toxic: 0
   container:
   - id: 0
     cardName: 
@@ -10263,6 +10345,7 @@ MonoBehaviour:
     healBase: 0
     move: 0
     freeze: 0
+    toxic: 0
   x: 0
   x1: 0
   x2: 0
@@ -10270,6 +10353,7 @@ MonoBehaviour:
   x4: 0
   x5: 0
   x6: 0
+  x7: 0
   CardToHand: {fileID: 3668064479017764002, guid: af7a32af08cccbf47b12b6ad753dbc5b, type: 3}
   Hand: {fileID: 503296982}
 --- !u!82 &1210230647
@@ -13858,7 +13942,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 982, y: 1078}
+  m_SizeDelta: {x: 1265, y: 1076}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1862566088
 MonoBehaviour:
@@ -13880,7 +13964,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f3a85c03224597d409fe21ad2398ed4d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a84295689ac1ecd4c957283defc3259b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -15115,7 +15199,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 4f2c5a6a570c6d54d8650e784321a1dd, type: 3}
+  m_Texture: {fileID: 2800000, guid: 266fe278f67e18a4e916e765b0c755bb, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -15196,7 +15280,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.27058825}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

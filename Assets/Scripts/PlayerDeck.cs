@@ -94,6 +94,35 @@ public class PlayerDeck : MonoBehaviour
                 deck[8] = CardDataBase.cardList[x7];
             }
         }
+        if (SceneManager.GetActiveScene().name == "Level 3")
+        {
+            deckSize = 9;
+            //dummy
+            x = 0;
+
+            //realcard
+            x1 = 1;
+            x2 = 6;
+            x3 = 4;
+            x4 = 2;
+            x5 = 3;
+            x6 = 5;
+            x7 = 7;
+
+            for (int i = 1; i < deckSize; i++)
+            {
+
+                deck[0] = CardDataBase.cardList[x1];
+                deck[1] = CardDataBase.cardList[x2];
+                deck[2] = CardDataBase.cardList[x3];
+                deck[3] = CardDataBase.cardList[x4];
+                deck[4] = CardDataBase.cardList[x4];
+                deck[5] = CardDataBase.cardList[x5];
+                deck[6] = CardDataBase.cardList[x5];
+                deck[7] = CardDataBase.cardList[x6];
+                deck[8] = CardDataBase.cardList[x7];
+            }
+        }
 
         Shuffle();
 

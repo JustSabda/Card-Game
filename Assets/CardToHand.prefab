@@ -215,7 +215,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e05c97f7da515c44b96bc98b85fd1ff9, type: 3}
+  m_Sprite: {fileID: 7104449989941661863, guid: a353413979ab25f48aa81ac8c8ea4c86, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -297,6 +297,7 @@ MonoBehaviour:
     healBase: 0
     move: 0
     freeze: 0
+    toxic: 0
   thisId: 2
   id: 0
   cardName: 
@@ -319,14 +320,8 @@ MonoBehaviour:
   skinCare: {fileID: 2202118494885930468}
   draw_cards: 0
   add_CurrentMana: 0
-  Target: {fileID: 0}
-  Enemy: {fileID: 0}
   attackBorder: {fileID: 8987077108122666327}
   summoningSickness: 0
-  cantAttack: 0
-  canAttack: 0
-  targeting: 0
-  targetingEnemy: 0
   onlyThisCardAttack: 0
   canMove: 0
   cantMove: 0
@@ -376,6 +371,7 @@ MonoBehaviour:
   canDamaged: 0
   freeze: 0
   cold: 0
+  coldCountdown: 0
   freezeEffect: {fileID: 4616527020305809679}
 --- !u!114 &7342551462688295090
 MonoBehaviour:
@@ -723,7 +719,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3476481548131608596
 RectTransform:
   m_ObjectHideFlags: 0

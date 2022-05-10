@@ -16,9 +16,9 @@ public class CardDataBase : MonoBehaviour
         cardList.Add(new Card(4, "Benteng Proteksi", 3, 4, "None", Resources.Load<Sprite>("Benteng Pertahanan"), Resources.Load<Sprite>("Benteng Pertahanan Ico"), 0, 0, 0, 0, false, false));
         cardList.Add(new Card(5, "Prajurit Kilat", 2, 1, "None", Resources.Load<Sprite>("Prajurit Kilat"), Resources.Load<Sprite>("Prajurit Kilat Ico"), 0, 0, 0, 2, false, false));
         cardList.Add(new Card(6, "Hayam Wuruk", 8, 2, "None", Resources.Load<Sprite>("Hayam Wuruk"), Resources.Load<Sprite>("Hayam Wuruk Ico"), 0, 1, 0, 0, false, false));
-        cardList.Add(new Card(7, "Prajurit Zirah", 4, 3, "None", Resources.Load<Sprite>("Prajurit Pedang"), Resources.Load<Sprite>("Prajurit Pedang Ico"), 0, 0, 0, 1, false, false));
-        cardList.Add(new Card(8, "Prajurit Es", 2, 1, "None", Resources.Load<Sprite>("Prajurit Pedang"), Resources.Load<Sprite>("Prajurit Pedang Ico"), 0, 0, 0, 1, true, false));
-        cardList.Add(new Card(9, "Ken Arok", 2, 2, "None", Resources.Load<Sprite>("Prajurit Pedang"), Resources.Load<Sprite>("Prajurit Pedang Ico"), 0, 0, 0, 1, false, false));
-        cardList.Add(new Card(10, "Kertanegara", 2, 2, "None", Resources.Load<Sprite>("Prajurit Pedang"), Resources.Load<Sprite>("Prajurit Pedang Ico"), 0, 0, 0, 1, false, false));
+        cardList.Add(new Card(7, "Prajurit Zirah", 4, 3, "None", Resources.Load<Sprite>("Prajurit Zirah"), Resources.Load<Sprite>("Prajurit Zirah Ico"), 0, 0, 0, 1, false, false));
+        cardList.Add(new Card(8, "Prajurit Es", 2, 1, "None", Resources.Load<Sprite>("Prajurit Es"), Resources.Load<Sprite>("Prajurit Es Ico"), 0, 0, 0, 1, true, false));
+        cardList.Add(new Card(9, "Ken Arok", 7, 5, "None", Resources.Load<Sprite>("Ken Arok"), Resources.Load<Sprite>("Prajurit Pedang Ico"), 0, 0, 0, 1, false, false));
+        cardList.Add(new Card(10, "Kertanegara", 5, 3, "None", Resources.Load<Sprite>("Kertanegara"), Resources.Load<Sprite>("Kertanegara Ico_0"), 0, 0, 0, 1, false, false));
     }
 }
