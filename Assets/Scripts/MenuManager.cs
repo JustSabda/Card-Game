@@ -13,7 +13,7 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private GameObject _skinCare1;
     [SerializeField] private GameObject _skinCare2;
 
-    public GameObject rawImage;
+    public GameObject rawImage, rawImagePeng;
 
     public bool firstClick;
     public GameObject pauseMenu;
@@ -23,6 +23,7 @@ public class MenuManager : MonoBehaviour
         if (SceneManager.GetActiveScene().name == "Level 2")
         {
             rawImage.SetActive(true);
+            rawImagePeng.SetActive(true);
             ParticleSystem ps = GameObject.Find("Particles").GetComponent<ParticleSystem>();
             ps.Play();
         }

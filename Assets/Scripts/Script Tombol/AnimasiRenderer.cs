@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class AnimasiRenderer : MonoBehaviour
 {
     // Here reference the camera component of the particles camera
-    [SerializeField] private Camera particlesCamera;
+    [SerializeField] private Camera animasiCamera;
 
     // Adjust the resolution in pixels
     [SerializeField] private Vector2Int imageResolution = new Vector2Int(256, 256);
@@ -19,10 +19,10 @@ public class AnimasiRenderer : MonoBehaviour
 
     private void Awake()
     {
-        if (!particlesCamera) particlesCamera = GetComponent<Camera>();
+        if (!animasiCamera) animasiCamera = GetComponent<Camera>();
 
         renderTexture = new RenderTexture(imageResolution.x, imageResolution.y, 32);
-        particlesCamera.targetTexture = renderTexture;
+        animasiCamera.targetTexture = renderTexture;
 
 
         targetImagePeng.texture = renderTexture;
