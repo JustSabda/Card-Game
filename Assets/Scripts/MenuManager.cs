@@ -13,11 +13,20 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private GameObject _skinCare1;
     [SerializeField] private GameObject _skinCare2;
 
+    public GameObject rawImage;
+
     public bool firstClick;
     public GameObject pauseMenu;
     public GameObject Tutorial, Tutorial0, Tutorial1, Tutorial2, Tutorial3, Tutorial4, Tutorial5, Tutorial52, Tutorial6, Tutorial7, Tutorial8;
     void Start()
     {
+        if (SceneManager.GetActiveScene().name == "Level 2")
+        {
+            rawImage.SetActive(true);
+            ParticleSystem ps = GameObject.Find("Particles").GetComponent<ParticleSystem>();
+            ps.Play();
+        }
+
         if (SceneManager.GetActiveScene().name == "Level 1")
         {
             Tutorial0.SetActive(true);
