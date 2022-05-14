@@ -171,6 +171,7 @@ public class AiCardToHand : MonoBehaviour
         powerText.text = "" + currentPower;
         //descriptionText.text = "" + cardDescription;
         freeze = thisCard[0].freeze;
+        toxic = thisCard[0].toxic;
         thatImage.sprite = thisSpriteCard;
         thatIcon.sprite = thisIkonCard;
         CardBackScript.UpdateCard(cardBack);
@@ -224,6 +225,11 @@ public class AiCardToHand : MonoBehaviour
                 coldCountdown--;
                 cantMove = true;
             }
+            if (poisoned == true)
+            {
+                currentPower--;
+                cantMove = true;
+            }
         }
         if (position == 1 || position == 2 || position == 10 || position == 11 || position == 19 || position == 20 || position == 28 || position == 29)
         {
@@ -247,6 +253,17 @@ public class AiCardToHand : MonoBehaviour
             freezeEffect.SetActive(true);
             Zone[position].GetComponent<Tiles>().Full = false;
             //thatIcon.color = new Color32(102,255,229,255);
+            if (currentPower <= 0)
+            {
+                audiox.Play();
+
+                Destroy();
+            }
+        }
+        if (poisoned == true)
+        {
+            poisonedEffect.SetActive(true);
+            Zone[position].GetComponent<Tiles>().FullEnemies = false;
             if (currentPower <= 0)
             {
                 audiox.Play();
@@ -298,7 +315,11 @@ public class AiCardToHand : MonoBehaviour
                     {
                         playerScript.coldCountdown = 2;
                     }
-                    
+                    if (toxic == true)
+                    {
+                        playerScript.poisoned = true;
+                    }
+
                 }
             }
         }

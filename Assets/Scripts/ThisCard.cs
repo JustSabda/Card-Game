@@ -75,6 +75,10 @@ public class ThisCard : MonoBehaviour
     public int coldCountdown;
     public GameObject freezeEffect;
 
+    public bool toxic;
+    public bool poisoned;
+    public GameObject poisonedEffect;
+
     AudioSource audiox;
     void Start()
     {
@@ -169,6 +173,7 @@ public class ThisCard : MonoBehaviour
         healSpell = thisCard[0].healBase;
 
         freeze = thisCard[0].freeze;
+        toxic = thisCard[0].toxic;
 
         //nameText.text = "" + cardName;
         //costText.text = "" + cost;
@@ -259,6 +264,11 @@ public class ThisCard : MonoBehaviour
                 coldCountdown--;
                 cantMove = true;
             }
+            if(poisoned == true)
+            {
+                currentPower--;
+                cantMove = true;
+            }
         }
         if(position == 8||position==9 || position == 17 || position == 18 || position == 26 || position == 27 || position == 35 || position == 36)
         {
@@ -276,6 +286,7 @@ public class ThisCard : MonoBehaviour
             currentMove = move;
             freezeEffect.SetActive(false);
         }
+
         if (cold == true)
         {
             currentMove = 0;
@@ -289,6 +300,18 @@ public class ThisCard : MonoBehaviour
                 Destroy();
             }
         }
+        if(poisoned == true)
+        {
+            poisonedEffect.SetActive(true);
+            Zone[position].GetComponent<Tiles>().FullEnemies = false;
+            if (currentPower <= 0)
+            {
+                audiox.Play();
+
+                Destroy();
+            }
+        }
+
     }
     public void LateUpdate()
     {
@@ -297,7 +320,6 @@ public class ThisCard : MonoBehaviour
             audiox.Play();
             
             Destroy();
-            
         }
     }
     public void damaged()
@@ -364,6 +386,10 @@ public class ThisCard : MonoBehaviour
                 {
                     aiScript.coldCountdown = 2;
                     
+                }
+                if(toxic == true)
+                {
+                    aiScript.poisoned = true;
                 }
             }
         }
