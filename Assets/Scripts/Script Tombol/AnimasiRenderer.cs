@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Camera))]
-public class RenderParticlesEffect : MonoBehaviour
+public class AnimasiRenderer : MonoBehaviour
 {
     // Here reference the camera component of the particles camera
     [SerializeField] private Camera particlesCamera;
@@ -13,7 +13,7 @@ public class RenderParticlesEffect : MonoBehaviour
     [SerializeField] private Vector2Int imageResolution = new Vector2Int(256, 256);
 
     // Reference the RawImage in your UI
-    [SerializeField] private RawImage targetImage;
+    [SerializeField] private RawImage targetImagePeng;
 
     private RenderTexture renderTexture;
 
@@ -24,7 +24,7 @@ public class RenderParticlesEffect : MonoBehaviour
         renderTexture = new RenderTexture(imageResolution.x, imageResolution.y, 32);
         particlesCamera.targetTexture = renderTexture;
 
-        targetImage.texture = renderTexture;
-       // targetImagePeng.texture = renderTexture;
+
+        targetImagePeng.texture = renderTexture;
     }
 }
