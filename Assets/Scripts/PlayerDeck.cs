@@ -164,7 +164,7 @@ public class PlayerDeck : MonoBehaviour
             audiox.Play();
         }
         yield return new WaitForSeconds(3/4);
-        if (SceneManager.GetActiveScene().name == "Level 1")
+        if (SceneManager.GetActiveScene().name == "Level 1" || SceneManager.GetActiveScene().name == "Level 2")
         {
             MenuManager.Instance.TutorialBtn1();
         }

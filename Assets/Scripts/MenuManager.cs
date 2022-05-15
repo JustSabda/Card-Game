@@ -17,7 +17,7 @@ public class MenuManager : MonoBehaviour
 
     public bool firstClick;
     public GameObject pauseMenu;
-    public GameObject Tutorial, Tutorial0, Tutorial1, Tutorial2, Tutorial3, Tutorial4, Tutorial5, Tutorial52, Tutorial6, Tutorial7, Tutorial8;
+    public GameObject Tutorial, Tutorial0, Tutorial1, Tutorial2, Tutorial3, Tutorial4, Tutorial5, Tutorial52, Tutorial6, Tutorial7, Tutorial8, Tutorial9;
     void Start()
     {
         if (SceneManager.GetActiveScene().name == "Level 2")
@@ -26,12 +26,12 @@ public class MenuManager : MonoBehaviour
             rawImagePeng.SetActive(true);
             ParticleSystem ps = GameObject.Find("Particles").GetComponent<ParticleSystem>();
             ps.Play();
+            
         }
 
-        if (SceneManager.GetActiveScene().name == "Level 1")
-        {
-            Tutorial0.SetActive(true);
-        }
+        
+        Tutorial0.SetActive(true);
+        
         firstClick = false;
     }
     void Update()
@@ -76,13 +76,21 @@ public class MenuManager : MonoBehaviour
         Tutorial6.SetActive(false);
         Tutorial7.SetActive(false);
         Tutorial8.SetActive(false);
+        Tutorial9.SetActive(false);
         Time.timeScale = 1f;
     }
     public void TutorialBtn1()
     {
         //Tutorial.SetActive(true);
         Tutorial0.SetActive(false);
-        Tutorial1.SetActive(true);
+        if (SceneManager.GetActiveScene().name == "Level 2")
+        {
+            Tutorial9.SetActive(true);
+        }
+        if (SceneManager.GetActiveScene().name == "Level 1")
+        {
+            Tutorial1.SetActive(true);
+        }
         Tutorial2.SetActive(false);
         Tutorial3.SetActive(false);
         Tutorial4.SetActive(false);
