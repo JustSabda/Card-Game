@@ -17,7 +17,7 @@ public class MenuManager : MonoBehaviour
 
     public bool firstClick;
     public GameObject pauseMenu;
-    public GameObject Tutorial, Tutorial0, Tutorial1, Tutorial2, Tutorial3, Tutorial4, Tutorial5, Tutorial52, Tutorial6, Tutorial7, Tutorial8, Tutorial9;
+    public GameObject Tutorial, Tutorial0, Tutorial1, Tutorial2, Tutorial3, Tutorial4, Tutorial5, Tutorial52, Tutorial6, Tutorial7, Tutorial8, Tutorial9, Tutorial10;
     void Start()
     {
         if (SceneManager.GetActiveScene().name == "Level 2")
@@ -77,6 +77,7 @@ public class MenuManager : MonoBehaviour
         Tutorial7.SetActive(false);
         Tutorial8.SetActive(false);
         Tutorial9.SetActive(false);
+        Tutorial10.SetActive(false);
         Time.timeScale = 1f;
     }
     public void TutorialBtn1()
@@ -101,7 +102,15 @@ public class MenuManager : MonoBehaviour
     {
         //Tutorial.SetActive(true);
         Tutorial1.SetActive(false);
-        Tutorial2.SetActive(true);
+        if (SceneManager.GetActiveScene().name == "Level 1")
+        {
+            Tutorial2.SetActive(true);
+        }
+        if (SceneManager.GetActiveScene().name == "Level 2")
+        {
+            Tutorial9.SetActive(false);
+            Tutorial10.SetActive(true);
+        }
         Tutorial3.SetActive(false);
         Tutorial4.SetActive(false);
         Tutorial5.SetActive(false);
