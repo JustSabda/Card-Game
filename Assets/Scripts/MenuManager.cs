@@ -76,8 +76,12 @@ public class MenuManager : MonoBehaviour
         Tutorial6.SetActive(false);
         Tutorial7.SetActive(false);
         Tutorial8.SetActive(false);
-        Tutorial9.SetActive(false);
-        Tutorial10.SetActive(false);
+        if (SceneManager.GetActiveScene().name == "Level 2")
+        {
+            Tutorial9.SetActive(false);
+            Tutorial10.SetActive(false);
+        }
+
         Time.timeScale = 1f;
     }
     public void TutorialBtn1()
