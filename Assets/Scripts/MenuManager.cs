@@ -16,17 +16,21 @@ public class MenuManager : MonoBehaviour
     public GameObject rawImage, rawImagePeng;
 
     public bool firstClick;
-    public GameObject pauseMenu;
+    public GameObject pauseMenu, particleEs;
     public GameObject Tutorial, Tutorial0, Tutorial1, Tutorial2, Tutorial3, Tutorial4, Tutorial5, Tutorial52, Tutorial6, Tutorial7, Tutorial8, Tutorial9, Tutorial10;
     void Start()
     {
-        if (SceneManager.GetActiveScene().name == "Level 2")
+        if (SceneManager.GetActiveScene().name == "Level 2" || SceneManager.GetActiveScene().name == "Level 1")
         {
             rawImage.SetActive(true);
             rawImagePeng.SetActive(true);
             ParticleSystem ps = GameObject.Find("Particles").GetComponent<ParticleSystem>();
             ps.Play();
             
+        }
+        if (SceneManager.GetActiveScene().name == "Level 1")
+        {
+            particleEs.SetActive(false);
         }
 
         
