@@ -7607,7 +7607,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   particlesCamera: {fileID: 914432442}
   imageResolution: {x: 1920, y: 1080}
-  targetImage: {fileID: 1360586726}
+  targetImage1: {fileID: 0}
+  targetImage2: {fileID: 0}
+  targetImage3: {fileID: 0}
+  targetImage4: {fileID: 0}
 --- !u!1 &917160190
 GameObject:
   m_ObjectHideFlags: 0

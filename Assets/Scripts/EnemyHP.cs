@@ -29,8 +29,8 @@ public class EnemyHP : MonoBehaviour
         }
         if (SceneManager.GetActiveScene().name == "Level 3")
         {
-            maxHP = 8;
-            staticHP = 8;
+            maxHP = 10;
+            staticHP = 10;
         }
     }
 

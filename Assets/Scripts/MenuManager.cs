@@ -20,7 +20,7 @@ public class MenuManager : MonoBehaviour
     public GameObject Tutorial, Tutorial0, Tutorial1, Tutorial2, Tutorial3, Tutorial4, Tutorial5, Tutorial52, Tutorial6, Tutorial7, Tutorial8, Tutorial9, Tutorial10;
     void Start()
     {
-        if (SceneManager.GetActiveScene().name == "Level 2" || SceneManager.GetActiveScene().name == "Level 1")
+        if (SceneManager.GetActiveScene().name == "Level 2" || SceneManager.GetActiveScene().name == "Level 1" )
         {
             rawImage.SetActive(true);
             rawImagePeng.SetActive(true);
@@ -32,8 +32,16 @@ public class MenuManager : MonoBehaviour
         {
             particleEs.SetActive(false);
         }
+        if(SceneManager.GetActiveScene().name == "Level 3" || SceneManager.GetActiveScene().name == "Level 1")
+        {
 
-        
+            rawImagePeng.SetActive(true);
+ 
+
+
+        }
+
+
         Tutorial0.SetActive(true);
         
         firstClick = false;
