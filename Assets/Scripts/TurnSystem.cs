@@ -66,12 +66,12 @@ public class TurnSystem : MonoBehaviour
     {
         if (isYourTurn == true)
         {
-            turnText.text = "Your Turn";
+            turnText.text = "Giliran Pemain";
 
         }
         else
         {
-            turnText.text = "Enemy Turn";
+            turnText.text = "Giliran Musuh";
         }
 
         manaText.text = ""+currentMana;
@@ -136,7 +136,7 @@ public class TurnSystem : MonoBehaviour
             }
             if (SceneManager.GetActiveScene().name == "Level 3")
             {
-                if (maxEnemyMana < 6)
+                if (maxEnemyMana < 8)
                 {
                     maxEnemyMana += 1;
                 }

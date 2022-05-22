@@ -72,8 +72,8 @@ public class AI : MonoBehaviour
         {
             for (int i = 0; i < deckSize; i++)
             {
-                int[] acak = { 2, 3, 5 , 8 };
-                int acak1 = Random.Range(0, 4);
+                int[] acak = { 2, 3, 8 };
+                int acak1 = Random.Range(0, 3);
                 int y = acak[acak1];
                 deck[i] = CardDataBase.cardList[y];
                 deck[4] = CardDataBase.cardList[9];
@@ -87,15 +87,16 @@ public class AI : MonoBehaviour
         {
             for (int i = 0; i < deckSize; i++)
             {
-                int[] acak = { 2, 3, 5, 8 };
+                int[] acak = { 2, 3, 4, 5 };
                 int acak1 = Random.Range(0, 4);
                 int y = acak[acak1];
                 deck[i] = CardDataBase.cardList[y];
-                deck[4] = CardDataBase.cardList[9];
-                deck[10] = CardDataBase.cardList[10];
-                deck[16] = CardDataBase.cardList[9];
-                deck[24] = CardDataBase.cardList[10];
-                deck[29] = CardDataBase.cardList[10];
+                deck[5] = CardDataBase.cardList[11];
+                deck[13] = CardDataBase.cardList[12];
+                deck[18] = CardDataBase.cardList[11];
+                deck[22] = CardDataBase.cardList[11];
+                deck[27] = CardDataBase.cardList[12];
+                deck[29] = CardDataBase.cardList[11];
             }
         }
 

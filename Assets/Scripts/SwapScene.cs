@@ -27,6 +27,28 @@ public class SwapScene : MonoBehaviour
             }
             
         }
+        if (SceneManager.GetActiveScene().name == "Level 2")
+        {
+            if (x == true)
+            {
+                Music.Instance.GetComponentInChildren<AudioSource>().Stop();
+                Music.Instance.GetComponentInChildren<AudioSource>().clip = bambang;
+                Music.Instance.GetComponentInChildren<AudioSource>().Play();
+                x = false;
+            }
+
+        }
+        if (SceneManager.GetActiveScene().name == "Level 3")
+        {
+            if (x == true)
+            {
+                Music.Instance.GetComponentInChildren<AudioSource>().Stop();
+                Music.Instance.GetComponentInChildren<AudioSource>().clip = bambang;
+                Music.Instance.GetComponentInChildren<AudioSource>().Play();
+                x = false;
+            }
+
+        }
         if (SceneManager.GetActiveScene().name == "MainMenu")
         {
             if (x == false)
