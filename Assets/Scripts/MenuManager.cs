@@ -24,26 +24,26 @@ public class MenuManager : MonoBehaviour
         {
             rawImage.SetActive(true);
             rawImagePeng.SetActive(true);
-            ParticleSystem ps = GameObject.Find("Particles").GetComponent<ParticleSystem>();
+            ParticleSystem ps = GameObject.FindWithTag("Particles").GetComponent<ParticleSystem>();
             ps.Play();
-            
+            Tutorial0.SetActive(true);
         }
         if (SceneManager.GetActiveScene().name == "Level 1")
         {
             particleEs.SetActive(false);
         }
-        if(SceneManager.GetActiveScene().name == "Level 3" || SceneManager.GetActiveScene().name == "Level 1")
+        else if(SceneManager.GetActiveScene().name == "Level 3" || SceneManager.GetActiveScene().name == "Level 1")
         {
-
+            rawImage.SetActive(true);
             rawImagePeng.SetActive(true);
  
 
 
         }
+        Time.timeScale = 1f;
 
 
-        Tutorial0.SetActive(true);
-        
+
         firstClick = false;
     }
     void Update()
@@ -201,6 +201,7 @@ public class MenuManager : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
+        Time.timeScale = 1f;
     }
     public void RestartButton()
     {

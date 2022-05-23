@@ -10,6 +10,7 @@ public class LevelManager : MonoBehaviour
     public GameObject LevelCanvas;
     public GameObject Story1, Story2, Story3;
     public GameObject Prolog, Ending;
+    public GameObject Particle1, Particle2, Particle3, Particle4;
  
     // Start is called before the first frame update
     void Start()
