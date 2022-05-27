@@ -715,6 +715,7 @@ MonoBehaviour:
     healBase: 0
     move: 0
     freeze: 0
+    toxic: 0
   cantMove: 0
   canMove: 0
   position: 0
@@ -773,9 +774,6 @@ MonoBehaviour:
   drawXcards: 0
   draw_cards: 0
   add_CurrentMana: 0
-  hurted: 0
-  canAttack: 0
-  cantAttack: 0
   actualpower: 0
   returnXcards: 0
   healSpell: 0
@@ -791,7 +789,13 @@ MonoBehaviour:
   thisCardCanBeDestroyed: 0
   freeze: 0
   cold: 0
+  coldCountdown: 0
   freezeEffect: {fileID: 8302058369615120324}
+  toxic: 0
+  poisoned: 0
+  poisonedCountdown: 0
+  poisonedEffect: {fileID: 0}
+  battleSFX: {fileID: 8611011888077040050, guid: e31f6fedd927a3d428b8a106ccbc2ff9, type: 3}
 --- !u!114 &2120792846104015239
 MonoBehaviour:
   m_ObjectHideFlags: 0

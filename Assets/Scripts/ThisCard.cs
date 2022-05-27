@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using DG.Tweening;
 
 public class ThisCard : MonoBehaviour
 {
@@ -80,6 +81,7 @@ public class ThisCard : MonoBehaviour
     public GameObject poisonedEffect;
 
     AudioSource audiox;
+    public GameObject battleSFX;
     void Start()
     {
         audiox = GetComponent<AudioSource>();
@@ -272,7 +274,7 @@ public class ThisCard : MonoBehaviour
         }
         if(position == 8||position==9 || position == 17 || position == 18 || position == 26 || position == 27 || position == 35 || position == 36)
         {
-            audiox.Play();
+            //audiox.Play();
             Destroy();
             EnemyHP.staticHP = EnemyHP.staticHP - currentPower;
         }
@@ -295,7 +297,7 @@ public class ThisCard : MonoBehaviour
             //thatIcon.color = new Color32(102, 255, 229, 255);
             if(currentPower <= 0)
             {
-                audiox.Play();
+                //audiox.Play();
 
                 Destroy();
             }
@@ -306,8 +308,8 @@ public class ThisCard : MonoBehaviour
             Zone[position].GetComponent<Tiles>().FullEnemies = false;
             if (currentPower <= 0)
             {
-                audiox.Play();
-
+                //audiox.Play();
+                
                 Destroy();
             }
         }
@@ -317,7 +319,7 @@ public class ThisCard : MonoBehaviour
     {
         if (currentPower <= 0 && Zone[position].GetComponent<Tiles>().FullEnemies == true)
         {
-            audiox.Play();
+            //audiox.Play();
             
             Destroy();
         }
@@ -351,6 +353,7 @@ public class ThisCard : MonoBehaviour
     }
     public void Destroy()
     {
+        Instantiate(battleSFX);
         Destroy(this.gameObject);
     }
     public void Heal()
@@ -366,14 +369,24 @@ public class ThisCard : MonoBehaviour
             {
                 if (position == i)
                 {
+                    Zone[position + x].GetComponent<HorizontalLayoutGroup>().enabled = false;
+                    if (this.gameObject.GetComponent<RectTransform>() != null)
+                    {
+                        this.transform.DOMove(Zone[position + x].transform.position, 2f);
+                    }
+                    if (this.transform.position == Zone[position + x].transform.position)
+                    {
+                        Zone[position + x].GetComponent<HorizontalLayoutGroup>().enabled = true;
+                    }
                     this.transform.SetParent(Zone[position + x].transform);
+                    //StartCoroutine(moveGo());
                 }
             }
             position = position + x;
             cantMove = true;
             if (Zone[position].GetComponent<Tiles>().FullEnemies == true)
             {
-                audiox.Play();
+                //audiox.Play();
                 aiScript = GetComponentInParent<Transform>().parent.GetComponentInChildren<AiCardToHand>();
                 //Zone[position].GetComponent<Tiles>().enemyCurrentPower = Zone[position].GetComponent<Tiles>().enemyCurrentPower - currentPower;
                 aiScript.currentPower = aiScript.currentPower - currentPower;
@@ -409,5 +422,11 @@ public class ThisCard : MonoBehaviour
     {
 	MenuManager.Instance.TutorialBtn6();
         MenuManager.Instance.ShowTileInfo(this);
+    }
+    IEnumerator moveGo()
+    {
+        yield return new WaitForSeconds(2f);
+        this.transform.SetParent(Zone[position].transform);
+
     }
 }

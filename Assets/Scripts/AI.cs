@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class AI : MonoBehaviour
 {
@@ -265,6 +266,7 @@ public class AI : MonoBehaviour
                     {
                         if (Zone[x].GetComponent<Tiles>().FullEnemies == false && Zone[x].GetComponent<Tiles>().Full == false)
                         {
+                            Zone[x].GetComponent<HorizontalLayoutGroup>().enabled = true;
                             child.transform.SetParent(Zone[x].transform);
                             AiCardToHand.summoned = true;
                             AiCardToHand.summoningSickness = true;
@@ -273,9 +275,10 @@ public class AI : MonoBehaviour
                                 child.GetComponent<AiCardToHand>().currentPower = child.GetComponent<AiCardToHand>().maxPower;
                                 child.GetComponent<AiCardToHand>().currentMove = child.GetComponent<AiCardToHand>().move;
                             }
+                            
                         }
                     }
-                    
+                    Debug.Log("Spawn di " + child.transform.parent.name);
 
                     TurnSystem.EnemyDrawCount =+ 1;
                     TurnSystem.currentEnemyMana -= CardDataBase.cardList[summonThisId].cost;

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class AiCardToHand : MonoBehaviour
 {
@@ -79,6 +80,7 @@ public class AiCardToHand : MonoBehaviour
     public int poisonedCountdown;
     public GameObject poisonedEffect;
 
+    public GameObject battleSFX;
     // Start is called before the first frame update
     void Start()
     {
@@ -233,7 +235,7 @@ public class AiCardToHand : MonoBehaviour
         }
         if (position == 1 || position == 2 || position == 10 || position == 11 || position == 19 || position == 20 || position == 28 || position == 29)
         {
-            audiox.Play();
+            //audiox.Play();
             Destroy();
             PlayerHP.staticHP = PlayerHP.staticHP - currentPower;
         }
@@ -255,7 +257,7 @@ public class AiCardToHand : MonoBehaviour
             //thatIcon.color = new Color32(102,255,229,255);
             if (currentPower <= 0)
             {
-                audiox.Play();
+                //audiox.Play();
 
                 Destroy();
             }
@@ -266,7 +268,7 @@ public class AiCardToHand : MonoBehaviour
             Zone[position].GetComponent<Tiles>().FullEnemies = false;
             if (currentPower <= 0)
             {
-                audiox.Play();
+                //audiox.Play();
 
                 Destroy();
             }
@@ -276,7 +278,7 @@ public class AiCardToHand : MonoBehaviour
     {
         if (currentPower <= 0 && Zone[position].GetComponent<Tiles>().Full == true)
         {
-            audiox.Play();
+            //audiox.Play();
             Zone[position].GetComponent<Tiles>().Full = false;
             Destroy();
         }
@@ -297,16 +299,25 @@ public class AiCardToHand : MonoBehaviour
                 {
                     if (position == i)
                     {
+                        Zone[position - x].GetComponent<HorizontalLayoutGroup>().enabled = false;
+                        if (this.gameObject.GetComponent<RectTransform>() != null)
+                        {
+                            this.transform.DOMove(Zone[position - x].transform.position, 2f);
+                        }
+                        if (this.transform.position == Zone[position - x].transform.position)
+                        {
+                            Zone[position - x].GetComponent<HorizontalLayoutGroup>().enabled = true;
+                        }
                         this.transform.SetParent(Zone[position - x].transform);
                     }
 
                 }
                 position = position - x;
-
+                
                 cantMove = true;
                 if (Zone[position].GetComponent<Tiles>().Full == true)
                 {
-                    audiox.Play();
+                    //audiox.Play();
                     playerScript = GetComponentInParent<Transform>().parent.GetComponentInChildren<ThisCard>();
                     playerScript.currentPower = playerScript.currentPower - currentPower;
                     //Zone[position].GetComponent<Tiles>().currentPower = Zone[position].GetComponent<Tiles>().currentPower - currentPower;
@@ -319,14 +330,16 @@ public class AiCardToHand : MonoBehaviour
                     {
                         playerScript.poisoned = true;
                     }
-
+                    
                 }
+                Debug.Log("pindah ke "+transform.parent.name);
             }
         }
 
     }
     public void Destroy()
     {
+        Instantiate(battleSFX);
         Destroy(this.gameObject);
     }
     public void SetSelectedHero()

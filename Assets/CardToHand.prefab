@@ -376,6 +376,7 @@ MonoBehaviour:
   toxic: 0
   poisoned: 0
   poisonedEffect: {fileID: 4685691486674595561}
+  battleSFX: {fileID: 8611011888077040050, guid: e31f6fedd927a3d428b8a106ccbc2ff9, type: 3}
 --- !u!114 &7342551462688295090
 MonoBehaviour:
   m_ObjectHideFlags: 0
