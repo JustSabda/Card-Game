@@ -205,6 +205,6 @@ public class MenuManager : MonoBehaviour
     }
     public void RestartButton()
     {
-        SceneManager.LoadScene("Level 1");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

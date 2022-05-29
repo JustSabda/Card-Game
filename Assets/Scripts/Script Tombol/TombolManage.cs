@@ -20,6 +20,7 @@ public class TombolManage : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 1f;
         MainMenu.SetActive(true);
         Credits.SetActive(false);
         Setting.SetActive(false);

@@ -10,12 +10,10 @@ public class PlayerHP : MonoBehaviour
     public float hp;
     //public Image Health;
     public Text hpText;
-    public AudioSource audiox;
 
     // Start is called before the first frame update
     void Start()
     {
-        audiox = GetComponent<AudioSource>();
         maxHP = 10;
         staticHP = 10;
     }
@@ -32,9 +30,5 @@ public class PlayerHP : MonoBehaviour
         }
 
         hpText.text = hp +"";
-        if (staticHP == 0)
-        {
-            audiox.Play();
-        }
     }
 }

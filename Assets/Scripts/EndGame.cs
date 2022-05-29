@@ -11,6 +11,8 @@ public class EndGame : MonoBehaviour
     public GameObject Lose;
     //public Text wLText;
     AudioSource audiox;
+    public AudioClip winSound;
+    public AudioClip loseSound;
 
     //public Image imageNotif;
     // Start is called before the first frame update
@@ -28,14 +30,14 @@ public class EndGame : MonoBehaviour
     {
         if(PlayerHP.staticHP <= 0)
         {
-            audiox.Play();
+            audiox.PlayOneShot(loseSound);
             WLPanel.SetActive(true);
             Lose.SetActive(true);
             Time.timeScale = 0f;
         }
         if(EnemyHP.staticHP <= 0)
         {
-            audiox.Play();
+            audiox.PlayOneShot(winSound);
             WLPanel.SetActive(true);
             Win.SetActive(true);
             Time.timeScale = 0f;

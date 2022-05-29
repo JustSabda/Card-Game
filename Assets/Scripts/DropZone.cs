@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class DropZone : MonoBehaviour, IPointerEnterHandler , IPointerExitHandler ,IDropHandler
 {
@@ -36,7 +37,8 @@ public class DropZone : MonoBehaviour, IPointerEnterHandler , IPointerExitHandle
             if (d != null && GetComponent<Tiles>().Full == false&& GetComponent<Tiles>().FullEnemies == false)
             {
                 d.parentToReturnTo = this.transform;
-
+                this.transform.GetComponent<HorizontalLayoutGroup>().enabled = true;
+                //this.transform.parent.GetComponent<HorizontalLayoutGroup>().enabled = true;
             }
 
         }

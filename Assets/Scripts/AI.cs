@@ -92,12 +92,18 @@ public class AI : MonoBehaviour
                 int acak1 = Random.Range(0, 4);
                 int y = acak[acak1];
                 deck[i] = CardDataBase.cardList[y];
-                deck[5] = CardDataBase.cardList[11];
-                deck[13] = CardDataBase.cardList[12];
-                deck[18] = CardDataBase.cardList[11];
-                deck[22] = CardDataBase.cardList[11];
-                deck[27] = CardDataBase.cardList[12];
+                deck[3] = CardDataBase.cardList[11];
+                deck[4] = CardDataBase.cardList[12];
+                deck[9] = CardDataBase.cardList[11];
+                deck[12] = CardDataBase.cardList[12];
+                deck[14] = CardDataBase.cardList[11];
+                deck[16] = CardDataBase.cardList[12];
+                deck[19] = CardDataBase.cardList[11];
+                deck[23] = CardDataBase.cardList[11];
+                deck[26] = CardDataBase.cardList[11];
+                deck[28] = CardDataBase.cardList[12];
                 deck[29] = CardDataBase.cardList[11];
+                deck[3] = CardDataBase.cardList[12];
             }
         }
 
@@ -270,6 +276,7 @@ public class AI : MonoBehaviour
                             child.transform.SetParent(Zone[x].transform);
                             AiCardToHand.summoned = true;
                             AiCardToHand.summoningSickness = true;
+                            
                             if (AiCardToHand.summoningSickness == true)
                             {
                                 child.GetComponent<AiCardToHand>().currentPower = child.GetComponent<AiCardToHand>().maxPower;
@@ -278,7 +285,7 @@ public class AI : MonoBehaviour
                             
                         }
                     }
-                    Debug.Log("Spawn di " + child.transform.parent.name);
+                    //Debug.Log("Spawn di " + child.transform.parent.name);
 
                     TurnSystem.EnemyDrawCount =+ 1;
                     TurnSystem.currentEnemyMana -= CardDataBase.cardList[summonThisId].cost;

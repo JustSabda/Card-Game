@@ -11,12 +11,11 @@ public class EnemyHP : MonoBehaviour
     public float hp;
     //public Image Health;
     public Text hpText;
-    public AudioSource audiox;
 
     // Start is called before the first frame update
     void Start()
     {
-        audiox = GetComponent<AudioSource>();
+        
         if (SceneManager.GetActiveScene().name == "Level 1")
         {
             maxHP = 6;
@@ -46,9 +45,5 @@ public class EnemyHP : MonoBehaviour
         }
 
         hpText.text = hp + "";
-        if (staticHP == 0)
-        {
-            audiox.Play();
-        }
     }
 }

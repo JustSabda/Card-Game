@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 using DG.Tweening;
 
@@ -82,6 +83,8 @@ public class ThisCard : MonoBehaviour
 
     AudioSource audiox;
     public GameObject battleSFX;
+    public bool waitMove;
+
     void Start()
     {
         audiox = GetComponent<AudioSource>();
@@ -148,6 +151,7 @@ public class ThisCard : MonoBehaviour
             Zone[36] = GameObject.Find("Zone_d09");
         }
         freezeEffect.SetActive(false);
+        waitMove = false;
     }
 
     // Update is called once per frame
@@ -190,9 +194,21 @@ public class ThisCard : MonoBehaviour
         {
             if(numberOfCardsInDeck == 0 && PlayerDeck.deckSize == 0)
             {
-                numberOfCardsInDeck = 8;
-                PlayerDeck.deckSize = 8;
-                
+                if (SceneManager.GetActiveScene().name == "Level 1")
+                {
+                    numberOfCardsInDeck = 8;
+                    PlayerDeck.deckSize = 8;
+                }
+                if (SceneManager.GetActiveScene().name == "Level 2")
+                {
+                    numberOfCardsInDeck = 9;
+                    PlayerDeck.deckSize = 9;
+                }
+                if (SceneManager.GetActiveScene().name == "Level 3")
+                {
+                    numberOfCardsInDeck = 10;
+                    PlayerDeck.deckSize = 10;
+                }
             }
             thisCard[0] = PlayerDeck.staticDeck[numberOfCardsInDeck - 1];
 
@@ -373,15 +389,18 @@ public class ThisCard : MonoBehaviour
                     if (this.gameObject.GetComponent<RectTransform>() != null)
                     {
                         this.transform.DOMove(Zone[position + x].transform.position, 2f);
+                        //StartCoroutine(moveGo());
                     }
                     if (this.transform.position == Zone[position + x].transform.position)
                     {
                         Zone[position + x].GetComponent<HorizontalLayoutGroup>().enabled = true;
                     }
+
                     this.transform.SetParent(Zone[position + x].transform);
                     //StartCoroutine(moveGo());
                 }
             }
+
             position = position + x;
             cantMove = true;
             if (Zone[position].GetComponent<Tiles>().FullEnemies == true)
@@ -392,21 +411,21 @@ public class ThisCard : MonoBehaviour
                 aiScript.currentPower = aiScript.currentPower - currentPower;
                 currentPower = currentPower - Zone[position].GetComponent<Tiles>().enemyDamaged;
 
-                
+
                 //currentPower = currentPower - Zone[position].GetComponent<Tiles>().enemyCurrentPower;
                 //Zone[position].GetComponent<Tiles>().enemyCurrentPower = Zone[position].GetComponent<Tiles>().enemyCurrentPower - currentPower;
                 if (freeze == true)
                 {
                     aiScript.coldCountdown = 2;
-                    
+
                 }
-                if(toxic == true)
+                if (toxic == true)
                 {
                     aiScript.poisoned = true;
                 }
             }
         }
-
+    
     }
     public void ChangeSkin()
     {
@@ -426,7 +445,7 @@ public class ThisCard : MonoBehaviour
     IEnumerator moveGo()
     {
         yield return new WaitForSeconds(2f);
-        this.transform.SetParent(Zone[position].transform);
+        waitMove = true;
 
     }
 }

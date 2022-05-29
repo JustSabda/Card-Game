@@ -19,6 +19,7 @@ public class PlayerDeck : MonoBehaviour
     public int x5;
     public int x6;
     public int x7;
+    public int x8;
 
 
     public static int deckSize = 8;
@@ -39,7 +40,7 @@ public class PlayerDeck : MonoBehaviour
         audiox = GetComponent<AudioSource>();
         if (SceneManager.GetActiveScene().name == "Level 1")
         {
-            deckSize = 8;
+            deckSize = 10;
             //dummy
             x = 0;
 
@@ -61,13 +62,15 @@ public class PlayerDeck : MonoBehaviour
                 deck[4] = CardDataBase.cardList[x4];
                 deck[5] = CardDataBase.cardList[x5];
                 deck[6] = CardDataBase.cardList[x5];
-                deck[7] = CardDataBase.cardList[x6];
+                deck[7] = CardDataBase.cardList[x5];
+                deck[8] = CardDataBase.cardList[x6];
+                deck[9] = CardDataBase.cardList[x6];
             }
         }
 
         if (SceneManager.GetActiveScene().name == "Level 2")
         {
-            deckSize = 9;
+            deckSize = 13;
             //dummy
             x = 0;
 
@@ -90,13 +93,17 @@ public class PlayerDeck : MonoBehaviour
                 deck[4] = CardDataBase.cardList[x4];
                 deck[5] = CardDataBase.cardList[x5];
                 deck[6] = CardDataBase.cardList[x5];
-                deck[7] = CardDataBase.cardList[x6];
-                deck[8] = CardDataBase.cardList[x7];
+                deck[7] = CardDataBase.cardList[x5];
+                deck[8] = CardDataBase.cardList[x6];
+                deck[9] = CardDataBase.cardList[x6];
+                deck[10] = CardDataBase.cardList[x7];
+                deck[11] = CardDataBase.cardList[x7];
+                deck[12] = CardDataBase.cardList[x7];
             }
         }
         if (SceneManager.GetActiveScene().name == "Level 3")
         {
-            deckSize = 9;
+            deckSize = 15;
             //dummy
             x = 0;
 
@@ -108,6 +115,7 @@ public class PlayerDeck : MonoBehaviour
             x5 = 3;
             x6 = 5;
             x7 = 7;
+            x8 = 8;
 
             for (int i = 1; i < deckSize; i++)
             {
@@ -119,8 +127,14 @@ public class PlayerDeck : MonoBehaviour
                 deck[4] = CardDataBase.cardList[x4];
                 deck[5] = CardDataBase.cardList[x5];
                 deck[6] = CardDataBase.cardList[x5];
-                deck[7] = CardDataBase.cardList[x6];
-                deck[8] = CardDataBase.cardList[x7];
+                deck[7] = CardDataBase.cardList[x5];
+                deck[8] = CardDataBase.cardList[x6];
+                deck[9] = CardDataBase.cardList[x6];
+                deck[10] = CardDataBase.cardList[x7];
+                deck[11] = CardDataBase.cardList[x7];
+                deck[12] = CardDataBase.cardList[x7];
+                deck[13] = CardDataBase.cardList[x8];
+                deck[14] = CardDataBase.cardList[x8];
             }
         }
 

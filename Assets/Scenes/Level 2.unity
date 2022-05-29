@@ -766,7 +766,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 0
   hpText: {fileID: 2006660420}
-  audiox: {fileID: 0}
 --- !u!114 &147740704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2479,6 +2478,8 @@ MonoBehaviour:
   WLPanel: {fileID: 342906344}
   Win: {fileID: 1462740133}
   Lose: {fileID: 764982907}
+  winSound: {fileID: 8300000, guid: 2a804ba25d14f2f48b3351e65d65b392, type: 3}
+  loseSound: {fileID: 8300000, guid: 07c71e466f61e6640b1547c08221a937, type: 3}
 --- !u!82 &272980288
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2489,7 +2490,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: dd6f20099e2a35c4496ae75f53676068, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -20618,6 +20619,58 @@ MonoBehaviour:
     move: 0
     freeze: 0
     toxic: 0
+  - id: 0
+    cardName: 
+    cost: 0
+    power: 0
+    cardDescription: 
+    thisImage: {fileID: 0}
+    thisIcon: {fileID: 0}
+    draw_Card: 0
+    add_CurrentMana: 0
+    healBase: 0
+    move: 0
+    freeze: 0
+    toxic: 0
+  - id: 0
+    cardName: 
+    cost: 0
+    power: 0
+    cardDescription: 
+    thisImage: {fileID: 0}
+    thisIcon: {fileID: 0}
+    draw_Card: 0
+    add_CurrentMana: 0
+    healBase: 0
+    move: 0
+    freeze: 0
+    toxic: 0
+  - id: 0
+    cardName: 
+    cost: 0
+    power: 0
+    cardDescription: 
+    thisImage: {fileID: 0}
+    thisIcon: {fileID: 0}
+    draw_Card: 0
+    add_CurrentMana: 0
+    healBase: 0
+    move: 0
+    freeze: 0
+    toxic: 0
+  - id: 0
+    cardName: 
+    cost: 0
+    power: 0
+    cardDescription: 
+    thisImage: {fileID: 0}
+    thisIcon: {fileID: 0}
+    draw_Card: 0
+    add_CurrentMana: 0
+    healBase: 0
+    move: 0
+    freeze: 0
+    toxic: 0
   container:
   - id: 0
     cardName: 
@@ -20640,6 +20693,7 @@ MonoBehaviour:
   x5: 0
   x6: 0
   x7: 0
+  x8: 0
   CardToHand: {fileID: 3668064479017764002, guid: af7a32af08cccbf47b12b6ad753dbc5b, type: 3}
   Hand: {fileID: 503296982}
 --- !u!82 &1210230647
@@ -31185,7 +31239,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 0
   hpText: {fileID: 2044063622}
-  audiox: {fileID: 0}
 --- !u!114 &2128879223
 MonoBehaviour:
   m_ObjectHideFlags: 0

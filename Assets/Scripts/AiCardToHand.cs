@@ -81,6 +81,7 @@ public class AiCardToHand : MonoBehaviour
     public GameObject poisonedEffect;
 
     public GameObject battleSFX;
+    public bool waitMove;
     // Start is called before the first frame update
     void Start()
     {
@@ -136,7 +137,8 @@ public class AiCardToHand : MonoBehaviour
         Zone[35] = GameObject.Find("Zone_d08");
         Zone[36] = GameObject.Find("Zone_d09");
 
-        freezeEffect.SetActive(false);
+        //freezeEffect.SetActive(false);
+        waitMove = false;
     }
 
     // Update is called once per frame
@@ -150,7 +152,6 @@ public class AiCardToHand : MonoBehaviour
             //It.transform.eulerAngles = new Vector3(25, 0, 0);
             z = 1;
         }
-
 
         id = thisCard[0].id;
         cardName = thisCard[0].cardName;
@@ -308,12 +309,13 @@ public class AiCardToHand : MonoBehaviour
                         {
                             Zone[position - x].GetComponent<HorizontalLayoutGroup>().enabled = true;
                         }
-                        this.transform.SetParent(Zone[position - x].transform);
-                    }
 
+                        this.transform.SetParent(Zone[position - x].transform);
+
+                    }
                 }
+
                 position = position - x;
-                
                 cantMove = true;
                 if (Zone[position].GetComponent<Tiles>().Full == true)
                 {
@@ -330,12 +332,13 @@ public class AiCardToHand : MonoBehaviour
                     {
                         playerScript.poisoned = true;
                     }
-                    
-                }
-                Debug.Log("pindah ke "+transform.parent.name);
-            }
-        }
 
+                }
+
+                //Debug.Log("pindah ke "+transform.parent.name);
+            }
+
+        }
     }
     public void Destroy()
     {
