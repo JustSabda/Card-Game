@@ -21,6 +21,7 @@ public class LevelManager : MonoBehaviour
         Story3.SetActive(false);
         Ending.SetActive(false);
         Prolog.SetActive(false);
+        Time.timeScale = 1f;
     }
 
     // Update is called once per frame

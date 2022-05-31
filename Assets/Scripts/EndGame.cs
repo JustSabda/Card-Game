@@ -7,8 +7,8 @@ public class EndGame : MonoBehaviour
 {
     //public Text victoryText;
     public GameObject WLPanel;
-    public GameObject Win;
-    public GameObject Lose;
+    public GameObject Win, nextButton;
+    public GameObject Lose, restartButton;
     //public Text wLText;
     AudioSource audiox;
     public AudioClip winSound;
@@ -22,6 +22,8 @@ public class EndGame : MonoBehaviour
         WLPanel.SetActive(false);
         Win.SetActive(false);
         Lose.SetActive(false);
+        restartButton.SetActive(false);
+        nextButton.SetActive(false);
 
     }
 
@@ -33,6 +35,7 @@ public class EndGame : MonoBehaviour
             audiox.PlayOneShot(loseSound);
             WLPanel.SetActive(true);
             Lose.SetActive(true);
+            restartButton.SetActive(true);
             Time.timeScale = 0f;
         }
         if(EnemyHP.staticHP <= 0)
@@ -40,6 +43,7 @@ public class EndGame : MonoBehaviour
             audiox.PlayOneShot(winSound);
             WLPanel.SetActive(true);
             Win.SetActive(true);
+            nextButton.SetActive(true);
             Time.timeScale = 0f;
         }
     }

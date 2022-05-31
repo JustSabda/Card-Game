@@ -88,7 +88,7 @@ public class MenuManager : MonoBehaviour
         Tutorial6.SetActive(false);
         Tutorial7.SetActive(false);
         Tutorial8.SetActive(false);
-        if (SceneManager.GetActiveScene().name == "Level 2")
+        if (SceneManager.GetActiveScene().name == "Level 2" || SceneManager.GetActiveScene().name == "Level 3")
         {
             Tutorial9.SetActive(false);
             Tutorial10.SetActive(false);
@@ -100,7 +100,7 @@ public class MenuManager : MonoBehaviour
     {
         //Tutorial.SetActive(true);
         Tutorial0.SetActive(false);
-        if (SceneManager.GetActiveScene().name == "Level 2")
+        if (SceneManager.GetActiveScene().name == "Level 2" || SceneManager.GetActiveScene().name == "Level 3")
         {
             Tutorial9.SetActive(true);
         }
@@ -122,7 +122,7 @@ public class MenuManager : MonoBehaviour
         {
             Tutorial2.SetActive(true);
         }
-        if (SceneManager.GetActiveScene().name == "Level 2")
+        if (SceneManager.GetActiveScene().name == "Level 2" || SceneManager.GetActiveScene().name == "Level 3")
         {
             Tutorial9.SetActive(false);
             Tutorial10.SetActive(true);
@@ -201,6 +201,12 @@ public class MenuManager : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
+        Time.timeScale = 1f;
+    }
+    public void LevelButton()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("LevelSelection");
         Time.timeScale = 1f;
     }
     public void RestartButton()
