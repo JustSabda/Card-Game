@@ -123,6 +123,72 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &848610665
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 848610668}
+  - component: {fileID: 848610667}
+  - component: {fileID: 848610666}
+  m_Layer: 0
+  m_Name: EventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &848610666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 848610665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
+--- !u!114 &848610667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 848610665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
+--- !u!4 &848610668
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 848610665}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1638037235
 GameObject:
   m_ObjectHideFlags: 0
@@ -135,6 +201,7 @@ GameObject:
   - component: {fileID: 1638037237}
   - component: {fileID: 1638037236}
   - component: {fileID: 1638037239}
+  - component: {fileID: 1638037240}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -214,7 +281,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1638037235}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 881bde5d60d551d4abc7d839d4685053, type: 3}
@@ -303,6 +370,40 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1638037240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1638037235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9db4c5c1bb923c488b66dbad7a7d219, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeSlider: {fileID: 0}
+  _selecetedHeroObject: {fileID: 0}
+  _skinCare1: {fileID: 0}
+  _skinCare2: {fileID: 0}
+  rawImage: {fileID: 0}
+  rawImagePeng: {fileID: 0}
+  firstClick: 0
+  pauseMenu: {fileID: 0}
+  particleEs: {fileID: 0}
+  Tutorial: {fileID: 0}
+  Tutorial0: {fileID: 0}
+  Tutorial1: {fileID: 0}
+  Tutorial2: {fileID: 0}
+  Tutorial3: {fileID: 0}
+  Tutorial4: {fileID: 0}
+  Tutorial5: {fileID: 0}
+  Tutorial52: {fileID: 0}
+  Tutorial6: {fileID: 0}
+  Tutorial7: {fileID: 0}
+  Tutorial8: {fileID: 0}
+  Tutorial9: {fileID: 0}
+  Tutorial10: {fileID: 0}
 --- !u!1 &3655379294910941888
 GameObject:
   m_ObjectHideFlags: 0
@@ -404,9 +505,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
-        m_MethodName: LevelPilih
+      - m_Target: {fileID: 1638037240}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: MenuButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -646,10 +747,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Gajahmada berhasil mengalahkan rival abadinya dan dengan itu Gajahmada
-    menjadi yang berhasil memenangkan sayembara. Gajahmada juga mendapat kesempatan
-    untuk dikabulkan permintaannya.\r\n\r\nGajahmada menyebutkan permintaannya yaitu
-    Ia ingin menyatukan wilayah Nusantara di bawah naungan Kerajaan Majapahit. Lalu
+  m_Text: "Akhirnya Gajahmada berhasil mengalahkan rival abadinya. Lalu Gajahmada
+    dinobatkan sebagai pemenang sayembara. Gajahmada juga mendapat kesempatan untuk
+    dikabulkan permintaannya.\r\n\r\nGajahmada menyebutkan permintaannya yaitu Ia
+    ingin menyatukan wilayah Nusantara di bawah naungan Kerajaan Majapahit. Lalu
     sang dewa menunjukkan satu kekuatan yang akan diberikan kepada Gajahmada.\r\n\r\nGajahmada
     kembali ke dunia asli dan kembali berada di Kerajaan Majapahit. Lalu Gajahmada
     menyusun kembali kekuatan tempur kerajaan Majapahit yang dipadukan dengan kekuatan

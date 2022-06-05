@@ -1417,7 +1417,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1110045341}
         m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
-        m_MethodName: EndingStory
+        m_MethodName: EpilogButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2026,7 +2026,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1110045341}
         m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
-        m_MethodName: PrologAwal
+        m_MethodName: PrologButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2996,13 +2996,19 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Gajah Mada pun telah siap. Ia maju bersama dengan Hayam Wuruk mengikut
-    sayembara. Gajah Mada memperkuat pasukannya dengan menambah prajurit zirah.\n\nSaat
-    di Arena, Gajahmada memulai pertarungan pertamanya yang dipertemukan dengan Kerajaan
-    Singosari. \n\nGajahmada merasakan suasana yang sangat tegang melihat kekuatan
-    tempur dari kerajaan Singosari.\n\nSingosari mengajukan 2 panglima hebatnya yaitu
-    Ken Arok dan Kertanegara. Mereka berdua ini merupakan ahli di bidang strategi
-    perang"
+  m_Text: 'Gajah Mada pun telah selesai berlatih. Ia siap maju bersama dengan Hayam
+    Wuruk mengikuti sayembara. Gajah Mada memperkuat pasukannya dengan menambah prajurit
+    zirah.
+
+    Saat di Arena, Gajahmada memulai pertarungan pertamanya yang dipertemukan
+    dengan Kerajaan Singosari. Gajahmada merasakan suasana yang sangat tegang melihat
+    kekuatan tempur dari kerajaan Singosari. Singosari mengajukan 2 panglima hebatnya
+    yaitu Ken Arok dan Kertanegara. Mereka berdua ini merupakan ahli di bidang strategi
+    perang.
+
+
+    Singosari mengajukan 2 panglima hebatnya yaitu Ken Arok dan Kertanegara.
+    Mereka berdua ini merupakan ahli di bidang strategi perang'
 --- !u!222 &1922718493
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3312,13 +3318,14 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: '
 
-    Gajahmada yang merupakan tokoh di kerajaan Majapahit mempunyai hasrat
-    yang tinggi untuk menguasai Nusantara. Gajahmada pun berlatih untuk mengikuti
-    sayembara tersebut.
+    Gajahmada yang merupakan panglima di kerajaan Majapahit mempunyai
+    hasrat yang tinggi untuk menguasai Nusantara. Gajah Mada pun tertantang untuk
+    mengikuti pertempuran tersebut.
 
 
-    Gajahmada lalu bertemu dengan rekannya di Majapahit
-    yaitu Hayam Wuruk untuk maju bersama dalam pertempuran'
+    Lalu Gajahmada bertemu dengan rekannya
+    di Majapahit yaitu Hayam Wuruk. Ia mengajak Hayam Wuruk untuk maju bersama dalam
+    pertempuran. '
 --- !u!222 &2104067291
 CanvasRenderer:
   m_ObjectHideFlags: 0

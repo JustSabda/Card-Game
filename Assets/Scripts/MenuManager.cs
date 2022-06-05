@@ -208,6 +208,10 @@ public class MenuManager : MonoBehaviour
         Time.timeScale = 1f;
         SceneManager.LoadScene("LevelSelection");
         Time.timeScale = 1f;
+        if (SceneManager.GetActiveScene().name == "Level 3")
+        {
+            LevelManager.epilogbo = true;
+        }
     }
     public void RestartButton()
     {

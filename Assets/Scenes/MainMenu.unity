@@ -5607,6 +5607,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bambang: {fileID: 8300000, guid: daa2bd5e9ce8466498dd303b03f1edd3, type: 3}
   Ipul: {fileID: 8300000, guid: ec1f7068a73e7c84cbe0ada7b54da601, type: 3}
+  slamet: {fileID: 8300000, guid: a9fb11b9689265140b33656f35ae1dc2, type: 3}
+  parjo: {fileID: 8300000, guid: 881bde5d60d551d4abc7d839d4685053, type: 3}
   x: 0
 --- !u!1 &1849396562
 GameObject:
