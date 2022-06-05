@@ -100,4 +100,8 @@ public class LevelManager : MonoBehaviour
     {
         SceneManager.LoadScene("MainMenu");
     }
+    public void PrologButton()
+    {
+        SceneManager.LoadScene("Prolog");
+    }
 }
