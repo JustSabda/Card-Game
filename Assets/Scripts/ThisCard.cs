@@ -85,6 +85,9 @@ public class ThisCard : MonoBehaviour
     public GameObject battleSFX;
     public bool waitMove;
 
+    public AudioClip healSfx;
+    public AudioClip manaSfx;
+
     void Start()
     {
         audiox = GetComponent<AudioSource>();
@@ -242,7 +245,6 @@ public class ThisCard : MonoBehaviour
                 skinCare.SetActive(false);
             }
 
-
             for (int i = 0; i < Zone.Length; i++)
             {
                 if (summoned == false && this.transform.parent == Zone[i].transform)
@@ -304,7 +306,6 @@ public class ThisCard : MonoBehaviour
             currentMove = move;
             freezeEffect.SetActive(false);
         }
-
         if (cold == true)
         {
             currentMove = 0;
@@ -357,6 +358,11 @@ public class ThisCard : MonoBehaviour
         TurnSystem.currentMana += add_CurrentMana;
         TurnSystem.DrawCount += 1;
 
+        if(add_CurrentMana != 0)
+        {
+            audiox.PlayOneShot(manaSfx);
+        }
+
         drawX = draw_cards;
         currentPower = maxPower;
         currentMove = move;
@@ -366,6 +372,7 @@ public class ThisCard : MonoBehaviour
     public void CurrentMana(int x)
     {
         TurnSystem.currentMana += x;
+        
     }
     public void Destroy()
     {
@@ -375,6 +382,7 @@ public class ThisCard : MonoBehaviour
     public void Heal()
     {
         PlayerHP.staticHP += healSpell;
+        audiox.PlayOneShot(healSfx);
     }
     public void Move(int x)
     {

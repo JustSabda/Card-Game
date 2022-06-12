@@ -46,11 +46,11 @@ public class PlayerDeck : MonoBehaviour
 
             //realcard
             x1 = 1;
-            x2 = 6;
-            x3 = 4;
-            x4 = 2;
-            x5 = 3;
-            x6 = 5;
+            x2 = 2;
+            x3 = 5;
+            x4 = 3;
+            x5 = 4;
+            x6 = 6;
 
             for (int i = 1; i < deckSize; i++)
             {
@@ -76,11 +76,11 @@ public class PlayerDeck : MonoBehaviour
 
             //realcard
             x1 = 1;
-            x2 = 6;
-            x3 = 4;
-            x4 = 2;
-            x5 = 3;
-            x6 = 5;
+            x2 = 2;
+            x3 = 5;
+            x4 = 3;
+            x5 = 4;
+            x6 = 6;
             x7 = 7;
 
             for (int i = 1; i < deckSize; i++)
@@ -109,11 +109,11 @@ public class PlayerDeck : MonoBehaviour
 
             //realcard
             x1 = 1;
-            x2 = 6;
-            x3 = 4;
-            x4 = 2;
-            x5 = 3;
-            x6 = 5;
+            x2 = 2;
+            x3 = 5;
+            x4 = 3;
+            x5 = 4;
+            x6 = 6;
             x7 = 7;
             x8 = 8;
 

@@ -63,7 +63,7 @@ public class AI : MonoBehaviour
         {
             for (int i = 0; i < deckSize; i++)
             {
-                int[] acak = { 2, 3, 5 };
+                int[] acak = { 11, 12, 14 };
                 int acak1 = Random.Range(0, 3);
                 int y = acak[acak1];
                 deck[i] = CardDataBase.cardList[y];
@@ -73,37 +73,37 @@ public class AI : MonoBehaviour
         {
             for (int i = 0; i < deckSize; i++)
             {
-                int[] acak = { 2, 3, 8 };
+                int[] acak = { 11, 12, 15 };
                 int acak1 = Random.Range(0, 3);
                 int y = acak[acak1];
                 deck[i] = CardDataBase.cardList[y];
-                deck[4] = CardDataBase.cardList[9];
-                deck[10] = CardDataBase.cardList[10];
-                deck[16] = CardDataBase.cardList[9];
-                deck[24] = CardDataBase.cardList[10];
-                deck[29] = CardDataBase.cardList[10];
+                deck[4] = CardDataBase.cardList[16];
+                deck[10] = CardDataBase.cardList[17];
+                deck[16] = CardDataBase.cardList[16];
+                deck[24] = CardDataBase.cardList[17];
+                deck[29] = CardDataBase.cardList[17];
             }
         }
         if (SceneManager.GetActiveScene().name == "Level 3")
         {
             for (int i = 0; i < deckSize; i++)
             {
-                int[] acak = { 2, 3, 4, 5 };
+                int[] acak = { 11, 12, 13, 14 };
                 int acak1 = Random.Range(0, 4);
                 int y = acak[acak1];
                 deck[i] = CardDataBase.cardList[y];
-                deck[3] = CardDataBase.cardList[11];
-                deck[4] = CardDataBase.cardList[12];
-                deck[9] = CardDataBase.cardList[11];
-                deck[12] = CardDataBase.cardList[12];
-                deck[14] = CardDataBase.cardList[11];
-                deck[16] = CardDataBase.cardList[12];
-                deck[19] = CardDataBase.cardList[11];
-                deck[23] = CardDataBase.cardList[11];
-                deck[26] = CardDataBase.cardList[11];
-                deck[28] = CardDataBase.cardList[12];
-                deck[29] = CardDataBase.cardList[11];
-                deck[3] = CardDataBase.cardList[12];
+                deck[3] = CardDataBase.cardList[18];
+                deck[4] = CardDataBase.cardList[19];
+                deck[9] = CardDataBase.cardList[18];
+                deck[12] = CardDataBase.cardList[19];
+                deck[14] = CardDataBase.cardList[18];
+                deck[16] = CardDataBase.cardList[19];
+                deck[19] = CardDataBase.cardList[18];
+                deck[23] = CardDataBase.cardList[18];
+                deck[26] = CardDataBase.cardList[18];
+                deck[28] = CardDataBase.cardList[19];
+                deck[29] = CardDataBase.cardList[18];
+                deck[3] = CardDataBase.cardList[19];
             }
         }
 

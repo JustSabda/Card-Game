@@ -7,6 +7,7 @@ public class EndGame : MonoBehaviour
 {
     //public Text victoryText;
     public GameObject WLPanel;
+    public static bool end;
     public GameObject Win, nextButton;
     public GameObject Lose, restartButton;
     //public Text wLText;
@@ -18,6 +19,7 @@ public class EndGame : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        end = false;
         audiox = GetComponent<AudioSource>();
         WLPanel.SetActive(false);
         Win.SetActive(false);
@@ -37,6 +39,7 @@ public class EndGame : MonoBehaviour
             Lose.SetActive(true);
             restartButton.SetActive(true);
             Time.timeScale = 0f;
+            end = true;
         }
         if(EnemyHP.staticHP <= 0)
         {
@@ -45,6 +48,7 @@ public class EndGame : MonoBehaviour
             Win.SetActive(true);
             nextButton.SetActive(true);
             Time.timeScale = 0f;
+            end = true;
         }
     }
 }

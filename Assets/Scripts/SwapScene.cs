@@ -29,6 +29,10 @@ public class SwapScene : MonoBehaviour
                 Music.Instance.GetComponentInChildren<AudioSource>().Play();
                 x = false;
                 y = true;
+                if (EndGame.end == true)
+                {
+                    Music.Instance.GetComponentInChildren<AudioSource>().Pause();
+                }
             }
             
         }
@@ -41,6 +45,10 @@ public class SwapScene : MonoBehaviour
                 Music.Instance.GetComponentInChildren<AudioSource>().Play();
                 x = false;
                 y = true;
+                if (EndGame.end == true)
+                {
+                    Music.Instance.GetComponentInChildren<AudioSource>().Pause();
+                }
             }
 
         }
@@ -53,6 +61,10 @@ public class SwapScene : MonoBehaviour
                 Music.Instance.GetComponentInChildren<AudioSource>().Play();
                 x = false;
                 y = true;
+                if (EndGame.end == true)
+                {
+                    Music.Instance.GetComponentInChildren<AudioSource>().Pause();
+                }
             }
 
         }
