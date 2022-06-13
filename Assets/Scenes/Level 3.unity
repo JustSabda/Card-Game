@@ -9433,7 +9433,7 @@ MonoBehaviour:
     move: 0
     freeze: 0
     toxic: 0
-  Hand: {fileID: 0}
+  Hand: {fileID: 1560830474}
   x: 0
   CardToHand: {fileID: 5362941949208870295, guid: 2466d2907f286d64ea8540d23fb5b632, type: 3}
   Clones:

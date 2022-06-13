@@ -34,7 +34,10 @@ public class EndGame : MonoBehaviour
     {
         if(PlayerHP.staticHP <= 0)
         {
-            audiox.PlayOneShot(loseSound);
+            if (end == false)
+            {
+                audiox.PlayOneShot(loseSound);
+            }
             WLPanel.SetActive(true);
             Lose.SetActive(true);
             restartButton.SetActive(true);
@@ -43,7 +46,10 @@ public class EndGame : MonoBehaviour
         }
         if(EnemyHP.staticHP <= 0)
         {
-            audiox.PlayOneShot(winSound);
+            if (end == false)
+            {
+                audiox.PlayOneShot(winSound);
+            }
             WLPanel.SetActive(true);
             Win.SetActive(true);
             nextButton.SetActive(true);

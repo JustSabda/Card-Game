@@ -52,7 +52,7 @@ public class AI : MonoBehaviour
 
     void Start()
     {
-
+        Hand = GameObject.Find("EnemyHand");
 
         //x = 0;
         deckSize = 30;
@@ -63,7 +63,7 @@ public class AI : MonoBehaviour
         {
             for (int i = 0; i < deckSize; i++)
             {
-                int[] acak = { 11, 12, 14 };
+                int[] acak = { 9, 10, 12 };
                 int acak1 = Random.Range(0, 3);
                 int y = acak[acak1];
                 deck[i] = CardDataBase.cardList[y];
@@ -73,37 +73,37 @@ public class AI : MonoBehaviour
         {
             for (int i = 0; i < deckSize; i++)
             {
-                int[] acak = { 11, 12, 15 };
+                int[] acak = { 9, 10, 13 };
                 int acak1 = Random.Range(0, 3);
                 int y = acak[acak1];
                 deck[i] = CardDataBase.cardList[y];
-                deck[4] = CardDataBase.cardList[16];
-                deck[10] = CardDataBase.cardList[17];
-                deck[16] = CardDataBase.cardList[16];
-                deck[24] = CardDataBase.cardList[17];
-                deck[29] = CardDataBase.cardList[17];
+                deck[4] = CardDataBase.cardList[14];
+                deck[10] = CardDataBase.cardList[15];
+                deck[16] = CardDataBase.cardList[14];
+                deck[24] = CardDataBase.cardList[15];
+                deck[29] = CardDataBase.cardList[15];
             }
         }
         if (SceneManager.GetActiveScene().name == "Level 3")
         {
             for (int i = 0; i < deckSize; i++)
             {
-                int[] acak = { 11, 12, 13, 14 };
+                int[] acak = { 9, 10, 11, 12 };
                 int acak1 = Random.Range(0, 4);
                 int y = acak[acak1];
                 deck[i] = CardDataBase.cardList[y];
-                deck[3] = CardDataBase.cardList[18];
-                deck[4] = CardDataBase.cardList[19];
-                deck[9] = CardDataBase.cardList[18];
-                deck[12] = CardDataBase.cardList[19];
-                deck[14] = CardDataBase.cardList[18];
-                deck[16] = CardDataBase.cardList[19];
-                deck[19] = CardDataBase.cardList[18];
-                deck[23] = CardDataBase.cardList[18];
-                deck[26] = CardDataBase.cardList[18];
-                deck[28] = CardDataBase.cardList[19];
-                deck[29] = CardDataBase.cardList[18];
-                deck[3] = CardDataBase.cardList[19];
+                deck[3] = CardDataBase.cardList[16];
+                deck[4] = CardDataBase.cardList[17];
+                deck[9] = CardDataBase.cardList[16];
+                deck[12] = CardDataBase.cardList[17];
+                deck[14] = CardDataBase.cardList[16];
+                deck[16] = CardDataBase.cardList[17];
+                deck[19] = CardDataBase.cardList[16];
+                deck[23] = CardDataBase.cardList[16];
+                deck[26] = CardDataBase.cardList[16];
+                deck[28] = CardDataBase.cardList[17];
+                deck[29] = CardDataBase.cardList[16];
+                
             }
         }
 
@@ -111,7 +111,7 @@ public class AI : MonoBehaviour
 
         StartCoroutine(StartGame());
 
-        Hand = GameObject.Find("EnemyHand");
+        
         //Zone = GameObject.FindGameObjectsWithTag("Zone");
         Zone[0] = GameObject.Find("Zone_a00");
         Zone[1] = GameObject.Find("Zone_a01");
@@ -152,7 +152,7 @@ public class AI : MonoBehaviour
         Zone[36] = GameObject.Find("Zone_d09");
 
 
-    }
+    }   
     // Update is called once per frame
     void Update()
     {

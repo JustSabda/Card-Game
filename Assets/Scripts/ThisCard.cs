@@ -382,7 +382,11 @@ public class ThisCard : MonoBehaviour
     public void Heal()
     {
         PlayerHP.staticHP += healSpell;
-        audiox.PlayOneShot(healSfx);
+        if (healSpell != 0)
+        {
+            audiox.PlayOneShot(healSfx);
+        }
+        
     }
     public void Move(int x)
     {
